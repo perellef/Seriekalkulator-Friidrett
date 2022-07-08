@@ -1,0 +1,64 @@
+{
+               
+    "overbygningsklubber": {
+        "IL i BUL":                 [[false,true,false], ["Nesodden IF"]],
+        "Gloppen Friidrettslag":    [[false,true,true],  ["Breimsbygda IL","Brodd IL","Fjellhug/Vereide IL","Hyen IL","Sandane Turn og Idrettslag"]],
+        "IL Gular":                 [[false,true,false], ["Turn & IL Hovding","Strandebarm IL","IL Korlevoll-Odda"]],
+        "Kongsvinger IL Friidrett": [[false,true,false], ["Grue IL"]],
+        "Norna-Salhus IL":          [[false,true,false], ["Loddefjord IL","FIL Aks-77","Eidsvåg IL, Åsane"]],
+        "Selsbakk IF":              [[false,true,false], ["Selbu IL","Børsa IL"]],
+        "Steinkjer Friidrettsklubb":[[false,true,false], ["Beitstad IL","Sør-Beitstad IL"]],
+        "Stord IL":                 [[false,true,false], ["Bremnes IL","Fitjar IL"]],
+        "Tingvoll IL":              [[false,true,true],  ["Triumf","Straumsnes IL"]],
+        "IK Tjalve":                [[false,true,false], ["IL Heming","IL Koll"]],
+        "Ullensaker/Kisa IL":       [[false,true,false], ["Eidsvold Turnforening Friidrett","Hurdal IL","Sørum IL"]]
+    },      
+    
+    "klubber unntatt overbygning": {
+        "Raumnes & Årnes IL":   [false,true,false]
+    },
+    
+
+    "utøvere unntatt overbygning": {
+        "menn": {
+            "FIL Aks-77":           ["Phillip Morken/2004"]
+        },
+
+        "kvinner": {
+
+        }
+    },
+
+    "rullestolutøvere": {
+        "menn":    [],
+        "kvinner": ["Anisa Abdihakin Abdulle/2005","Sofie Østerbø Jansen/1996","Julie Lervik Saursaunet/1983"]      
+    },
+            
+    "ugyldige resultater": {
+        "menn": [
+            {"resultat": ["Ås IL","Per Ellef Ryen Aalerud","2000","610","Tresteg","12,54","Bislett","02.06.2021"],
+            "begrunnelse": "Test"},
+            
+            {"resultat": ["Sandnes IL","Narve Gilje Nordås","1998","1055","3000m","7,41,31","Lahti/FIN","19.08.2021"],
+            "begrunnelse": "Test"},
+            
+            {"resultat": ["Sandnes IL","Narve Gilje Nordås","1998","972","5000m","13,41,82","Tokyo/JPN","03.08.2021"],
+            "begrunnelse": "Test"}
+        ],
+
+        "kvinner": [
+
+        ]
+    },
+
+    "manglende resultater": {
+        "menn":[
+            {"resultat": ["Ås IL","Per Ellef Ryen Aalerud","2000","610","Tresteg","12.54","Bislett","02.06.2021"],
+            "begrunnelse": "Test"}
+        ],
+
+        "kvinner": [
+            
+        ]
+    }
+}
