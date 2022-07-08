@@ -62,6 +62,9 @@ class Datasenter:
 
             i+= 1
 
+    def hentStatistikkFraFil(self,filnavn):
+        Statistikkhenting.hentStatistikkFraFil(self,filnavn)
+
     def korrigerKlubbStatistikk(self): 
 
         for kjonn in ["menn","kvinner"]:

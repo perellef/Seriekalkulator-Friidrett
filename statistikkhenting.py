@@ -1,7 +1,8 @@
+from resultat import Resultat
+
 from bs4 import BeautifulSoup
 import requests
-
-from resultat import Resultat
+import openpyxl
 
 url = "http://www.minfriidrettsstatistikk.info/php/SeriePoengPrKlubb.php"
 
@@ -51,7 +52,7 @@ class Statistikkhenting:
         inputs = {'showclub': ID, 'showgender': gender, 'showyear': str(aar), "submit": "BEREGN"}
 
         while True:
-            
+
             try:
                 data = BeautifulSoup(requests.post(url, data=inputs, timeout=5).text, "lxml")
             except (requests.ConnectionError, requests.Timeout):
@@ -92,6 +93,47 @@ class Statistikkhenting:
             klubb.leggTilRes(resultat)
             datasenter.leggTilRes(kjonn,resultat)       
 
+    @staticmethod
     def hentStatistikkFraFil(datasenter,filnavn):
 
-        ...
+        ovelsesinfo = datasenter.ovelsesinfo()["sluttform"]
+
+        statistikkfil = openpyxl.load_workbook(filnavn+".xlsx")
+
+        for kjonn in ["menn","kvinner"]:
+            ark = statistikkfil[kjonn + " - statistikk"]
+            for rad in range(5, ark.max_row+1):
+
+                if ark.cell(row=rad,column=2).value == None:
+                    continue
+
+                klubbnavn = str(ark.cell(row=rad,column=2).value)
+                krets = str(ark.cell(row=rad,column=3).value)
+
+                klubb = datasenter.hentKlubbFraNavn(kjonn,klubbnavn)
+                klubb.settKrets(krets)  
+
+                navn = str(ark.cell(row=rad,column=6).value)
+                fAar = str(ark.cell(row=rad,column=7).value)
+
+                utover = datasenter.hentUtover(kjonn,navn,fAar)
+
+                poeng = str(ark.cell(row=rad,column=4).value)
+
+                if not poeng.isdigit():
+                    raise SystemError(f"Poeng er gitt i heltall ('{poeng}')")
+
+                ovelse = ark.cell(row=rad,column=5).value
+
+                if not ovelse in ovelsesinfo.keys():
+                    raise SystemError(f"'{ovelse}' er ikke en gyldig øvelse")
+
+                res = str(ark.cell(row=rad,column=8).value)
+                sted = str(ark.cell(row=rad,column=9).value)
+                dato = str(ark.cell(row=rad,column=10).value)
+
+                resultat = Resultat(utover,ovelse,poeng,res,dato,sted,klubb)
+
+                utover.leggTilRes(resultat)
+                klubb.leggTilRes(resultat)
+                datasenter.leggTilRes(kjonn,resultat)
