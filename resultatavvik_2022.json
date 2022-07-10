@@ -3,20 +3,20 @@
     "overbygningsklubber": {
         "IL i BUL":                 [[false,true,false], ["Nesodden IF"]],
         "Gloppen Friidrettslag":    [[false,true,true],  ["Breimsbygda IL","Brodd IL","Fjellhug/Vereide IL","Hyen IL","Sandane Turn og Idrettslag"]],
-        "IL Gular":                 [[false,true,false], ["Turn & IL Hovding","Strandebarm IL","IL Korlevoll-Odda"]],
+        "IL Gular":                 [[false,true,false], ["IL Korlevoll-Odda","Strandebarm IL","Turn & IL Hovding"]],
         "Kongsvinger IL Friidrett": [[false,true,false], ["Grue IL"]],
-        "Norna-Salhus IL":          [[false,true,false], ["Loddefjord IL","FIL Aks-77","Eidsvåg IL, Åsane"]],
+        "Norna-Salhus IL":          [[false,true,false], ["Eidsvåg IL, Åsane","FIL Aks-77","Loddefjord IL"]],
         "Steinkjer Friidrettsklubb":[[false,true,false], ["Beitstad IL","Sør-Beitstad IL"]],
         "Stord IL":                 [[false,true,false], ["Bremnes IL","Fitjar IL"]],
-        "Tingvoll IL":              [[false,true,true],  ["Triumf","Straumsnes IL"]],
+        "Tingvoll IL":              [[false,true,true],  ["Straumsnes IL","Tingvoll FIK","Triumf"]],
         "IK Tjalve":                [[false,true,false], ["IL Koll"]],
         "IL Tyrving":               [[false,true,false], ["Nesøya IL"]],
         "Ullensaker/Kisa IL":       [[false,true,false], ["Eidsvold Turnforening Friidrett","Hurdal IL","Hvam IL","Nordre Eidsvoll IL","Sørum IL"]]
     },
     
     "klubber unntatt overbygning": {
-        "Raumnes & Årnes IL":       [false,true,false]
-    },
+        "Ullensaker/Kisa IL":       [[false,true,false], ["Raumnes & Årnes IL"]]
+    },    
     
     "utøvere unntatt overbygning": {
         "menn": {

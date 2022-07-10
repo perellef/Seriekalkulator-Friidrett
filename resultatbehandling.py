@@ -183,49 +183,51 @@ class Resultatbehandling:
         overbygning = resultatavvik["overbygningsklubber"]
         utovereUnntatt = resultatavvik["utøvere unntatt overbygning"][kjonn]
         
-        for moderKlubbnavn in overbygning:
+        for overbygKlubbnavn in overbygning:
                 
             utovere_unntatt = []
-            if moderKlubbnavn in utovereUnntatt.keys(): # finner alle unntatte utovere i klubben
-                for el in utovereUnntatt[moderKlubbnavn]:
+            if overbygKlubbnavn in utovereUnntatt.keys(): # finner alle unntatte utovere i klubben
+                for el in utovereUnntatt[overbygKlubbnavn]:
                     navn,fAar = el.split("/")
 
                     utover = datasenter.hentUtover(kjonn,navn,fAar)
             
                     utovere_unntatt.append(utover)
             
-            moderKlubb = datasenter.hentKlubbFraNavn(kjonn,moderKlubbnavn,lagNy=False)
+            overbygKlubb = datasenter.hentKlubbFraNavn(kjonn,overbygKlubbnavn,lagNy=False)
             
-            alder_krav, overbygKlubber = overbygning[moderKlubbnavn]
+            alder_krav, moderklubber = overbygning[overbygKlubbnavn]
             
-            for overbygKlubbnavn in overbygKlubber:
-                overbygKlubb = datasenter.hentKlubbFraNavn(kjonn,overbygKlubbnavn,lagNy=False)
+            for moderklubbnavn in moderklubber:
+                moderKlubb = datasenter.hentKlubbFraNavn(kjonn,moderklubbnavn,lagNy=False)
                 
-                resultater = overbygKlubb.hentResultater()
+                resultater = moderKlubb.hentResultater()
                 
                 for res in resultater:
                     
                     utover = res.hentUtover()
                     alder = res.hentAlderTilUtover()
                     
-                    condition1 = (utover not in utovere_unntatt)
+                    condition1 = (utover in utovere_unntatt)
                     
                     con1 = (alder_krav[0] and alder in [11,12,13,14])
                     con2 = (alder_krav[1] and alder in [15,16,17,18,19])
                     con3 = (alder_krav[2] and alder>=20)
                     
                     condition2 = any((con1,con2,con3))
-                    
-                    if all((condition1,condition2)):
-                        
-                        moderKlubb.leggTilRes(res)
-                        overbygKlubb.fjernRes(res)
 
-                        res.settKlubbTil(moderKlubb)
+                    if all((condition1,condition2)):
+                        res.settBegrunnelse("Utøver unntatt overbygning")  
+                    
+                    elif all((not condition1,condition2)):
+                        
+                        overbygKlubb.leggTilRes(res)
+                        moderKlubb.fjernRes(res)
+
+                        res.settKlubbTil(overbygKlubb)
                         res.settBegrunnelse("Overbygning")  
 
-                    elif all((not condition1,condition2)):
-                        res.settBegrunnelse("Utøver unntatt overbygning")  
+                    
 
     @staticmethod        
     def handterKlubberUnntattOverbygning(datasenter,kjonn):
@@ -233,40 +235,44 @@ class Resultatbehandling:
         resultatavvik = datasenter.resultatavvik()
         klubberUnntatt = resultatavvik["klubber unntatt overbygning"]
         
-        for klubb in klubberUnntatt:
-            
-            klubb_til = datasenter.hentKlubbFraNavn(kjonn,klubb,lagNy=False)
-            alder_krav = klubberUnntatt[klubb]
+        for overbygKlubbnavn in klubberUnntatt:
 
-            klubbResultater = klubb_til.hentResultater()
+            overbygKlubb = datasenter.hentKlubbFraNavn(kjonn,overbygKlubbnavn,lagNy=False)
+            alder_krav = klubberUnntatt[overbygKlubbnavn][0]
 
-            utovereSjekket = []
-            for klubbRes in klubbResultater:
-                
-                utover = klubbRes.hentUtover()
+            moderklubber = klubberUnntatt[overbygKlubbnavn][1]
 
-                if utover not in utovereSjekket:
-                    utovereSjekket.append(utover)
-                else:
-                    continue
+            for moderKlubbnavn in moderklubber:
+                moderklubb = datasenter.hentKlubbFraNavn(kjonn,moderKlubbnavn,lagNy=False)
 
-                utoverResultater = utover.hentResultater()
+                klubbResultater = moderklubb.hentResultater() # henter moderresultatene for å finne moderutoverene. Dersom disse har resultater for overb.klubben overfores disse tilbake.
 
-                for utoverRes in utoverResultater:
-                    klubbMedRes = utoverRes.hentKlubbFra()
+                utovereSjekket = []
+                for klubbRes in klubbResultater:
+                    
+                    utover = klubbRes.hentUtover()
 
-                    if klubb_til is klubbMedRes:
+                    if utover not in utovereSjekket:
+                        utovereSjekket.append(utover)
+                    else:
                         continue
 
-                    alder = utoverRes.hentAlderTilUtover()
-                    
-                    con1 = (alder_krav[0] and alder in [11,12,13,14])
-                    con2 = (alder_krav[1] and alder in [15,16,17,18,19])
-                    con3 = (alder_krav[2] and alder>=20)
-                    
-                    if all((con1,con2,con3)):
-                        klubb_til.leggTilRes(utoverRes)
-                        klubbMedRes.fjernRes(utoverRes)
+                    utoverResultater = utover.hentResultater()
 
-                        utoverRes.settKlubbTil(klubb_til)
-                        utoverRes.settBegrunnelse("Klubb unntatt overbygning")
+                    for utoverRes in utoverResultater:
+
+                        if utoverRes.hentKlubbFra() is not overbygKlubb:
+                            continue
+
+                        alder = utoverRes.hentAlderTilUtover()
+                        
+                        con1 = (alder_krav[0] and alder in [11,12,13,14])
+                        con2 = (alder_krav[1] and alder in [15,16,17,18,19])
+                        con3 = (alder_krav[2] and alder>=20)
+                        
+                        if any((con1,con2,con3)):
+                            moderklubb.leggTilRes(utoverRes)
+                            overbygKlubb.fjernRes(utoverRes)
+
+                            utoverRes.settKlubbTil(moderklubb)
+                            utoverRes.settBegrunnelse("Klubb unntatt overbygning")
