@@ -45,7 +45,7 @@ class Filleser:
             lag.settFjoraars(poeng,plassering,div)
 
             opprykk = (div in [2,3]) and (plassering <=3)
-            nedrykk = (div in [1,2]) and (plassering >=9)
+            nedrykk = (div in [1,2]) and (plassering >=10)
 
             if opprykk:
                 div -= 1

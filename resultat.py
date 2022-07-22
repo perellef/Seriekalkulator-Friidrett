@@ -28,6 +28,9 @@ class Resultat:
     def __lt__(self,resultat2):
         return self.hentPoeng()<resultat2.hentPoeng()
 
+    def __gt__(self,resultat2):
+        return self.hentPoeng()>resultat2.hentPoeng()
+
     def __ne__(self,resultat2):
         return self.hentPoeng()!=resultat2.hentPoeng()
 

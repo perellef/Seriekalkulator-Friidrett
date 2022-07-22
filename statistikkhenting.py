@@ -12,7 +12,7 @@ class Statistikkhenting:
     def definerKlubbIDer(datasenter):
                 
         try:
-            data = BeautifulSoup(requests.get(url, timeout=5).text, "lxml")
+            data = BeautifulSoup(requests.get(url, timeout=10).text, "lxml")
         except (requests.ConnectionError, requests.Timeout):
             print(f"Mangler nett-tilgang og får ikke hentet klubbid-er.")
             return      
@@ -54,7 +54,7 @@ class Statistikkhenting:
         while True:
 
             try:
-                data = BeautifulSoup(requests.post(url, data=inputs, timeout=5).text, "lxml")
+                data = BeautifulSoup(requests.post(url, data=inputs, timeout=10).text, "lxml")
             except (requests.ConnectionError, requests.Timeout):
                 print(f"Mangler nett-tilgang og får ikke hentet statistikk til {klubb}.")
                 return                       
@@ -69,8 +69,8 @@ class Statistikkhenting:
         lag_data = [el.text for el in all_data[0].findAll("td")]
         
         klubb.settKrets(lag_data[1].replace(" Friidrettskrets",""))  
-        
-            
+
+   
         data = [[el.text for el in indiv_data.findAll("td")] for indiv_data in samlet_indiv_data]            
             
         for ovelse,navn,fAar,res,poeng,sted,dato in data:
@@ -101,8 +101,11 @@ class Statistikkhenting:
         statistikkfil = openpyxl.load_workbook(filnavn+".xlsx")
 
         for kjonn in ["menn","kvinner"]:
-            ark = statistikkfil[kjonn + " - statistikk"]
+            ark = statistikkfil[kjonn.capitalize() + " - statistikk"]
             for rad in range(5, ark.max_row+1):
+
+                if rad%2500==0:
+                    print(kjonn,rad)
 
                 if ark.cell(row=rad,column=2).value == None:
                     continue
@@ -123,7 +126,7 @@ class Statistikkhenting:
                 if not poeng.isdigit():
                     raise SystemError(f"Poeng er gitt i heltall ('{poeng}')")
 
-                ovelse = ark.cell(row=rad,column=5).value
+                ovelse = str(ark.cell(row=rad,column=5).value)
 
                 if not ovelse in ovelsesinfo.keys():
                     raise SystemError(f"'{ovelse}' er ikke en gyldig øvelse")

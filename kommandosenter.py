@@ -72,12 +72,12 @@ class Kommandosenter:
                 continue
 
             print(f"HANDLING: Klubbstatistikk til alle klubber ({svar}) hentes")
-            self._datasenter.hentKlubbstatistikkTilAlle()
 
             if svar in ["1","menn","3","begge"]:
                 self._datasenter.hentKlubbstatistikkTilAlle("menn")
-            elif svar in ["2","kvinner"]:
+            if svar in ["2","kvinner","3","begge"]:
                 self._datasenter.hentKlubbstatistikkTilAlle("kvinner")
+            return
             
     def hentStatistikkTilKlubb(self):
 

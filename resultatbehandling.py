@@ -37,7 +37,9 @@ class Resultatbehandling:
             klubb = datasenter.hentKlubbFraNavn(kjonn,klubbnavn,lagNy=False)
             utover = datasenter.hentUtover(kjonn,navn,fAar)
             
-            for res in klubb.hentResultater():
+            resultater = klubb.hentResultater()
+
+            for res in reversed(resultater):
             
                 con1 = (res.hentUtover() is utover)
                 con2 = (res.hentPoeng()==int(poeng))
@@ -58,21 +60,22 @@ class Resultatbehandling:
     @staticmethod
     def fjernMellomtider(datasenter,kjonn):
 
-        settinger = datasenter.settinger()
-        resultater = datasenter.resultater(kjonn)
+        klubber = datasenter.klubber(kjonn)
         
-        for res in resultater.hent():
-            prestasjon = res.hentPrestasjon()
+        for klubb in klubber:
+            resultater = klubb.hentResultater()
+            for res in reversed(resultater):
+                prestasjon = res.hentPrestasjon()
 
-            if "+" in prestasjon:
-                klubb = res.hentKlubbFra()
-                utover = res.hentUtover()
+                if "+" in prestasjon:
+                    klubb = res.hentKlubbFra()
+                    utover = res.hentUtover()
 
-                klubb.fjernRes(res)
-                utover.fjernRes(res)
+                    klubb.fjernRes(res)
+                    utover.fjernRes(res)
 
-                res.settKlubbTil(None)
-                res.settBegrunnelse("Mellomtid")
+                    res.settKlubbTil(None)
+                    res.settBegrunnelse("Mellomtid")
 
                 
     @staticmethod
@@ -84,7 +87,7 @@ class Resultatbehandling:
         for utover in utovere:
             resultater = utover.hentResultater()
 
-            for res1 in resultater:
+            for res1 in reversed(resultater):
                 
                 ovelse1 = res1.hentOvelse()
                 prestasjon = res1.hentPrestasjon()
@@ -131,27 +134,28 @@ class Resultatbehandling:
     def fjernForUngeUtovere(datasenter,kjonn):
 
         settinger = datasenter.settinger()
-        resultater = datasenter.resultater(kjonn)
+        klubber = datasenter.klubber(kjonn)
 
         min_alder = settinger["aldersgrense for deltakelse"]
         
-        for res in resultater.hent():
+        for klubb in klubber:
+            resultater = klubb.hentResultater()
+            for res in reversed(resultater):
+                alder = res.hentAlderTilUtover()
+                        
+                con1 = (alder<min_alder)
+                con2 = (alder>0) 
 
-            alder = res.hentAlderTilUtover()
-                    
-            con1 = (alder<min_alder)
-            con2 = (alder>0) 
+                if all((con1,con2)):
 
-            if all((con1,con2)):
+                    klubbFra = res.hentKlubbFra()
+                    utover = res.hentUtover()
 
-                klubbFra = res.hentKlubbFra()
-                utover = res.hentUtover()
+                    klubbFra.fjernRes(res)
+                    utover.fjernRes(res)
 
-                klubbFra.fjernRes(res)
-                utover.fjernRes(res)
-
-                res.settKlubbTil(None)
-                res.settBegrunnelse(f"Resultat til en for ung utøver (<{min_alder})")
+                    res.settKlubbTil(None)
+                    res.settBegrunnelse(f"Resultat til en for ung utøver (<{min_alder})")
                 
     @staticmethod      
     def fjernRullestolutovere(datasenter,kjonn):
@@ -184,27 +188,28 @@ class Resultatbehandling:
         utovereUnntatt = resultatavvik["utøvere unntatt overbygning"][kjonn]
         
         for overbygKlubbnavn in overbygning:
-                
-            utovere_unntatt = []
-            if overbygKlubbnavn in utovereUnntatt.keys(): # finner alle unntatte utovere i klubben
-                for el in utovereUnntatt[overbygKlubbnavn]:
-                    navn,fAar = el.split("/")
-
-                    utover = datasenter.hentUtover(kjonn,navn,fAar)
-            
-                    utovere_unntatt.append(utover)
             
             overbygKlubb = datasenter.hentKlubbFraNavn(kjonn,overbygKlubbnavn,lagNy=False)
             
             alder_krav, moderklubber = overbygning[overbygKlubbnavn]
             
             for moderklubbnavn in moderklubber:
+
+                utovere_unntatt = []
+                if moderklubbnavn in utovereUnntatt: # finner alle unntatte utovere i klubben
+                    for el in utovereUnntatt[moderklubbnavn]:
+                        navn,fAar = el.split("/")
+
+                        utover = datasenter.hentUtover(kjonn,navn,fAar)
+
+                        utovere_unntatt.append(utover)
+
                 moderKlubb = datasenter.hentKlubbFraNavn(kjonn,moderklubbnavn,lagNy=False)
                 
                 resultater = moderKlubb.hentResultater()
                 
-                for res in resultater:
-                    
+                for res in reversed(resultater):
+
                     utover = res.hentUtover()
                     alder = res.hentAlderTilUtover()
                     
@@ -217,7 +222,7 @@ class Resultatbehandling:
                     condition2 = any((con1,con2,con3))
 
                     if all((condition1,condition2)):
-                        res.settBegrunnelse("Utøver unntatt overbygning")  
+                        res.settBegrunnelse("Utøver unntatt overbygning")
                     
                     elif all((not condition1,condition2)):
                         
@@ -226,8 +231,6 @@ class Resultatbehandling:
 
                         res.settKlubbTil(overbygKlubb)
                         res.settBegrunnelse("Overbygning")  
-
-                    
 
     @staticmethod        
     def handterKlubberUnntattOverbygning(datasenter,kjonn):
@@ -248,7 +251,7 @@ class Resultatbehandling:
                 klubbResultater = moderklubb.hentResultater() # henter moderresultatene for å finne moderutoverene. Dersom disse har resultater for overb.klubben overfores disse tilbake.
 
                 utovereSjekket = []
-                for klubbRes in klubbResultater:
+                for klubbRes in reversed(klubbResultater):
                     
                     utover = klubbRes.hentUtover()
 

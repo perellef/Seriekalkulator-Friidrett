@@ -35,14 +35,7 @@
             
     "ugyldige resultater": {
         "menn": [
-            {"resultat": ["Ås IL","Per Ellef Ryen Aalerud","2000","610","Tresteg","12,54","Bislett","02.06.2021"],
-            "begrunnelse": "Test"},
-            
-            {"resultat": ["Sandnes IL","Narve Gilje Nordås","1998","1055","3000m","7,41,31","Lahti/FIN","19.08.2021"],
-            "begrunnelse": "Test"},
-            
-            {"resultat": ["Sandnes IL","Narve Gilje Nordås","1998","972","5000m","13,41,82","Tokyo/JPN","03.08.2021"],
-            "begrunnelse": "Test"}
+
         ],
 
         "kvinner": [
@@ -52,8 +45,7 @@
 
     "manglende resultater": {
         "menn":[
-            {"resultat": ["Ås IL","Per Ellef Ryen Aalerud","2000","610","Tresteg","12.54","Bislett","02.06.2021"],
-            "begrunnelse": "Test"}
+            
         ],
 
         "kvinner": [

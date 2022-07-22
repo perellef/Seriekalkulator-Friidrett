@@ -1,4 +1,3 @@
-from resultater import Resultater
 
 class Lag:
     
@@ -13,9 +12,9 @@ class Lag:
 
         self._posisjon = None
 
-        self._laginfo = {"resultater": Resultater(), "poeng": 0, "antall deltakere": 0, "antall resultater": 0}
-        self._obl_lag = {"resultater": Resultater(), "poeng": 0, "antall deltakere": 0, "antall resultater": 0}
-        self._val_lag = {"resultater": Resultater(), "poeng": 0, "antall deltakere": 0, "antall resultater": 0}
+        self._laginfo = {"resultater": [], "poeng": 0, "antall deltakere": 0, "antall resultater": 0, "type": "laginfo"}
+        self._obl_lag = {"resultater": [], "poeng": 0, "antall deltakere": 0, "antall resultater": 0, "type": "obl lag"}
+        self._val_lag = {"resultater": [], "poeng": 0, "antall deltakere": 0, "antall resultater": 0, "type": "val lag"}
 
     def settFjoraars(self,fjPl,fjPo,fjDiv):
         self._fjoraars["poeng"]= fjPo
@@ -27,6 +26,7 @@ class Lag:
         self._forrige["plassering"] = fgPl
     
     def settLagoppstilling(self,obl_lag,val_lag):
+
         self._definerLaginfo(self._laginfo,obl_lag + val_lag)
         self._definerLaginfo(self._obl_lag,obl_lag)
         self._definerLaginfo(self._val_lag,val_lag)
@@ -52,6 +52,7 @@ class Lag:
         dict["antall deltakere"] = len(set_utovere)
         dict["antall resultater"] = len(utovere)
 
+        dict["resultater"] = []
         for res in resultater:
             if not res.erNull():
                 dict["resultater"].append(res)
@@ -59,8 +60,11 @@ class Lag:
     def __lt__(self,lag2):
         if (self.hentPoeng()!=lag2.hentPoeng()):
             return self.hentPoeng()<lag2.hentPoeng()
+
+        resultater1 = sorted(self.hentResultater(), key = lambda x: -int(x.hentPoeng()))
+        resultater2 = sorted(lag2.hentResultater(), key = lambda x: -int(x.hentPoeng()))
         
-        for res1,res2 in zip(self.hentResultater(),lag2.hentResultater()):
+        for res1,res2 in zip(resultater1,resultater2):
             if res1!=res2:
                 return res1<res2
 
@@ -97,7 +101,7 @@ class Lag:
         return self.hentLagnavn() + " (" + str(self._laginfo["poeng"]) + ")"
         
     def printLag(self):
-        
+
         print("Obligatoriske Øvelser")
         for el in self._obl_lag["resultater"]:
             print(el)
@@ -138,7 +142,7 @@ class Lag:
     def hentLagnavn(self):
         if self._lagnr==1:
             return self._klubbnavn
-        return self._klubbnavn+str(self._lagnr)+". lag"
+        return self._klubbnavn+" "+str(self._lagnr)+". lag"
 
     def hentPosisjon(self):
         return self._posisjon

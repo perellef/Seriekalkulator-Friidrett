@@ -13,6 +13,8 @@ class Utover:
         return self.hentNavn()==utover2.hentNavn() and self.hentFAar()==utover2.hentFAar()
     
     def __str__(self):
+        if self.erNull():
+            return "nullutøver"
         return self._navn + " (" + str(self._fodselsaar) + ")"
 
     def __hash__(self):

@@ -19,6 +19,13 @@ class Resultater: # liste med resultater, automatisk sortert etter poeng
     def __next__(self):
         return self._resultater.__next__()
 
+    def __getitem__(self, item):
+        return self._resultater[item]
+
+    def __reversed__(self):
+        for elem in self._resultater[::-1]:
+            yield elem
+
     def append(self,resultat):
         for i,res in enumerate(self._resultater):
             if res<resultat:
@@ -38,6 +45,7 @@ class Resultater: # liste med resultater, automatisk sortert etter poeng
         for res1 in self._resultater:
             con1 = (not any(all((res1.hentUtover() is res2.hentUtover(),res1.hentOvelse()==res2.hentOvelse())) for res2 in resultater))
             con2 = (not res1.erNull())
+
             if all((con1,con2)):
                 resultater.append(res1)
         return resultater

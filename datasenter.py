@@ -7,7 +7,7 @@ from filleser import Filleser
 from filskriver import Filskriver
 from statistikkhenting import Statistikkhenting
 from resultatbehandling import Resultatbehandling
-from kalkulator import Kalk
+from nyKalkulator import Kalk
 
 import sys
 import asyncio
@@ -83,11 +83,14 @@ class Datasenter:
             Resultatbehandling.handterKlubberUnntattOverbygning(self,kjonn)
 
     def beregnKlubb(self,klubb):
+        print(klubb,datetime.now())
         Kalk.LagKalk(self,klubb)
+        print(klubb,datetime.now())
 
     def beregnAlleKlubber(self):
         for kjonn in ["menn","kvinner"]:
             for klubb in self._klubber[kjonn]:
+                print(klubb,datetime.now())
                 Kalk.LagKalk(self,klubb)
 
     def lagOffisiellSerietabell(self,filnavn):
@@ -99,13 +102,11 @@ class Datasenter:
     def lagResultatFil(self,filnavn):
         Filskriver.resultatark(self,filnavn)
 
-    def beregnAlleKlubber(self):
-
-        for kjonn in ["menn","kvinner"]:
-            for klubb in self._klubber[kjonn]:
-                Kalk.LagKalk(self,klubb)
-
     def hentAlleKretser(self):
+
+        # Grei IL har "ukjent" som krets
+
+        print("Husk a fjerne dette")
 
         kretser = []
 
@@ -115,12 +116,15 @@ class Datasenter:
                 con1 = ((krets := klubb.hentKrets()) not in kretser)
                 con2 = (krets!=None)
 
+                if krets=="ukjent":
+                    print(klubb.hentKlubbnavn())
+
                 if all((con1,con2)):
                     kretser.append(krets)
 
         return sorted(kretser)
 
-    def hentKlubbFraNavn(self,kjonn,klubbnavn,lagNy=True): # hentKlubbFraNavn
+    def hentKlubbFraNavn(self,kjonn,klubbnavn,lagNy=True):
         
         for klubb in self._klubber[kjonn]:            
             if klubb.hentKlubbnavn()==klubbnavn:
