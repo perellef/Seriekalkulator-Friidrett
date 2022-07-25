@@ -56,6 +56,38 @@ class Resultatbehandling:
                     res.settKlubbTil(None)
                     res.settBegrunnelse(resultat["begrunnelse"])
                     break
+    @staticmethod
+    def fjernManuelleResultater(datasenter,kjonn):
+
+        ovelsesinfo = datasenter.ovelsesinfo()["sluttform"]
+
+        ovelser = []
+        for ovelse,info in ovelsesinfo.items():
+
+            if not "manuell" in info:
+                continue
+            if info["manuell"]:
+                continue
+
+            ovelser.append(ovelse)
+
+        klubber = datasenter.klubber(kjonn)
+
+        for klubb in klubber:
+            resultater = klubb.hentResultater()
+            for res in reversed(resultater):
+                con1 = (len(res.hentPrestasjon().split(",")[-1])==1)
+                con2 = (res.hentOvelse() in ovelser)
+
+                if all((con1,con2)):
+                    klubb = res.hentKlubbFra()
+                    utover = res.hentUtover()
+
+                    klubb.fjernRes(res)
+                    utover.fjernRes(res)
+
+                    res.settKlubbTil(None)
+                    res.settBegrunnelse("Manuelt resultat i en serieøvelse som kun tillater elektronisk")
 
     @staticmethod
     def fjernMellomtider(datasenter,kjonn):
@@ -67,15 +99,17 @@ class Resultatbehandling:
             for res in reversed(resultater):
                 prestasjon = res.hentPrestasjon()
 
-                if "+" in prestasjon:
-                    klubb = res.hentKlubbFra()
-                    utover = res.hentUtover()
+                if "+" not in prestasjon:
+                    continue
 
-                    klubb.fjernRes(res)
-                    utover.fjernRes(res)
+                klubb = res.hentKlubbFra()
+                utover = res.hentUtover()
 
-                    res.settKlubbTil(None)
-                    res.settBegrunnelse("Mellomtid")
+                klubb.fjernRes(res)
+                utover.fjernRes(res)
+
+                res.settKlubbTil(None)
+                res.settBegrunnelse("Mellomtid")
 
                 
     @staticmethod
@@ -117,7 +151,7 @@ class Resultatbehandling:
                     con8 = (dist1<dist2) # kortere distanse
 
                     if not all((con7,con8)):
-                            continue
+                        continue
 
                     # ma være mellomtid til serieovelse og skal derfor fjernes
 

@@ -1,3 +1,4 @@
+from turtle import position
 import openpyxl
 from openpyxl.styles import PatternFill, Border, Side, Alignment, Font
 
@@ -216,7 +217,6 @@ class Filskriver:
                     ark[kj][div][fane] = div_1_2.create_sheet(title=f"{fane} {kj} {div}", index=nr)
                     nr += 1
 
-            
         for kj in ["menn","kvinner"]:
 
             iKrets = {}
@@ -244,8 +244,30 @@ class Filskriver:
                 tabellark.cell(row=1, column=1,value=str(div)+'. DIVISJON ' + kj.upper() + ' ' + aar + ' TOTALT')
                 tabellark.cell(row=1, column=1).alignment = Alignment(horizontal='center')
                 tabellark.cell(row=1, column=1).font = font5  
+                
                 tabellark.row_dimensions[1].height = 18
-                tabellark.row_dimensions[2].height = 13
+                for rad in range(2,len(divisjon)+3):
+                    tabellark.row_dimensions[rad].height = 13
+                
+                for kol,bredde in enumerate([4.36,24.55,7.64,8.73,7.64,16.45]):
+                    tabellark.column_dimensions[chr(65+kol)].width = bredde
+
+                for kol in range(26):
+                    kol = tabellark.column_dimensions[chr(65+kol)]
+                    kol.fill = fill1
+
+                for arknavn,detaljark in ark[kj][f"{div}.d"].items():
+                    if arknavn=="Tabell":
+                        continue
+
+                    for kol in range(26):
+                        kol = detaljark.column_dimensions[chr(65+kol)]
+                        kol.fill = fill1
+
+                    for side in [0,1]:
+                        for kol,bredde in enumerate([0.56,19.36,38.82,7.73,10.73,9.18,21.27,6.36,0.56,4.73]):
+                            kolonne = chr(65+10*side+kol)
+                            detaljark.column_dimensions[kolonne].width = bredde        
 
                 # setter opp lagoppsett-ark
             
@@ -263,9 +285,11 @@ class Filskriver:
                     Filskriver._formaterCelle(tabellark,pos+3,2, font=font2, fyll=fill2, verdi=lag.hentLagnavn())
                     Filskriver._formaterCelle(tabellark,pos+3,3, font=font2, fyll=fill2, verdi='('+lag.hentNotat()+')')
                     Filskriver._formaterCelle(tabellark,pos+3,4, font=font2, fyll=fill2, verdi=lag.hentPoeng())
-                    Filskriver._formaterCelle(tabellark,pos+3,5, font=font2, fyll=fill2)
+                    Filskriver._formaterCelle(tabellark,pos+3,5, font=font2, fyll=fill2, verdi="("+lag.hentFjoraarsplassering()+")")
                     Filskriver._formaterCelle(tabellark,pos+3,6, font=font2, fyll=fill2, verdi=krets)
                     
+                    tabellark.cell(row=pos+3, column=5).alignment = Alignment(horizontal='right')
+
                     """
                     if not laginfo["f. plassering"][-1] in ["d","-"]:
                         tabell.cell(row=i+3, column=5,value=int(laginfo["f. plassering"]))
@@ -323,7 +347,7 @@ class Filskriver:
                     
                     Filskriver._formaterCelle(detaljark,rad+1,kol+3, font=font2, fyll=fill2, kant=thin_around, verdi=krets)
                     Filskriver._formaterCelle(detaljark,rad+2,kol+3, font=font2, fyll=fill2, kant=thin_around, verdi=lag.hentLagnavn())
-                    Filskriver._formaterCelle(detaljark,rad+3,kol+3, font=font2, fyll=fill2, kant=thin_around, verdi=aar)
+                    Filskriver._formaterCelle(detaljark,rad+3,kol+3, font=font2, fyll=fill2, kant=thin_around, verdi=int(aar))
                     detaljark.cell(row=rad+3, column=kol+3).alignment = Alignment(horizontal='left')
 
                     Filskriver._formaterCelle(detaljark,rad+5,kol+2, font=font4, fyll=fill1, verdi='OBLIGATORISKE ØVELSER')
@@ -358,36 +382,31 @@ class Filskriver:
                             detaljark.cell(row=rad+k+oi+8, column=kol+2,value=res.hentOvelse())
                             detaljark.cell(row=rad+k+oi+8, column=kol+3,value=res.hentUtover().hentNavn())
 
-                            """
+                            detaljark.cell(row=rad+k+oi+8, column=kol+4,value=int(res.hentUtover().hentFAar()))
+
                             try:
-                                detaljark.cell(row=rad+k+oi+8, column=kol+4,value=int(res["f. år"]))                
-                            except:
-                                detaljark.cell(row=rad+k+oi+8, column=kol+4,value=str(res["f. år"]))
-                                detaljark.cell(row=rad+k+oi+8, column=kol+4).alignment = Alignment(horizontal='right')
-                            try:
-                                resultat = res["resultat"].replace(",",".")
+                                resultat = res.hentPrestasjon().replace(",",".")
                                 detaljark.cell(row=rad+k+oi+8, column=kol+5,value=float(resultat))
                                 if len(resultat.split(".")[-1])==2:
                                     detaljark.cell(row=rad+k+oi+8, column=kol+5).number_format = '#,##0.00'
                                 else:
                                     detaljark.cell(row=rad+k+oi+8, column=kol+5).number_format = '#,#0.0'
-                            except:
-                                detaljark.cell(row=rad+k+oi+8, column=kol+5,value=str(res["resultat"]))
+                            except ValueError:
+                                detaljark.cell(row=rad+k+oi+8, column=kol+5,value=str(res.hentPrestasjon()))
                                 detaljark.cell(row=rad+k+oi+8, column=kol+5).alignment = Alignment(horizontal='right')
-                            """
 
                             detaljark.cell(row=rad+k+oi+8, column=kol+6,value=res.hentPoeng())
                             detaljark.cell(row=rad+k+oi+8, column=kol+7,value=res.hentSted())
                                     
-                            """
+                            
                             try:
-                                resultat = res["dato"][:-5].replace(",",".")
+                                resultat = res.hentDato()[:-5].replace(",",".")
                                 detaljark.cell(row=rad+k+oi+8, column=kol+8,value=float(resultat))
                                 detaljark.cell(row=rad+k+oi+8, column=kol+8).number_format = '##,##00.00'
                                 detaljark.cell(row=rad+k+oi+8, column=kol+8).alignment = Alignment(horizontal='left')
-                            except:
-                                detaljark.cell(row=rad+k+oi+8, column=kol+8,value=res["dato"][:-5])
-                            """
+                            except ValueError:
+                                detaljark.cell(row=rad+k+oi+8, column=kol+8,value=res.hentDato()[:-5])
+                            
                         
                         
                     for k,l in zip([0,N_obl+6],[N_obl,N_val]):
@@ -415,13 +434,6 @@ class Filskriver:
         aar = datasenter.aar()        
 
         "Definerer filer og ark i egen dict"
-
-        """
-        col = ws.column_dimensions['A']
-        col.font = Font(bold=True)
-        row = ws.row_dimensions[1]
-        row.font = Font(underline="single")
-        """
 
         div_1_2 = openpyxl.Workbook()
         menn_3 = openpyxl.Workbook()
@@ -481,8 +493,6 @@ class Filskriver:
                 tabellark.cell(row=1, column=1,value=str(div)+'. DIVISJON MENN ' + aar + ' TOTALT')
                 tabellark.cell(row=1, column=1).alignment = Alignment(horizontal='center')
                 tabellark.cell(row=1, column=1).font = font5  
-                tabellark.row_dimensions[1].height = 18
-                tabellark.row_dimensions[2].height = 13
 
                 # setter opp lagoppsett-ark
             

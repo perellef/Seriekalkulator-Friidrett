@@ -7,9 +7,8 @@ from filleser import Filleser
 from filskriver import Filskriver
 from statistikkhenting import Statistikkhenting
 from resultatbehandling import Resultatbehandling
-from nyKalkulator import Kalk
+from kalkulator import Kalk
 
-import sys
 import asyncio
 from datetime import datetime
 
@@ -71,6 +70,7 @@ class Datasenter:
 
             Resultatbehandling.hentManueltManglendeRes(self,kjonn)
             Resultatbehandling.fjernManueltUgyldigeRes(self,kjonn)
+            Resultatbehandling.fjernManuelleResultater(self,kjonn)
             
             if (self._settinger["tillat mellomtider"]):
                 Resultatbehandling.fjernMellomtiderTilSerieres(self,kjonn)
@@ -104,10 +104,6 @@ class Datasenter:
 
     def hentAlleKretser(self):
 
-        # Grei IL har "ukjent" som krets
-
-        print("Husk a fjerne dette")
-
         kretser = []
 
         for kjonn in ["menn","kvinner"]:
@@ -115,9 +111,6 @@ class Datasenter:
 
                 con1 = ((krets := klubb.hentKrets()) not in kretser)
                 con2 = (krets!=None)
-
-                if krets=="ukjent":
-                    print(klubb.hentKlubbnavn())
 
                 if all((con1,con2)):
                     kretser.append(krets)

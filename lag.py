@@ -16,7 +16,7 @@ class Lag:
         self._obl_lag = {"resultater": [], "poeng": 0, "antall deltakere": 0, "antall resultater": 0, "type": "obl lag"}
         self._val_lag = {"resultater": [], "poeng": 0, "antall deltakere": 0, "antall resultater": 0, "type": "val lag"}
 
-    def settFjoraars(self,fjPl,fjPo,fjDiv):
+    def settFjoraars(self,fjPo,fjPl,fjDiv):
         self._fjoraars["poeng"]= fjPo
         self._fjoraars["plassering"] = fjPl
         self._fjoraars["div"] = fjDiv
@@ -132,6 +132,17 @@ class Lag:
 
     def hentFjoraars(self):
         return self._fjoraars
+
+    def hentFjoraarsplassering(self):
+
+        fPlass = self._fjoraars["plassering"]
+        fDiv = self._fjoraars["div"]
+
+        if fPlass==None:
+            return "-"
+        if fDiv != self.hentDiv():
+            return str(fPlass+1)+"/"+str(fDiv)+"d"
+        return str(fPlass+1)
 
     def hentForrige(self):
         return self._forrige

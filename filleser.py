@@ -99,8 +99,8 @@ class Filleser:
             klubbnavn,lag_nr = Filleser._hentInfoFraLagnavn(lagnavn)
 
             kj = el[0]
-            poeng = int(el[2])
-            plassering = int(el[3])
+            poeng = int(el[3])
+            plassering = int(el[2])
             div = int(el[1])
             
             klubb = datasenter.hentKlubbFraNavn(kj,klubbnavn,lagNy=False)
