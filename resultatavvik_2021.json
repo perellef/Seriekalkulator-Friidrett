@@ -9,7 +9,7 @@
         "Selsbakk IF":              [[false,true,false], ["Selbu IL","Børsa IL"]],
         "Steinkjer Friidrettsklubb":[[false,true,false], ["Beitstad IL","Sør-Beitstad IL"]],
         "Stord IL":                 [[false,true,false], ["Bremnes IL","Fitjar IL"]],
-        "Tingvoll IL":              [[false,true,true],  ["Straumsnes IL","Tingvoll FIK","Triumf"]],
+        "Tingvoll FIK":             [[false,true,true],  ["Straumsnes IL","Tingvoll IL","Triumf"]],
         "IK Tjalve":                [[false,true,false], ["IL Heming","IL Koll"]],
         "Ullensaker/Kisa IL":       [[false,true,false], ["Eidsvold Turnforening Friidrett","Hurdal IL","Sørum IL"]]
     },      

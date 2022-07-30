@@ -8,10 +8,10 @@
         "Norna-Salhus IL":          [[false,true,false], ["Eidsvåg IL, Åsane","FIL Aks-77","Loddefjord IL"]],
         "Steinkjer Friidrettsklubb":[[false,true,false], ["Beitstad IL","Sør-Beitstad IL"]],
         "Stord IL":                 [[false,true,false], ["Bremnes IL","Fitjar IL"]],
-        "Tingvoll IL":              [[false,true,true],  ["Straumsnes IL","Tingvoll FIK","Triumf"]],
+        "Tingvoll FIK":             [[false,true,true],  ["Straumsnes IL","Tingvoll IL","Triumf"]],
         "IK Tjalve":                [[false,true,false], ["IL Koll"]],
         "IL Tyrving":               [[false,true,false], ["Nesøya IL"]],
-        "Ullensaker/Kisa IL":       [[false,true,false], ["Eidsvold Turnforening Friidrett","Hurdal IL","Hvam IL","Nordre Eidsvoll IL","Sørum IL"]]
+        "Ullensaker/Kisa IL":       [[false,true,false], ["Eidsvold Turnforening Friidrett","Hurdal IL","Nordre Eidsvoll IL","Sørum IL"]]
     },
     
     "klubber unntatt overbygning": {
@@ -35,10 +35,17 @@
             
     "ugyldige resultater": {
         "menn": [
-
             {
-            "resultat": ["IL Fri","Nicholas Coghill","1997","904","Kule","16,86","Arna","22.06.2022"],
-            "begrunnelse": "Utenlandsk utøver"
+                "resultat": ["IL Fri","Nicholas Coghill","1997","919","Kule","17,13","Osterøy","20.06.2022"],
+                "begrunnelse": "Utenlandsk utøver"
+            },
+            {
+                "resultat": ["IL Fri","Nicholas Coghill","1997","904","Kule","16,86","Arna","22.06.2022"],
+                "begrunnelse": "Utenlandsk utøver"
+            },
+            {
+                "resultat": ["IL Fri","Nicholas Coghill","1997","781","Diskos","45,42","Osterøy","20.06.2022"],
+                "begrunnelse": "Utenlandsk utøver"
             }
             
         ],

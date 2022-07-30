@@ -13,10 +13,6 @@ class Kalk:
 
         "1. Henter klubbens resultater"
 
-        if klubb.hentKlubbnavn()=="Rjukan Idrettslag":
-            print("Fjerner Rjukan Idrettslag")
-            return
-
         kjonn = klubb.hentKjonn()
         klubbres = klubb.hentResultater()
 
@@ -60,14 +56,14 @@ class Kalk:
 
         "2.1.1. Beregner (evt. flere) lag med høyeste mulige seriepoengsum"
 
-        n,lag,utover_liste = Kalk.__beregn_lagoppstilling(datasenter,klubb,lag_nr+steg,resultater)
+        n,lag,utovere_brukt = Kalk.__beregn_lagoppstilling(datasenter,klubb,lag_nr+steg,resultater)
 
         "2.1.2. Bruker rekursjon til å finne beste av flere lag med samme poeng, basert på de neste lagene til klubben"
 
         if steg == 0:
             lag_info = lag[0]
                 
-        if len(utover_liste)==1: ## hvis kun en optimal lagoppstilling, returnerer direkte laginfoen
+        if len(utovere_brukt)==1: ## hvis kun en optimal lagoppstilling, returnerer direkte laginfoen
             return [lag_info,n_liste+[n]]
 
         else:   
@@ -76,12 +72,12 @@ class Kalk:
             
             resultater_i = resultater[:] # gjenværende resultater til klubben. Lagres ettersom den senere endres ved iterasjon.
                 
-            for i in range(len(utover_liste)):###### finner poeng til neste lag (2. lag hvis dette er 1. lag) til de ulike lagoppstillingene
+            for i in range(len(utovere_brukt)):###### finner poeng til neste lag (2. lag hvis dette er 1. lag) til de ulike lagoppstillingene
                 
                 if steg == 0: ## lager laginfo lister til hver "optimale" lagoppstilling
                     lag_info = lag[i]
                     
-                resultater = [res for res in resultater_i[:] if not res.hentUtover() in utover_liste[i]]
+                resultater = [res for res in resultater_i[:] if not res.hentUtover() in utovere_brukt[i]]
                 
                 like_lag.append(Kalk.__rekursiv_lagberegner(datasenter,klubb,lag_nr,resultater,lag_info,n_liste+[n],steg+1))
             
@@ -541,8 +537,10 @@ class Kalk:
         
         "1.3.2.14.1. Itererer gjennom kombinasjoner av obligatoriske oppstillinger"
 
+        counter = 0
         n = -1
         for obl_usikker in liste:
+            counter += 1
 
             utovere = [res.hentUtover() for res in obl_usikker] # trenger kun å sjekke for utoverne i obl_usikker, for alle >5 utovere samles her
 
@@ -695,12 +693,12 @@ class Kalk:
                                 
                 b_c = res[:]
                     
-            while len(b_c)<krav_val: ## fyller eventuelle rest plasser med null resultater
+            while len(b_c)<krav_val+N_ek: ## fyller eventuelle rest plasser med null resultater
                 b_c.append(Kalk.nullresultat)   
                                 
             b = [res for res in b_c if (not res.erNull()) and (not res.er(lop))] ### henter de beste tekniske øvelsene
             
-            while len(b)<krav_val_tek:
+            while len(b)<krav_val_tek+N_ek:
                 b.append(Kalk.nullresultat)
             
             
@@ -905,41 +903,39 @@ class Kalk:
                                 lop_komb = lop_si + list(lop_ek)
                                 
                                 set_utovere = Kalk.__set_obj([res.hentUtover() for res in obl_komb+tek_komb+lop_komb if not res.erNull()])
-                                
+                                set_utovere = sorted(set_utovere, key=lambda x: x.hentNavn())
+
                                 s = Kalk.__poengsum(obl_komb + tek_komb + lop_komb)
 
                                 if s>n: ###... hvis høyere poengsum - oppdaterer laginfo
 
                                     n = s
-
                                     lag = [[obl_komb,tek_komb+lop_komb]]
-            
-                                    utover_liste = [set_utovere]
-                                                                
-                                elif s==n and set_utovere not in utover_liste: ###... hvis lik poengsum - legger til en ekstra lagoppstilling. Senere vil det vurderes hvilken av disse som gir beste 2. lag.
+                                    utovere_brukt = [set_utovere]
+
+                                elif s==n and (set_utovere not in utovere_brukt): ###... hvis lik poengsum - legger til en ekstra lagoppstilling. Senere vil det vurderes hvilken av disse som gir beste 2. lag.
                     
-                                    utover_liste.append(set_utovere)
+                                    utovere_brukt.append(set_utovere)
                                     lag.append([obl_komb,tek_komb+lop_komb])
                         
                         else:
 
-                            set_utovere = Kalk.__set_obj([res.hentUtover() for res in lop_komb+tek_komb if not res.erNull()])
+                            set_utovere = Kalk.__set_obj([res.hentUtover() for res in obl_komb+tek_komb if not res.erNull()])
+                            set_utovere = sorted(set_utovere, key=lambda x: x.hentNavn())
                             
                             s = Kalk.__poengsum(obl_komb + tek_komb)
 
                             if s>n: ###... hvis høyere poengusm - oppdaterer laginfo
         
                                 n = s
-                                
                                 lag = [[obl_komb,tek_komb]]
-        
-                                utover_liste = [set_utovere]
+                                utovere_brukt = [set_utovere]
                                                             
-                            elif s==n and set_utovere not in utover_liste: ###... hvis lik poengsum - legger til en ekstra lagoppstilling. Senere vil det vurderes hvilken av disse som gir beste 2. lag.
+                            elif s==n and set_utovere not in utovere_brukt: ###... hvis lik poengsum - legger til en ekstra lagoppstilling. Senere vil det vurderes hvilken av disse som gir beste 2. lag.
                 
-                                utover_liste.append(set_utovere)
+                                utovere_brukt.append(set_utovere)
                                 lag.append([obl_komb,tek_komb])
-        return n,lag,utover_liste
+        return n,lag,utovere_brukt
         
 
     @staticmethod

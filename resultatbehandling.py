@@ -39,6 +39,7 @@ class Resultatbehandling:
             
             resultater = klubb.hentResultater()
 
+            fjernet = False
             for res in reversed(resultater):
             
                 con1 = (res.hentUtover() is utover)
@@ -55,7 +56,14 @@ class Resultatbehandling:
 
                     res.settKlubbTil(None)
                     res.settBegrunnelse(resultat["begrunnelse"])
+
+                    fjernet = True
                     break
+
+            if not fjernet:
+                print(f"Resultatet: {resultat['resultat']} ble ikke fjernet")
+
+
     @staticmethod
     def fjernManuelleResultater(datasenter,kjonn):
 
@@ -161,7 +169,7 @@ class Resultatbehandling:
                     utover.fjernRes(res1)
 
                     res1.settKlubbTil(None)
-                    res2.settBegrunnelse("Mellomtid til et serieresultat")
+                    res1.settBegrunnelse("Mellomtid til et serieresultat")
                     break
                         
     @staticmethod    

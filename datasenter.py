@@ -83,14 +83,11 @@ class Datasenter:
             Resultatbehandling.handterKlubberUnntattOverbygning(self,kjonn)
 
     def beregnKlubb(self,klubb):
-        print(klubb,datetime.now())
         Kalk.LagKalk(self,klubb)
-        print(klubb,datetime.now())
 
     def beregnAlleKlubber(self):
         for kjonn in ["menn","kvinner"]:
             for klubb in self._klubber[kjonn]:
-                print(klubb,datetime.now())
                 Kalk.LagKalk(self,klubb)
 
     def lagOffisiellSerietabell(self,filnavn):
@@ -111,8 +108,9 @@ class Datasenter:
 
                 con1 = ((krets := klubb.hentKrets()) not in kretser)
                 con2 = (krets!=None)
+                con3 = (len(klubb.hentAlleLag())>0)
 
-                if all((con1,con2)):
+                if all((con1,con2,con3)):
                     kretser.append(krets)
 
         return sorted(kretser)

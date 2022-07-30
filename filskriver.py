@@ -53,6 +53,7 @@ class Filskriver:
     def resultatark(datasenter,filnavn):
 
         dokument = openpyxl.Workbook()
+        del dokument['Sheet']
 
         ark = {"menn": {}, "kvinner": {}}
 
