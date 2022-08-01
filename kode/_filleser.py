@@ -121,7 +121,7 @@ class Filleser:
                 klubbnavn = klubbnavn[:-7]     
         try:
             klubbnavn = klubbnavn.encode('latin1').decode('utf8')
-        except UnicodeEncodeError:
+        except (UnicodeEncodeError,UnicodeDecodeError):
             klubbnavn = klubbnavn.replace("Ã…","Å")
 
         return klubbnavn,lag_nr
