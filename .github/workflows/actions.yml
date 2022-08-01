@@ -1,7 +1,7 @@
 name: hovedprogram.py
 on:
   schedule:
-    - cron: '0 * * * *' # hver time
+    - cron: '0 12 * * 3,6' # onsdag og lørdag, kl 12 UTC
 jobs:
   build:
     runs-on: ubuntu-latest
