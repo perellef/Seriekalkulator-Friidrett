@@ -2,24 +2,24 @@
 menn|1|0|23356|IK Tjalve 1. lag
 menn|2|0|15206|IK Tjalve 2. lag
 menn|2|1|10138|IL Koll 1. lag
-menn|2|2|12173|�s IL 1. lag
+menn|2|2|12173|Ås IL 1. lag
 menn|2|3|9743|IK Tjalve 3. lag
 kvinner|2|0|9692|IL Koll 1. lag
 kvinner|2|1|18800|IK Tjalve 1. lag
 kvinner|2|2|14429|IK Tjalve 2. lag
 kvinner|2|3|5397|IL Koll 2. lag
-kvinner|2|4|8444|�s IL 1. lag
+kvinner|2|4|8444|Ås IL 1. lag
 kvinner|2|5|5293|IK Tjalve 3. lag
 |2022-07-05 21:43:30.376278| | |
 menn|2|0|18992|IK Tjalve 1. lag
 menn|2|1|15970|IK Tjalve 2. lag
 menn|2|2|11888|IK Tjalve 3. lag
-menn|2|3|12173|�s IL 1. lag
+menn|2|3|12173|Ås IL 1. lag
 menn|2|4|10138|IL Koll 1. lag
 |2022-07-05 21:52:56.698102| | |
 menn|2|0|18992|IK Tjalve
 menn|2|1|15970|IK Tjalve2. lag
-menn|2|2|12173|�s IL
+menn|2|2|12173|Ås IL
 menn|2|3|11888|IK Tjalve3. lag
 menn|2|4|10138|IL Koll
 |2022-07-05 21:59:05.389016| | |
@@ -29,14 +29,14 @@ menn|2|0|17465|Sandnes IL
 menn|2|1|17110|IL Gneist
 menn|2|2|16895|IL Gular
 menn|2|3|16785|Norna-Salhus IL
-menn|2|4|15911|T�nsberg Friidrettsklubb
+menn|2|4|15911|Tønsberg Friidrettsklubb
 menn|2|5|15885|IL i BUL
 menn|2|6|15665|Ullensaker/Kisa IL
 menn|2|7|15606|Idrettslaget Skjalg
 menn|2|8|15315|Steinkjer Friidrettsklubb
 menn|2|9|15206|IK Tjalve2. lag
 menn|2|10|15154|Sportsklubben Vidar
-menn|2|11|14736|Oster�y IL
+menn|2|11|14736|Osterøy IL
 menn|2|12|14695|Dimna IL
 menn|2|13|14673|IL Gneist2. lag
 menn|2|14|14504|Ask Friidrett
@@ -52,32 +52,32 @@ menn|2|23|13134|IL i BUL2. lag
 menn|2|24|13032|Haugesund IL
 menn|2|25|12827|IL Sandvin
 menn|2|26|12775|Moss IL
-menn|2|27|12682|B�kkelagets SK
+menn|2|27|12682|Bækkelagets SK
 menn|2|28|12663|Larvik Turn & IF
 menn|2|29|12615|IF Sturla
 menn|2|30|12570|Asker Sk. Friidrett
 menn|2|31|12519|Kristiansands IF Friidrett
 menn|2|32|12343|Gloppen Friidrettslag
-menn|2|33|12224|BUL-Troms� Friidrett
+menn|2|33|12224|BUL-Tromsø Friidrett
 menn|2|34|12183|Strindheim IL
-menn|2|35|12173|�s IL
-menn|2|36|12171|Sn�gg Friidrett
+menn|2|35|12173|Ås IL
+menn|2|36|12171|Snøgg Friidrett
 menn|2|37|11787|Moelven IL
 menn|2|38|11690|IL Tyrving2. lag
 menn|2|39|11618|Fredrikstad IF
 menn|2|40|11475|Ullensaker/Kisa IL2. lag
 menn|2|41|11443|GTI
-menn|2|42|11170|Laksev�g TIL
+menn|2|42|11170|Laksevåg TIL
 menn|2|43|11108|IL Gular2. lag
-menn|2|44|11026|J�lster IL
-menn|2|45|11008|S�mna IL
+menn|2|44|11026|Jølster IL
+menn|2|45|11008|Sømna IL
 menn|2|46|10989|Sarpsborg IL
 menn|2|47|10963|IL Gneist3. lag
 menn|2|48|10949|FIK Orion
 menn|2|49|10852|Idrettslaget Skjalg2. lag
 menn|2|50|10818|Herkules Friidrett
-menn|2|51|10329|�rsta IL
-menn|2|52|10306|S�rild FIK
+menn|2|51|10329|Ørsta IL
+menn|2|52|10306|Sørild FIK
 menn|2|53|10289|Ranheim IL2. lag
 menn|2|54|10185|Halden IL
 menn|2|55|10144|Overhalla IL
@@ -87,22 +87,22 @@ menn|2|58|10088|IL Gular3. lag
 menn|2|59|10046|Norna-Salhus IL2. lag
 menn|2|60|9951|IL i BUL3. lag
 menn|2|61|9908|Fana IL2. lag
-menn|2|62|9882|F�rde IL Friidrett
-menn|2|63|9788|S�ndre Land IL
+menn|2|62|9882|Førde IL Friidrett
+menn|2|63|9788|Søndre Land IL
 menn|2|64|9743|IK Tjalve3. lag
 menn|2|65|9550|Steinkjer Friidrettsklubb2. lag
-menn|2|66|9547|L�renskog Friidrettslag
-menn|2|67|9514|T�nsberg Friidrettsklubb2. lag
+menn|2|66|9547|Lørenskog Friidrettslag
+menn|2|67|9514|Tønsberg Friidrettsklubb2. lag
 menn|2|68|9335|Fyllingen IL
-menn|2|69|9247|Bod� Friidrettsklubb
-menn|2|70|9214|Mj�sdalen IL
-menn|2|71|9147|Oster�y IL2. lag
+menn|2|69|9247|Bodø Friidrettsklubb
+menn|2|70|9214|Mjøsdalen IL
+menn|2|71|9147|Osterøy IL2. lag
 menn|2|72|9094|T&IF Viking
 menn|2|73|8921|Sandnes IL3. lag
 menn|2|74|8869|IK Grane
 menn|2|75|8819|FIK Ren-Eng
 menn|2|76|8749|Svorkmo N.O.I.
-menn|2|77|8585|Flor� Turn og IF
+menn|2|77|8585|Florø Turn og IF
 menn|2|78|8468|Hamar IL
 menn|2|79|8436|Jotun IL
 menn|2|80|8430|Bremnes IL
@@ -111,7 +111,7 @@ menn|2|82|8241|Nesodden IF
 menn|2|83|8139|Idrettslaget Skjalg3. lag
 menn|2|84|8122|Brandbu IF
 menn|2|85|8102|Lambertseter IF
-menn|2|86|8041|�lesund Friidrettsklubb
+menn|2|86|8041|Ålesund Friidrettsklubb
 menn|2|87|8025|IL i BUL4. lag
 menn|2|88|7975|Bergens Turnforening
 menn|2|89|7943|Raufoss Idrettslag Friidrett
@@ -139,7 +139,7 @@ menn|2|110|7145|Ski IL Friidrett
 menn|2|111|7139|Sportsklubben Vidar2. lag
 menn|2|112|7078|Strindheim IL2. lag
 menn|2|113|6973|Namsen Friidrettsforening
-menn|2|114|6958|Stj�rdal Friidrettsklubb
+menn|2|114|6958|Stjørdal Friidrettsklubb
 menn|2|115|6847|IL Tyrving3. lag
 menn|2|116|6769|Aremark IF
 menn|2|117|6766|IF Hellas
@@ -150,29 +150,29 @@ menn|2|121|6624|Narvik IL
 menn|2|122|6587|Oslostudentenes IK Friidrett2. lag
 menn|2|123|6587|Norna-Salhus IL3. lag
 menn|2|124|6546|Rindal IL
-menn|2|125|6537|S�mna IL2. lag
+menn|2|125|6537|Sømna IL2. lag
 menn|2|126|6535|Fredrikstad IF2. lag
 menn|2|127|6494|Os Turnforening
 menn|2|128|6429|IL Sandvin2. lag
-menn|2|129|6426|Kyrks�ter�ra IL
+menn|2|129|6426|Kyrksæterøra IL
 menn|2|130|6365|Sandefjord Turn & IF
-menn|2|131|6355|J�lster IL2. lag
+menn|2|131|6355|Jølster IL2. lag
 menn|2|132|6333|Sem IF
 menn|2|133|6325|GTI2. lag
 menn|2|134|6319|IL i BUL5. lag
-menn|2|135|6263|BUL-Troms� Friidrett2. lag
-menn|2|136|6249|B�ler IF
+menn|2|135|6263|BUL-Tromsø Friidrett2. lag
+menn|2|136|6249|Bøler IF
 menn|2|137|6211|Sandnes IL4. lag
 menn|2|138|6205|IL Gneist4. lag
-menn|2|139|6152|Ur�dd Friidrett
+menn|2|139|6152|Urædd Friidrett
 menn|2|140|6089|Asker Sk. Friidrett2. lag
 menn|2|141|5995|IL Fri2. lag
-menn|2|142|5852|Kristiansand L�peklubb
+menn|2|142|5852|Kristiansand Løpeklubb
 menn|2|143|5773|Idrettslaget Skjalg4. lag
 menn|2|144|5770|Haugesund IL2. lag
 menn|2|145|5759|Otra IL
 menn|2|146|5683|Lillehammer IF3. lag
-menn|2|147|5658|B�kkelagets SK2. lag
+menn|2|147|5658|Bækkelagets SK2. lag
 menn|2|148|5632|Spirit Friidrettsklubb2. lag
 menn|2|149|5605|Aure IL
 menn|2|150|5570|Fitjar IL
@@ -182,16 +182,16 @@ menn|2|153|5424|IL Norodd
 menn|2|154|5423|Gjesdal IL
 menn|2|155|5378|Egersunds IK
 menn|2|156|5349|Oslostudentenes IK Friidrett3. lag
-menn|2|157|5259|S�rild FIK2. lag
-menn|2|158|5201|Sn�gg Friidrett2. lag
+menn|2|157|5259|Sørild FIK2. lag
+menn|2|158|5201|Snøgg Friidrett2. lag
 menn|2|159|5156|Romerike Friidrett
-menn|2|160|5103|Oppeg�rd IL
+menn|2|160|5103|Oppegård IL
 menn|2|161|5098|Sportsklubben Vidar3. lag
 menn|2|162|5092|Seljord IL
 menn|2|163|5091|Dimna IL2. lag
 menn|2|164|5090|T&IF Viking2. lag
-menn|2|165|5086|Dr�bak-Frogn IL Friidrett
-menn|2|166|5071|Krager� IF Friidrett
+menn|2|165|5086|Drøbak-Frogn IL Friidrett
+menn|2|166|5071|Kragerø IF Friidrett
 |2022-07-08 14:18:24.619778| | |
 |2022-07-08 17:55:36.071353| | |
 |2022-07-08 20:02:47.272828| | |

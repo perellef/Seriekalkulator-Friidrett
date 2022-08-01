@@ -20,23 +20,27 @@ class Filleser:
 
         aar = int(datasenter.aar())
 
-        fjorarsfil = f"./data/serietabell_{aar-1}.csv"
+        fjorarsfil = f"./data/serietabell_{aar-1}.txt"
 
         ###### hvis filen ikke finnes ma handteres
         
+        data = []
         try:
-            data = np.genfromtxt(fjorarsfil,delimiter='|',dtype=str).tolist()
+            with open(fjorarsfil,"r",encoding="utf8") as fil:
+                for linje in fil:
+                    data.append(linje.strip().split("|"))
+
         except FileNotFoundError:
             print(f"MERKNAD: Fant ingen fjoraarstabell ('{fjorarsfil}'). Fortsetter uten.")
             return
 
-        for el in data:
+        for linje in data:
 
-            kj = el[0]
-            poeng = int(el[3])
-            plassering = int(el[2])
-            div = int(el[1])
-            lagnavn = el[4]
+            kj = linje[0]
+            poeng = int(linje[3])
+            plassering = int(linje[2])
+            div = int(linje[1])
+            lagnavn = linje[4]
 
             klubbnavn, lag_nr = cls._hentInfoFraLagnavn(lagnavn)
 
@@ -60,11 +64,11 @@ class Filleser:
         
         aar = datasenter.aar()
 
-        tabellhistorie = f"./data/tabellhistorie_{aar}.csv"
+        tabellhistorie = f"./data/tabellhistorie_{aar}.txt"
 
         data = {}
         try:
-            with open(tabellhistorie,"r") as fil:
+            with open(tabellhistorie,"r",encoding="utf8") as fil:
                 
                 for linje in fil:
                     if linje[0]=="|":

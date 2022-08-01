@@ -36,7 +36,7 @@ class Filskriver:
 
         aar = datasenter.aar()
 
-        with open(f"./data/tabellhistorie_{aar}.csv","a") as fil:
+        with open(f"./data/tabellhistorie_{aar}.txt","a") as fil:
 
             fil.write("|" + str(datasenter.inititieringTid()) + "| | |\n")
 
