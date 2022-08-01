@@ -1,4 +1,3 @@
-from turtle import position
 import openpyxl
 from openpyxl.styles import PatternFill, Border, Side, Alignment, Font
 
@@ -29,9 +28,15 @@ class Filskriver:
     @staticmethod
     def tabellhistorie(datasenter):
 
+        innstillinger = datasenter.innstillinger()
+        oppdater = innstillinger["oppdater tabellhistorie"]
+
+        if not oppdater:
+            return
+
         aar = datasenter.aar()
 
-        with open("tabellhistorie_"+str(int(aar))+".csv","a") as fil:
+        with open(f"./data/tabellhistorie_{aar}.csv","a") as fil:
 
             fil.write("|" + str(datasenter.inititieringTid()) + "| | |\n")
 
@@ -160,7 +165,7 @@ class Filskriver:
                     klubbark.cell(row=rad,column=8, value=res.hentDato())
 
 
-        dokument.save(f"{filnavn}.xlsx")
+        dokument.save(f"./output/{filnavn}.xlsx")
 
     @staticmethod
     def _formaterCelle(ark,rad,kol,verdi=None,font=None,fyll=None,kant=None):
@@ -425,9 +430,9 @@ class Filskriver:
                     Filskriver._formaterCelle(detaljark,rad+1,kol+6, font=font3, fyll=fill2, verdi=lag.hentPosisjon()+1)
                     detaljark.cell(row=rad+1, column=kol+6).alignment = Alignment(horizontal='center')
                 
-        div_1_2.save(f"{filnavn} 1-2. div.xlsx")
-        menn_3.save(f"{filnavn} menn 3. div.xlsx")
-        kvinner_3.save(f"{filnavn} kvinner 3. div.xlsx")
+        div_1_2.save(f"./output/{filnavn} 1-2. div.xlsx")
+        menn_3.save(f"./output/{filnavn} menn 3. div.xlsx")
+        kvinner_3.save(f"./output/{filnavn} kvinner 3. div.xlsx")
 
     @staticmethod
     def utviklingSerietabell(datasenter,filnavn):
@@ -654,7 +659,7 @@ class Filskriver:
                     Filskriver._formaterCelle(detaljark,rad+1,kol+6, font=font3, fyll=fill2, verdi=lag.hentPosisjon()+1)
                     detaljark.cell(row=rad+1, column=kol+6).alignment = Alignment(horizontal='center')
                 
-        div_1_2.save(f"{filnavn} 1-2. div.xlsx")
-        menn_3.save(f"{filnavn} menn 3. div.xlsx")
-        kvinner_3.save(f"{filnavn} kvinner 3. div.xlsx")
+        div_1_2.save(f"./output/{filnavn} 1-2. div.xlsx")
+        menn_3.save(f"./output/{filnavn} menn 3. div.xlsx")
+        kvinner_3.save(f"./output/{filnavn} kvinner 3. div.xlsx")
     

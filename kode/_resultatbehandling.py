@@ -1,4 +1,4 @@
-from resultat import Resultat
+from _resultat import Resultat
 
 class Resultatbehandling:  
 
@@ -61,7 +61,7 @@ class Resultatbehandling:
                     break
 
             if not fjernet:
-                print(f"Resultatet: {resultat['resultat']} ble ikke fjernet")
+                print(f"MERKNAD: Resultatet {resultat['resultat']} ble ikke fjernet")
 
 
     @staticmethod

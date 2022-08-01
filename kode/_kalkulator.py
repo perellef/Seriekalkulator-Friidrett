@@ -1,15 +1,15 @@
 import itertools
 
-from utover import Utover
-from resultat import Resultat
+from _utover import Utover
+from _resultat import Resultat
 
-class Kalk:
+class Kalkulator:
 
     nullutover = Utover(None,None,None)
     nullresultat = Resultat(nullutover,None,0,None,None,None,None)
 
-    @staticmethod
-    def LagKalk(datasenter,klubb):
+    @classmethod
+    def LagKalk(cls,datasenter,klubb):
 
         "1. Henter klubbens resultater"
 
@@ -26,7 +26,7 @@ class Kalk:
             
             "2.1. Beregner seriepoeng og annen tilhørende informasjon til beste lag"
             
-            obl_lag,val_lag = Kalk.__rekursiv_lagberegner(datasenter,klubb,lag_nr,ubrukte_klubbres,[],[],0)[0]
+            obl_lag,val_lag = cls.__rekursiv_lagberegner(datasenter,klubb,lag_nr,ubrukte_klubbres,[],[],0)[0]
 
             "2.2. Finner relevante statuetter, prosesserer og så lagrer laginformasjon fra beregning" 
             
@@ -36,7 +36,7 @@ class Kalk:
             obl_sekvens = ovelsesinfo["sluttform"] # inkluderer ogsa ikke-obl ovelser, men er uten betydning
 
             obl_lag = [res for x in obl_sekvens for res in obl_lag if res.hentOvelse() == x]
-            val_lag = Kalk.__sorter([res for res in val_lag])
+            val_lag = cls.__sorter([res for res in val_lag])
             
             tabell = datasenter.tabell(kjonn)
 
@@ -45,18 +45,18 @@ class Kalk:
 
             "2.3. Klargjør for beregning av klubbens neste lag."
             
-            brukte_utovere = Kalk.__set_obj([res.hentUtover() for res in obl_lag+val_lag])
+            brukte_utovere = cls.__set_obj([res.hentUtover() for res in obl_lag+val_lag])
             
             ubrukte_klubbres = [res for res in ubrukte_klubbres if res.hentUtover() not in brukte_utovere] # fjerner "brukte" utøvere fra gjenværende klubbresultater.
 
             lag_nr += 1
 
-    @staticmethod
-    def __rekursiv_lagberegner(datasenter,klubb,lag_nr,resultater,lag_info,n_liste,steg):
+    @classmethod
+    def __rekursiv_lagberegner(cls,datasenter,klubb,lag_nr,resultater,lag_info,n_liste,steg):
 
         "2.1.1. Beregner (evt. flere) lag med høyeste mulige seriepoengsum"
 
-        n,lag,utovere_brukt = Kalk.__beregn_lagoppstilling(datasenter,klubb,lag_nr+steg,resultater)
+        n,lag,utovere_brukt = cls.__beregn_lagoppstilling(datasenter,klubb,lag_nr+steg,resultater)
 
         "2.1.2. Bruker rekursjon til å finne beste av flere lag med samme poeng, basert på de neste lagene til klubben"
 
@@ -79,7 +79,7 @@ class Kalk:
                     
                 resultater = [res for res in resultater_i[:] if not res.hentUtover() in utovere_brukt[i]]
                 
-                like_lag.append(Kalk.__rekursiv_lagberegner(datasenter,klubb,lag_nr,resultater,lag_info,n_liste+[n],steg+1))
+                like_lag.append(cls.__rekursiv_lagberegner(datasenter,klubb,lag_nr,resultater,lag_info,n_liste+[n],steg+1))
             
             i = 0
             while True:
@@ -109,8 +109,8 @@ class Kalk:
             
             return like_lag[0]  
             
-    @staticmethod
-    def __beregn_lagoppstilling(datasenter,klubb,lag_nr,resultater):
+    @classmethod
+    def __beregn_lagoppstilling(cls,datasenter,klubb,lag_nr,resultater):
         
         "2.1.1.1. Henter relevant informasjon og krav"
 
@@ -136,9 +136,9 @@ class Kalk:
 
         "2.1.1.2. Finner og skiller resultatene inn i obl-, tek- og løpsresultater."
 
-        ai = Kalk.__sorter([res for res in resultater if res.er(obl)])
-        bi = Kalk.__sorter([res for res in resultater if res.er(tek)])
-        ci = Kalk.__sorter([res for res in resultater if res.er(lop)])
+        ai = cls.__sorter([res for res in resultater if res.er(obl)])
+        bi = cls.__sorter([res for res in resultater if res.er(tek)])
+        ci = cls.__sorter([res for res in resultater if res.er(lop)])
 
         ovelser = []
         a = []
@@ -150,26 +150,24 @@ class Kalk:
         a_temp = a[:]
       
         if len(a)==0: ###### Fyller opp listene med 0-resultater
-            a = [Kalk.nullresultat]
-        while len(Kalk.__sorter(bi))<30:
-            bi.append(Kalk.nullresultat)
-        while len(Kalk.__sorter(ci))<30:
-            ci.append(Kalk.nullresultat)
+            a = [cls.nullresultat]
+        while len(cls.__sorter(bi))<30:
+            bi.append(cls.nullresultat)
+        while len(cls.__sorter(ci))<30:
+            ci.append(cls.nullresultat)
 
         "1.3.2.3. Lager liste med de (i utgangspunktet) beste obligatoriske resultatene."
         
-        N_tek = Kalk.__tell_tek(a[:krav_obl],lop) # antall tek. øvelser
+        N_tek = cls.__tell_tek(a[:krav_obl],lop) # antall tek. øvelser
         
         if krav_obl_tek <= N_tek:
             a = a[:krav_obl]
         
         else:
-            a_tek = Kalk.__sorter([res for res in a if (res.er(tek) or res.erNull())])[:krav_obl_tek]
-            a_lop = Kalk.__sorter([res for res in a if res.er(lop)])[:(krav_obl-krav_obl_tek)]
+            a_tek = cls.__sorter([res for res in a if (res.er(tek) or res.erNull())])[:krav_obl_tek]
+            a_lop = cls.__sorter([res for res in a if res.er(lop)])[:(krav_obl-krav_obl_tek)]
             
-            a = Kalk.__sorter(a_tek + a_lop)
-
-        a_i = a[:]
+            a = cls.__sorter(a_tek + a_lop)
 
         "1.3.2.13. Finner resultater som (praktisk sett) ikke vil kunne befinne seg i valgfri oppstilling"
         
@@ -186,7 +184,7 @@ class Kalk:
 
         "1.3.2.6. Legger til obl øvelser som erstatter eventuelle tekniske obl øvelser som kan falle ned i valgfri oppstilling."
 
-        N_a_tek = Kalk.__tell_tek(a,lop)
+        N_a_tek = cls.__tell_tek(a,lop)
 
         l = 0
         t = 0
@@ -210,11 +208,11 @@ class Kalk:
         b = [res for res in bi if (not res in a or res.erNull())]
         c = [res for res in ci if (not res in a or res.erNull())]
                         
-        b_c = Kalk.__sorter(b + c)
+        b_c = cls.__sorter(b + c)
 
         "1.3.2.7. Henter inn nye obligatoriske resultater for hver gang 'maks 5'-kravet 'brytes'."
             
-        N_tek = Kalk.__tell_tek(b_c[:krav_val],lop) # antall tek. øvelser  
+        N_tek = cls.__tell_tek(b_c[:krav_val],lop) # antall tek. øvelser  
                 
         if N_tek >= krav_val_tek:
             d = a+b_c[:krav_val] # d = aktuelle resultater = obl + beste valgfri øvelser inklusive ekstra resultater tilsvarende antall ganger "maks 5"-kravet brytes.
@@ -235,7 +233,7 @@ class Kalk:
             
             utovere = [res.hentUtover() for res in d]
 
-            for utover in Kalk.__set_obj(utovere):
+            for utover in cls.__set_obj(utovere):
                 
                 N_res = utovere.count(utover) # N_res = antall res av utøver blant (foreløpig) gjeldende obl. og val.
                 
@@ -288,9 +286,9 @@ class Kalk:
             b = [res for res in b if (not res in a or res.erNull())]      
             c = [res for res in c if (not res in a or res.erNull())]
                     
-            b_c = Kalk.__sorter(b + c)
+            b_c = cls.__sorter(b + c)
 
-            N_tek = Kalk.__tell_tek(b_c[:krav_val+N_ek],lop)
+            N_tek = cls.__tell_tek(b_c[:krav_val+N_ek],lop)
                     
             if N_tek>=krav_val_tek+N_ek:
                 d = a+b_c[:krav_val+N_ek]
@@ -313,7 +311,7 @@ class Kalk:
             utovere = [res.hentUtover() for res in d]
                 
             i = 0 ######## sjekker om noen nye utøvere har over 5 øvelser
-            for utover in Kalk.__set_obj(utovere):
+            for utover in cls.__set_obj(utovere):
                 
                 condition1 = utovere.count(utover)>N_maks
                 condition2 = not utover.erNull()
@@ -347,16 +345,16 @@ class Kalk:
             if any((con1,con2)):
                 a.append(res)
         
-        a = Kalk.__sorter(a)
+        a = cls.__sorter(a)
 
         "1.3.2.11. Fordeler ikke-sikre obligatoriske resultater etter øvelse, og legger til eventuelle null-resultater"
         
         b = [res for res in b if (not res in a or res.erNull())]  
         c = [res for res in c if (not res in a or res.erNull())]
 
-        b_c = Kalk.__sorter(b + c)
+        b_c = cls.__sorter(b + c)
                 
-        N_tek = Kalk.__tell_tek(b_c[:krav_val+N_ek],lop) 
+        N_tek = cls.__tell_tek(b_c[:krav_val+N_ek],lop) 
                 
         if N_tek>=krav_val_tek+N_ek:
             d = a + b_c[:krav_val+N_ek]
@@ -373,7 +371,7 @@ class Kalk:
                 a_fordelt[res.er(tek)][ovelse] = [res]
 
         for ovelse in obl_null: ## legger til null-resultat for de gitte øvelsene
-            a_fordelt[ovelse in tek][ovelse].append(Kalk.nullresultat)
+            a_fordelt[ovelse in tek][ovelse].append(cls.nullresultat)
 
         N = {"tek": {}, "lop": {}}
 
@@ -413,7 +411,7 @@ class Kalk:
                 a_sikker.append(a_fordelt[omTek][ovelse][0])
                 del a_fordelt[omTek][ovelse]
 
-        a_sikker = Kalk.__sorter(a_sikker)
+        a_sikker = cls.__sorter(a_sikker)
 
         "1.3.2.10. Finner minimums antall resultater >5 utoverene vil ha i obligatorisk oppstilling"
 
@@ -485,12 +483,12 @@ class Kalk:
             print(utover,verdi)"""
 
         if ingenOblRes:
-            liste = [(Kalk.nullresultat,)]
+            liste = [(cls.nullresultat,)]
 
         elif kunEttOvelsesutvalg:
             utvalg = list(a_fordelt[True].values()) + list(a_fordelt[False].values())
 
-            liste = Kalk.__hent_oppstillinger(utvalg,utoverres,N_null)
+            liste = cls.__hent_oppstillinger(utvalg,utoverres,N_null)
 
 
         else:
@@ -514,24 +512,24 @@ class Kalk:
 
                     kombinert_utvalg = tek_komb + lop_komb
 
-                    obl_oppstillinger = Kalk.__hent_oppstillinger(kombinert_utvalg,utoverres,N_null)
+                    obl_oppstillinger = cls.__hent_oppstillinger(kombinert_utvalg,utoverres,N_null)
                     liste.extend(obl_oppstillinger)
 
-        liste = sorted(liste, key = lambda x: -Kalk.__poengsum(x))
+        liste = sorted(liste, key = lambda x: -cls.__poengsum(x))
 
         "1.3.2.13. Finner høyeste (praktisk) mulig poengsum for valgfri oppstilling"
 
         b_val = [res for res in bi if (res not in ikkeval) or res.erNull()] ######### regner ut den høyeste mulig b og c summen for å exite beregning når de obligatoriske øvelsene gir en for lav sum til å kunne forbedre seriepoengene.
         c_val = [res for res in ci if (res not in ikkeval) or res.erNull()]
         
-        b_c = Kalk.__sorter(b_val+c_val)
+        b_c = cls.__sorter(b_val+c_val)
         
-        N_tek = Kalk.__tell_tek(b_c[:krav_val],lop)
+        N_tek = cls.__tell_tek(b_c[:krav_val],lop)
 
         if N_tek>=krav_val_tek+N_ek:
-            maks_val = Kalk.__poengsum(b_c[:krav_val]) # høyeste mulig poengsum til en valgfri oppstilling
+            maks_val = cls.__poengsum(b_c[:krav_val]) # høyeste mulig poengsum til en valgfri oppstilling
         else:
-            maks_val = Kalk.__poengsum(b_val[:krav_val_tek]+c_val[:(krav_val - krav_val_tek)])
+            maks_val = cls.__poengsum(b_val[:krav_val_tek]+c_val[:(krav_val - krav_val_tek)])
 
         "1.3.2.14. Til hver lagkombinasjon, beregner poengsum, og eventuelt lagrer laginfo"
         
@@ -551,7 +549,7 @@ class Kalk:
 
             obl_komb = a_sikker + list(obl_usikker)
 
-            if Kalk.__poengsum(obl_komb)+maks_val<n: ## dersom obl. kombinasjonen (og alle etter den ettersom de er sortert etter poeng) har for lite poeng (selv med sterkeste mulige valgfri oppstilling) til a kunne erstatte beste n-verdi
+            if cls.__poengsum(obl_komb)+maks_val<n: ## dersom obl. kombinasjonen (og alle etter den ettersom de er sortert etter poeng) har for lite poeng (selv med sterkeste mulige valgfri oppstilling) til a kunne erstatte beste n-verdi
                 break
 
             " Henter aktuelle valgfrie ovelser"
@@ -594,7 +592,7 @@ class Kalk:
                         if not con1:
                             lis.append(res)
         
-            b_c = Kalk.__sorter(b+c)
+            b_c = cls.__sorter(b+c)
             
             "1.3.2.14.2. Finner antall gjenværende øvelser til utøvere med over 5 resultater totalt"
                     
@@ -602,7 +600,7 @@ class Kalk:
             utovere_obl = [res.hentUtover() for res in obl_komb]
             
             begrensing = {}
-            for utover in Kalk.__set_obj(utovere):
+            for utover in cls.__set_obj(utovere):
                 if (utovere+utovere_obl).count(utover) > N_maks and not utover.erNull(): # hvis utøveren har flere totalt har flere enn 5 resultater
                     N_obl_ut = utovere_obl.count(utover)
                     begrensing[utover] = [N_maks-N_obl_ut,N_maks-N_obl_ut,N_maks-N_obl_ut,N_maks-N_obl_ut] # gj. øvelser til utøveren
@@ -611,12 +609,12 @@ class Kalk:
             "1.3.2.14.3. Finner en valgfri oppstilling like god eller bedre enn beste gyldig oppstilling"
             
             
-            N_tek = Kalk.__tell_tek(b_c[:krav_val+N_ek],lop) 
+            N_tek = cls.__tell_tek(b_c[:krav_val+N_ek],lop) 
                     
             if N_tek>=krav_val_tek+N_ek:
-                d = Kalk.__sorter(b_c[:krav_val+N_ek])
+                d = cls.__sorter(b_c[:krav_val+N_ek])
             else:
-                d = Kalk.__sorter(b[:krav_val_tek+N_ek]+c[:krav_val-krav_val_tek+N_ek])
+                d = cls.__sorter(b[:krav_val_tek+N_ek]+c[:krav_val-krav_val_tek+N_ek])
 
             
             """
@@ -662,7 +660,7 @@ class Kalk:
             if len(t_valgfri)>krav_val:
                 t_valgfri = t_valgfri[:krav_val]
                     
-            if Kalk.__poengsum(t_valgfri+obl_komb)<n:
+            if cls.__poengsum(t_valgfri+obl_komb)<n:
                 continue
 
             "1.3.2.14.5. Fjerner for dårlige valgfri løps- og tekniske resultater av utøvere med over 5 resultater totalt"
@@ -694,12 +692,12 @@ class Kalk:
                 b_c = res[:]
                     
             while len(b_c)<krav_val+N_ek: ## fyller eventuelle rest plasser med null resultater
-                b_c.append(Kalk.nullresultat)   
+                b_c.append(cls.nullresultat)   
                                 
             b = [res for res in b_c if (not res.erNull()) and (not res.er(lop))] ### henter de beste tekniske øvelsene
             
             while len(b)<krav_val_tek+N_ek:
-                b.append(Kalk.nullresultat)
+                b.append(cls.nullresultat)
             
             
             "1.3.2.14.6. Finner start- og sluttverdi av antall tekniske øvelser blant de valgfrie"    
@@ -708,7 +706,7 @@ class Kalk:
                 
             "1.3.2.14.7. Henter eventuelle resultater like gode som den/de svakeste blant valgfri tekniske"    
             
-            b_pot = Kalk.__sorter([res for res in bi if not any((res in b, res.erNull(), res.hentUtover() in utovere_obl))]) ############# Legger til tekniske valgfri øvelser som har lik poeng som den dårligste i valgfri tek. listen
+            b_pot = cls.__sorter([res for res in bi if not any((res in b, res.erNull(), res.hentUtover() in utovere_obl))]) ############# Legger til tekniske valgfri øvelser som har lik poeng som den dårligste i valgfri tek. listen
             
             P_svak_res = int(b[-1].hentPoeng()) # resultatet av tekniske valgfri med minst poeng av de gjeldende
             i = 0
@@ -739,7 +737,7 @@ class Kalk:
             utovere = [res.hentUtover() for res in b_c]
 
             begr = [] ##### finner de gj. tekniske øvelsene til >5 res utøvere
-            for utover in Kalk.__set_obj(utovere):
+            for utover in cls.__set_obj(utovere):
                 if (utovere+utovere_obl).count(utover) > N_maks and not utover.erNull(): ## sjekker om utøveren har begrensing på valgfri øvelser (pga >5 totalt)
                     N_obl_ut = utovere_obl.count(utover)
                     begr.append([utover,N_maks-N_obl_ut])
@@ -796,13 +794,13 @@ class Kalk:
 
                     ###### samler og sorterer de tek antall beste tekniske øvelsene
                     if len(b)>0 and len(b)>=N_tek-len(res_5):
-                        tek_res = Kalk.__sorter(res_5 + b[:N_tek-len(res_5)])
+                        tek_res = cls.__sorter(res_5 + b[:N_tek-len(res_5)])
                                 
                     elif len(b)==0:
-                        tek_res = Kalk.__sorter(res_5)
+                        tek_res = cls.__sorter(res_5)
                                     
                     else:
-                        tek_res = Kalk.__sorter(res_5 + b)
+                        tek_res = cls.__sorter(res_5 + b)
                         
                     
                     "1.3.2.14.9.3. Henter eventuelle resultater like gode som det svakeste av de tekniske valgfri"
@@ -854,7 +852,7 @@ class Kalk:
                             utovere = [res.hentUtover() for res in tek_komb+obl_komb]
                                         
                             maks = [] #### utøvere som allerede har brukt sine 5 øvelser
-                            for utover in Kalk.__set_obj(utovere):
+                            for utover in cls.__set_obj(utovere):
                                 if utovere.count(utover)==N_maks and not utover.erNull():
                                     maks.append(utover)
                                     
@@ -902,10 +900,10 @@ class Kalk:
 
                                 lop_komb = lop_si + list(lop_ek)
                                 
-                                set_utovere = Kalk.__set_obj([res.hentUtover() for res in obl_komb+tek_komb+lop_komb if not res.erNull()])
+                                set_utovere = cls.__set_obj([res.hentUtover() for res in obl_komb+tek_komb+lop_komb if not res.erNull()])
                                 set_utovere = sorted(set_utovere, key=lambda x: x.hentNavn())
 
-                                s = Kalk.__poengsum(obl_komb + tek_komb + lop_komb)
+                                s = cls.__poengsum(obl_komb + tek_komb + lop_komb)
 
                                 if s>n: ###... hvis høyere poengsum - oppdaterer laginfo
 
@@ -920,10 +918,10 @@ class Kalk:
                         
                         else:
 
-                            set_utovere = Kalk.__set_obj([res.hentUtover() for res in obl_komb+tek_komb if not res.erNull()])
+                            set_utovere = cls.__set_obj([res.hentUtover() for res in obl_komb+tek_komb if not res.erNull()])
                             set_utovere = sorted(set_utovere, key=lambda x: x.hentNavn())
                             
-                            s = Kalk.__poengsum(obl_komb + tek_komb)
+                            s = cls.__poengsum(obl_komb + tek_komb)
 
                             if s>n: ###... hvis høyere poengusm - oppdaterer laginfo
         
@@ -938,8 +936,8 @@ class Kalk:
         return n,lag,utovere_brukt
         
 
-    @staticmethod
-    def __hent_oppstillinger(utvalg,utoverres,N_null):
+    @classmethod
+    def __hent_oppstillinger(cls,utvalg,utoverres,N_null):
 
         gjeldende = [[utfall] for utfall in utvalg[0]]
 
@@ -954,7 +952,7 @@ class Kalk:
                     utovere = [res.hentUtover() for res in ny_komb]
 
                     omUtoveravvik = any(((utovere.count(utover)+len(utvalg)-len(ny_komb)<verdi) for utover,verdi in utoverres.items()))
-                    omNullavvik = utovere.count(Kalk.nullutover)>N_null
+                    omNullavvik = utovere.count(cls.nullutover)>N_null
 
                     if any((omUtoveravvik,omNullavvik)):
                         continue

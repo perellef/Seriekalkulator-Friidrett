@@ -1,4 +1,4 @@
-from resultat import Resultat
+from _resultat import Resultat
 
 from bs4 import BeautifulSoup
 import requests
@@ -98,7 +98,7 @@ class Statistikkhenting:
 
         ovelsesinfo = datasenter.ovelsesinfo()["sluttform"]
 
-        statistikkfil = openpyxl.load_workbook(filnavn+".xlsx")
+        statistikkfil = openpyxl.load_workbook(f"./input/{filnavn}.xlsx")
 
         for kjonn in ["menn","kvinner"]:
             ark = statistikkfil[kjonn.capitalize() + " - statistikk"]

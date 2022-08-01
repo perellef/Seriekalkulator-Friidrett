@@ -1,5 +1,5 @@
-from resultater import Resultater
-from lag import Lag
+from _resultater import Resultater
+from _lag import Lag
 
 class Klubb:
     

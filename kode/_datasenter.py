@@ -1,13 +1,13 @@
-from klubb import Klubb
-from utover import Utover
-from resultater import Resultater
-from tabell import Tabell
+from _klubb import Klubb
+from _utover import Utover
+from _resultater import Resultater
+from _tabell import Tabell
 
-from filleser import Filleser
-from filskriver import Filskriver
-from statistikkhenting import Statistikkhenting
-from resultatbehandling import Resultatbehandling
-from kalkulator import Kalk
+from _filleser import Filleser
+from _filskriver import Filskriver
+from _statistikkhenting import Statistikkhenting
+from _resultatbehandling import Resultatbehandling
+from _kalkulator import Kalkulator
 
 import asyncio
 from datetime import datetime
@@ -20,9 +20,10 @@ class Datasenter:
         self._aar = aar
         self._initieringTid = datetime.now()
 
-        self._settinger = Filleser.json(f"settinger_{aar}")
-        self._ovelsesinfo = Filleser.json(f"ovelsesinfo_{aar}")
-        self._resultatavvik = Filleser.json(f"resultatavvik_{aar}")
+        self._settinger = Filleser.json(f"./konfig/{aar}/settinger")
+        self._ovelsesinfo = Filleser.json(f"./konfig/{aar}/ovelsesinfo")
+        self._resultatavvik = Filleser.json(f"./konfig/{aar}/resultatavvik")
+        self._innstillinger = Filleser.json(f"./konfig/innstillinger")
 
         self._utovere = {"menn": [], "kvinner": []}
         self._resultater = {"menn": Resultater(),"kvinner": Resultater()}
@@ -46,7 +47,7 @@ class Datasenter:
     def hentSeriedata(self):
         Statistikkhenting.definerKlubbIDer(self)
         Filleser.fjorarstabell(self)
-        Filskriver.tabellhistorie(self)
+        Filleser.tabellhistorie(self)
     
     def hentKlubbstatistikk(self,klubb):
         Statistikkhenting.hentKlubbstatistikk(self,klubb)
@@ -83,18 +84,21 @@ class Datasenter:
             Resultatbehandling.handterKlubberUnntattOverbygning(self,kjonn)
 
     def beregnKlubb(self,klubb):
-        Kalk.LagKalk(self,klubb)
+        Kalkulator.LagKalk(self,klubb)
 
     def beregnAlleKlubber(self):
         for kjonn in ["menn","kvinner"]:
             for klubb in self._klubber[kjonn]:
-                Kalk.LagKalk(self,klubb)
+                Kalkulator.LagKalk(self,klubb)
+
+    def oppdaterTabellhistorie(self):
+        Filskriver.tabellhistorie(self)
 
     def lagOffisiellSerietabell(self,filnavn):
         Filskriver.offisieltSerieark(self,filnavn)
 
     def lagUtviklingsSerietabell(self,filnavn):
-        print("utviklingsserietabell")
+        print("utviklingsserietabell (print)")
 
     def lagResultatFil(self,filnavn):
         Filskriver.resultatark(self,filnavn)
@@ -175,6 +179,9 @@ class Datasenter:
 
     def ovelsesinfo(self):
         return self._ovelsesinfo
+    
+    def innstillinger(self):
+        return self._innstillinger
 
 
     def inititieringTid(self):

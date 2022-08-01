@@ -1,4 +1,4 @@
-from resultater import Resultater
+from _resultater import Resultater
 
 class Utover:
 

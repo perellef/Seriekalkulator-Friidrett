@@ -15,12 +15,12 @@ class Filleser:
 
         return json.loads(streng)
 
-    @staticmethod
-    def fjorarstabell(datasenter):
+    @classmethod
+    def fjorarstabell(cls,datasenter):
 
         aar = int(datasenter.aar())
 
-        fjorarsfil = f"serietabell_" + str(aar-1) + ".csv"
+        fjorarsfil = f"./data/serietabell_{aar-1}.csv"
 
         ###### hvis filen ikke finnes ma handteres
         
@@ -38,7 +38,7 @@ class Filleser:
             div = int(el[1])
             lagnavn = el[4]
 
-            klubbnavn, lag_nr = Filleser._hentInfoFraLagnavn(lagnavn)
+            klubbnavn, lag_nr = cls._hentInfoFraLagnavn(lagnavn)
 
             klubb = datasenter.hentKlubbFraNavn(kj,klubbnavn,lagNy=False)
             lag = klubb.hentLag(lag_nr)
@@ -55,12 +55,12 @@ class Filleser:
             klubb.leggTilDiv(div)   
 
             
-    @staticmethod
-    def tabellhistorie(datasenter):
+    @classmethod
+    def tabellhistorie(cls,datasenter):
         
         aar = datasenter.aar()
 
-        tabellhistorie = "tabellhistorie_"+aar+".csv"
+        tabellhistorie = f"./data/tabellhistorie_{aar}.csv"
 
         data = {}
         try:
@@ -96,7 +96,7 @@ class Filleser:
             el = tabellinje.split(",")
 
             lagnavn = el[4]
-            klubbnavn,lag_nr = Filleser._hentInfoFraLagnavn(lagnavn)
+            klubbnavn,lag_nr = cls._hentInfoFraLagnavn(lagnavn)
 
             kj = el[0]
             poeng = int(el[3])

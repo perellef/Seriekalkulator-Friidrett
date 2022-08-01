@@ -1,4 +1,4 @@
-from datasenter import Datasenter
+from _datasenter import Datasenter
 
 import os
 import requests
@@ -19,13 +19,21 @@ class Kommandosenter:
             print("FEIL: Et heltall må velges")
             return False
 
-        con2 = os.path.exists(f"settinger_{aar}.json")
-        con3 = os.path.exists(f"ovelsesinfo_{aar}.json")
-        con4 = os.path.exists(f"resultatavvik_{aar}.json")
+        con2 = os.path.exists(f"./konfig/{aar}")
+        con3 = os.path.exists(f"./konfig/innstillinger.json")
 
-        for con,fil in zip([con2,con3,con4],["settinger","ovelsesinfo","resultatavvik"]):
+        for con,fil in zip([con2,con3],[f"{aar}","innstillinger.json"]):
             if not con:
-                print(f"FEIL: '{fil}_{aar}.json' eksisterer ikke")
+                print(f"FEIL: '{fil}' eksisterer ikke (konfig/{fil})")
+                return False
+
+        con4 = os.path.exists(f"./konfig/{aar}/settinger.json")
+        con5 = os.path.exists(f"./konfig/{aar}/ovelsesinfo.json")
+        con6 = os.path.exists(f"./konfig/{aar}/resultatavvik.json")
+
+        for con,fil in zip([con4,con5,con6],["settinger","ovelsesinfo","resultatavvik"]):
+            if not con:
+                print(f"FEIL: '{fil}.json' eksisterer ikke (konfig/{aar}/{fil}.json)")
                 return False
 
         self._datasenter = Datasenter(aar)
