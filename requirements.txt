@@ -1,0 +1,6 @@
+asyncio
+bs4
+datetime
+openpyxl
+pandas
+requests
