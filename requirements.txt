@@ -1,6 +1,7 @@
 asyncio
 bs4
 datetime
+lxml
 openpyxl
 pandas
 requests
