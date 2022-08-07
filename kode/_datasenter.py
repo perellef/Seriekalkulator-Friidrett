@@ -71,13 +71,13 @@ class Datasenter:
 
             Resultatbehandling.hentManueltManglendeRes(self,kjonn)
             Resultatbehandling.fjernManueltUgyldigeRes(self,kjonn)
-            Resultatbehandling.fjernManuelleResultater(self,kjonn)
             
             if (self._settinger["tillat mellomtider"]):
                 Resultatbehandling.fjernMellomtiderTilSerieres(self,kjonn)
             else: 
                 Resultatbehandling.fjernMellomtider(self,kjonn)
 
+            Resultatbehandling.fjernManuelleResultater(self,kjonn)
             Resultatbehandling.fjernForUngeUtovere(self,kjonn)
             Resultatbehandling.fjernRullestolutovere(self,kjonn)
             Resultatbehandling.flyttOverbygningsresultater(self,kjonn)

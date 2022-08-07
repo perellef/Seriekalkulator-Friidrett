@@ -86,13 +86,13 @@ class Filskriver:
                 if (klubbFra := res.hentKlubbFra()) == None:
                     continue
 
-                statark.cell(row=5+i,column=2, value=res.hentUtover().hentNavn())
-                statark.cell(row=5+i,column=3, value=res.hentUtover().hentFAar())
-                statark.cell(row=5+i,column=4, value=res.hentOvelse())
-                statark.cell(row=5+i,column=5, value=res.hentPrestasjon())
-                statark.cell(row=5+i,column=6, value=res.hentPoeng())
-                statark.cell(row=5+i,column=7, value=klubbFra.hentKlubbnavn())
-                statark.cell(row=5+i,column=8, value=klubbFra.hentKrets())
+                statark.cell(row=5+i,column=2, value=klubbFra.hentKlubbnavn())
+                statark.cell(row=5+i,column=3, value=klubbFra.hentKrets())
+                statark.cell(row=5+i,column=4, value=res.hentPoeng())
+                statark.cell(row=5+i,column=5, value=res.hentOvelse())
+                statark.cell(row=5+i,column=6, value=res.hentUtover().hentNavn())
+                statark.cell(row=5+i,column=7, value=res.hentUtover().hentFAar())
+                statark.cell(row=5+i,column=8, value=res.hentPrestasjon())
                 statark.cell(row=5+i,column=9, value=res.hentSted())
                 statark.cell(row=5+i,column=10, value=res.hentDato())
 

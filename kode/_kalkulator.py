@@ -18,7 +18,7 @@ class Kalkulator:
 
         ubrukte_klubbres = klubbres.set()
             
-        "2. Bestemmer lagene til klubben fra resultatene."        
+        "2. Kalkulerer lagene til klubben fra klubbresultatene"        
         
         lag_nr = 1
 
@@ -43,18 +43,18 @@ class Kalkulator:
             lag.settLagoppstilling(obl_lag,val_lag)
             tabell.plasserLag(lag)
 
-            "2.3. Klargjør for beregning av klubbens neste lag."
+            "2.3. Klargjør for beregning av klubbens neste lag"
             
             brukte_utovere = cls.__set_obj([res.hentUtover() for res in obl_lag+val_lag])
             
-            ubrukte_klubbres = [res for res in ubrukte_klubbres if res.hentUtover() not in brukte_utovere] # fjerner "brukte" utøvere fra gjenværende klubbresultater.
+            ubrukte_klubbres = [res for res in ubrukte_klubbres if res.hentUtover() not in brukte_utovere] # fjerner "brukte" utøvere fra klubbens gjenværende resultater
 
             lag_nr += 1
 
     @classmethod
     def __rekursiv_lagberegner(cls,datasenter,klubb,lag_nr,resultater,lag_info,n_liste,steg):
 
-        "2.1.1. Beregner (evt. flere) lag med høyeste mulige seriepoengsum"
+        "2.1.1. Finner alle lag med høyeste mulige seriepoengsum"
 
         n,lag,utovere_brukt = cls.__beregn_lagoppstilling(datasenter,klubb,lag_nr+steg,resultater)
 
@@ -83,9 +83,9 @@ class Kalkulator:
             
             i = 0
             while True:
-                len_n_liste = [len(el[1]) for el in like_lag] # rekursiv iterasjonsdybde (2 - neste lag, 3 - de to neste lagene, osv)
+                len_n_liste = [len(el[1]) for el in like_lag]
 
-                if i>=max(len_n_liste) or len(like_lag)==1: ## i>=høyeste iterasjonsdybde vil si at lagene er like gode og kombinasjon kan velges vilkårlig.
+                if i>=max(len_n_liste) or len(like_lag)==1: ## i>=høyeste iterasjonsdybde vil si at alle resultatene er brukt opp, som betyr at lagene er like gode og oppstillingen kan velges vilkårlig.
                     break    
                 
                 liste_poeng_lister = [el[1] for el in like_lag] # liste med alle aktuelle lister av poenger til klubbens ulike lag
@@ -120,7 +120,7 @@ class Kalkulator:
         div = klubb.hentDiv(lag_nr)
         kjonn = klubb.hentKjonn()
 
-        antallOvelser = settinger["antall øvelser"][f""+str(div)+". div"]
+        antallOvelser = settinger["antall øvelser"][f"{div}. div"]
             
         krav_obl = antallOvelser["obl"]
         krav_obl_tek = antallOvelser["obl-tek"]
@@ -134,7 +134,7 @@ class Kalkulator:
         
         N_maks = settinger["maks resultater per person"]
 
-        "2.1.1.2. Finner og skiller resultatene inn i obl-, tek- og løpsresultater."
+        "2.1.1.2. Finner og grupperer resultatene inn i obl-, tek- og løpsresultater."
 
         ai = cls.__sorter([res for res in resultater if res.er(obl)])
         bi = cls.__sorter([res for res in resultater if res.er(tek)])
@@ -142,7 +142,7 @@ class Kalkulator:
 
         ovelser = []
         a = []
-        for res in ai:
+        for res in ai: #### henter beste resultat til hver obl øvelse
             if res.hentOvelse() not in ovelser:
                 ovelser.append(res.hentOvelse())
                 a.append(res)
@@ -156,7 +156,7 @@ class Kalkulator:
         while len(cls.__sorter(ci))<30:
             ci.append(cls.nullresultat)
 
-        "1.3.2.3. Lager liste med de (i utgangspunktet) beste obligatoriske resultatene."
+        "2.1.1.3. Lager liste med de (i utgangspunktet) beste obligatoriske resultatene."
         
         N_tek = cls.__tell_tek(a[:krav_obl],lop) # antall tek. øvelser
         
@@ -169,20 +169,19 @@ class Kalkulator:
             
             a = cls.__sorter(a_tek + a_lop)
 
-        "1.3.2.13. Finner resultater som (praktisk sett) ikke vil kunne befinne seg i valgfri oppstilling"
+        "2.1.1.4. Finner resultater som (praktisk sett) ikke vil kunne befinne seg i valgfri oppstilling"
         
         tek_ikkeval = [res for res in a if res.er(tek)][:krav_obl_tek] # tekres som aldri vil kunne befinne seg i val oppstilling
         lop_ikkeval = [res for res in a if res.er(lop)] # lopsres som aldri vil kunne befinne seg i val oppstilling
 
         ikkeval = tek_ikkeval+lop_ikkeval
 
-        "1.3.2.4. Lager backup-lister der (eventuelle) nye obligatoriske resultater hentes fra."
+        "2.1.1.5. Lager backup-lister der (eventuelle) nye erstattende obl resultater hentes fra"
 
-        a_ers_ny = [res for res in a_temp if (not res in a)] ## fjerner overlappende resultater
+        a_ers_ny = [res for res in a_temp if (res not in a)] # beste obl resultat til en ikke-a ovelse
+        a_ers = [res for res in ai if (res not in a_temp)] # alle obl-resultater som ikke er best i sin ovelse        
 
-        a_ers = [res for res in ai[:] if (not res in a+a_ers_ny)]
-
-        "1.3.2.6. Legger til obl øvelser som erstatter eventuelle tekniske obl øvelser som kan falle ned i valgfri oppstilling."
+        "2.1.1.6. Legger til obl øvelser som erstatter eventuelle tekniske obl øvelser som kan falle ned i valgfri oppstilling"
 
         N_a_tek = cls.__tell_tek(a,lop)
 
@@ -203,19 +202,19 @@ class Kalkulator:
             if l==N_a_tek-krav_obl_tek or not flere:
                 break        
 
-        "1.3.2.5. Lager (ikke-overlappende med obl) lister for løps- og tekniske øvelser."
+        "2.1.1.7. Lager (ikke-overlappende med obl) lister for løps- og tekniske øvelser."
 
         b = [res for res in bi if (not res in a or res.erNull())]
         c = [res for res in ci if (not res in a or res.erNull())]
                         
         b_c = cls.__sorter(b + c)
 
-        "1.3.2.7. Henter inn nye obligatoriske resultater for hver gang 'maks 5'-kravet 'brytes'."
+        "2.1.1.8. Henter inn nye obligatoriske resultater for hver gang 'maks 5'-kravet 'brytes'."
             
         N_tek = cls.__tell_tek(b_c[:krav_val],lop) # antall tek. øvelser  
                 
         if N_tek >= krav_val_tek:
-            d = a+b_c[:krav_val] # d = aktuelle resultater = obl + beste valgfri øvelser inklusive ekstra resultater tilsvarende antall ganger "maks 5"-kravet brytes.
+            d = a+b_c[:krav_val] # d = alle aktuelle resultater = obl + beste valgfri øvelser inklusive ekstra resultater tilsvarende antall ganger "maks 5"-kravet brytes
         else:
             d = a+b[:krav_val_tek]+c[:krav_val-krav_val_tek]
             
@@ -235,11 +234,11 @@ class Kalkulator:
 
             for utover in cls.__set_obj(utovere):
                 
-                N_res = utovere.count(utover) # N_res = antall res av utøver blant (foreløpig) gjeldende obl. og val.
+                N_res = utovere.count(utover) # N_res = antall res av utøver blant (foreløpig) gjeldende obl og val
                 
                 condition1 = N_res>N_maks
                 condition2 = not utover.erNull()
-                condition3 = not utover in utovere_5 # utøvere allerede hentet res
+                condition3 = not utover in utovere_5 # utøveren allerede notert som >5 utøver
                 
                 if condition1 and condition2:
                     
@@ -248,30 +247,30 @@ class Kalkulator:
                     if condition3:
 
                         utovere_5.append(utover)
-                        ov_krav.append([res.hentOvelse() for res in a if res.hentUtover() is utover]) # øvelser det skal hentes erstatter for
+                        ov_krav.append([res.hentOvelse() for res in a if res.hentUtover() is utover]) # øvelser det skal hentes erstatter til
                         ov.append([])
         
-            for i in range(len(ov_krav)): # i = utøver nr.
-                for l in range(len(ov_krav[i])): # ov_krav[i][l] = øvelse
+            for i,(ovelser,hentede_ovelser) in enumerate(zip(ov_krav,ov)): # i = >5 utøver nr.
+                for l,ovelse in enumerate(ovelser): # ov_krav[i][l] = øvelse
                     
-                    if ov_krav[i][l] in ov[i]: ## hvis erstatter resultatene allerede er hentet
+                    if ovelse in hentede_ovelser: ## hvis utøverens resultat i øvelsen allerede har fått en erstatter
                         continue
                     
-                    ov[i].append(ov_krav[i][l])
+                    hentede_ovelser.append(ovelse)
                 
                     pos = None
-                    for j in range(len(a_ers)):
-                        if a_ers[j].hentOvelse()==ov_krav[i][l]:
+                    for j,res in enumerate(a_ers):
+                        if res.hentOvelse()==ovelse:
                             pos = j
                             break
                     
-                    if pos != None:
+                    if pos != None: ##### henter erstatningsresultat. Hvis dette ikke finnes, vil et nullresultat erstatte
                         a.append(a_ers[pos])
                         del a_ers[pos]
                     else:
-                        obl_null.append(ov_krav[i][l])
+                        obl_null.append(ovelse)
                             
-            while N_ny < N_ek: ###### henter erstatter resultat fra øvelser i utgangspunktet ikke var gode nok for obl.
+            while N_ny < N_ek: ###### henter erstatter resultat fra øvelser i utgangspunktet ikke var gode nok for obl
                 if len(a_ers_ny)==0:
                     break
                 
@@ -281,7 +280,7 @@ class Kalkulator:
                 del a_ers_ny[0]
                     
         
-            ######## oppdaterer listen med gjeldende valgfri resultater gitt de nye obligatoriske øvelsene samt ny N_ek verdi.
+            ######## oppdaterer listen med gjeldende valgfri resultater gitt de nye obligatoriske øvelsene samt ny N_ek verdi
             
             b = [res for res in b if (not res in a or res.erNull())]      
             c = [res for res in c if (not res in a or res.erNull())]
@@ -325,7 +324,7 @@ class Kalkulator:
             if cond1 and cond2:
                 break
             
-        "1.3.2.8. Legger til like gode resultater i obl. listen for håndtering av 'beste 2. laget'"
+        "2.1.1.9. Legger til like gode resultater i obl listen for håndtering av 'beste neste lag'"
 
         a_ers = [res for res in a_ers if not (res in a+a_ers_ny)]
         
@@ -347,7 +346,7 @@ class Kalkulator:
         
         a = cls.__sorter(a)
 
-        "1.3.2.11. Fordeler ikke-sikre obligatoriske resultater etter øvelse, og legger til eventuelle null-resultater"
+        "2.1.1.10. Fordeler ikke-sikre obligatoriske resultater etter øvelse, og legger til eventuelle null-resultater"
         
         b = [res for res in b if (not res in a or res.erNull())]  
         c = [res for res in c if (not res in a or res.erNull())]
@@ -361,7 +360,7 @@ class Kalkulator:
         else:
             d = a + b[:krav_val_tek+N_ek]+c[:krav_val-krav_val_tek+N_ek]
 
-        a_fordelt = {True: {}, False: {}}  ######## a fordelt etter øvelse
+        a_fordelt = {True: {}, False: {}}  ####### a fordelt etter øvelse
 
         for res in a:
             ovelse = res.hentOvelse()
@@ -378,7 +377,7 @@ class Kalkulator:
         N["tek"]["tot"] = len(a_fordelt[True])
         N["lop"]["tot"] = len(a_fordelt[False])
 
-        "1.3.2.10. Samlet (og fjerner fra obl listen) sikre resultater - resultater som er garantert å være i obl oppstillingen"
+        "2.1.1.11. Samlet (og fjerner fra obl listen) sikre resultater - resultater som er garantert å være i obl oppstillingen"
         
         a_sikker = []
 
@@ -396,7 +395,7 @@ class Kalkulator:
                 condition1 = (t<krav_obl_tek or t<krav_obl-N["lop"]["tot"]) # om tek resultatet erstatter en ellers garantert tom obl plass
                 condition2 = (N_tek>=krav_val_tek+N_ek and t+l<krav_obl) # om valgfri oppstilling ikke har mangel på tekniske øvelser, og det er plass til resultatet i obl oppstillingen
 
-                con1 = (condition1 or condition2)
+                con1 = any((condition1,condition2))
                 con2 = (len(a_fordelt[True][ovelse])==1)
 
                 t += 1
@@ -413,7 +412,7 @@ class Kalkulator:
 
         a_sikker = cls.__sorter(a_sikker)
 
-        "1.3.2.10. Finner minimums antall resultater >5 utoverene vil ha i obligatorisk oppstilling"
+        "2.1.1.12. Finner minimums antall resultater >5 utoverene vil ha i obligatorisk oppstilling"
 
         utovere_iv = [res.hentUtover() for res in ikkeval] 
         utovere_d = [res.hentUtover() for res in d] #  alle utøvere med res blant aktuelle resultater
@@ -445,44 +444,24 @@ class Kalkulator:
 
             utoverres[utover] = N_res_min            
 
-        "1.3.2.12. Finner alle aktuelle kombinasjoner av obligatoriske oppstillinger"
+        "2.1.1.13. Finner alle aktuelle kombinasjoner av obligatoriske oppstillinger"
 
         for sort in ["tek","lop"]:
             N[sort]["usikker"] = len(a_fordelt[sort=="tek"])
             N[sort]["sikker"] = N[sort]["tot"] - N[sort]["usikker"]
 
-        ingenOblRes = any((
+        ingenUsikreOblRes = any((
             (N["tek"]["usikker"]+N["lop"]["usikker"]==0),                            # 1. det finnes ingen usikre obligatoriske resultater
             (N["tek"]["sikker"]+N["lop"]["sikker"]==krav_obl),                       # 2. obligatorisk oppstilling allerede oppfylt
             (N["tek"]["usikker"]==0 and N["lop"]["sikker"]==krav_obl-krav_obl_tek),  # 3. det er ikke plass til noen av de siste "usikre" lopsovelse
         ))
-        kunEttOvelsesutvalg = (N["lop"]["tot"]<=krav_obl-krav_obl_tek and N["tek"]["tot"]+N["lop"]["tot"]<=krav_obl)
+        kunEttOvelsesutvalg = all((
+            (N["lop"]["tot"]<=krav_obl-krav_obl_tek),       # 1. antall obl lopsresultater vil aldri overgå kvoten
+            (N["tek"]["tot"]+N["lop"]["tot"]<=krav_obl),    # 2. antall totale obl resultater er mindre (<=) enn antall som skal brukes
+        ))
 
 
-        """print(f"\n\n ==== Lag {lag_nr} ==== ")
-        
-        print(" --- a_sikker --- ")
-        for el in a_sikker:
-            print(el)
-
-        print("krav_obl", krav_obl)
-        print("len(a_sikker)",len(a_sikker))
-        print(N["tek"]["usikker"],N["lop"]["usikker"])
-
-        for ovelse in a_fordelt[True]:
-            print("\n"+ovelse, end=":  ")
-            for res in a_fordelt[True][ovelse]:
-                print(res,end="| ")
-
-        for ovelse in a_fordelt[False]:
-            print("\n"+ovelse, end=":  ")
-            for res in a_fordelt[False][ovelse]:
-                print(res,end="| ")
-
-        for utover,verdi in utoverres.items():
-            print(utover,verdi)"""
-
-        if ingenOblRes:
+        if ingenUsikreOblRes:
             liste = [(cls.nullresultat,)]
 
         elif kunEttOvelsesutvalg:
@@ -490,36 +469,32 @@ class Kalkulator:
 
             liste = cls.__hent_oppstillinger(utvalg,utoverres,N_null)
 
-
         else:
             N_tek_start = max((krav_obl_tek - N["tek"]["sikker"],0))
             N_tek_slutt = min((N["tek"]["usikker"],krav_obl-N["tek"]["sikker"]-N["lop"]["sikker"]))
            
             liste = []
             for N_tek in range(N_tek_start,N_tek_slutt+1):
-                nr = 0
-                
-                tekutvalg = []
-                for utvalg in itertools.combinations(a_fordelt[True].values(),N_tek): # finner mulige (tekniske) ovelsesutvalg
+
+                tekutvalg = [] ### finner mulige tek ovelsesutvalg fra gitt antall tek ovelser
+                for utvalg in itertools.combinations(a_fordelt[True].values(),N_tek):
                     tekutvalg.append(utvalg)
                     
-                lopsutvalg = []
-                for utvalg in itertools.combinations(a_fordelt[False].values(),krav_obl-N_tek-N["lop"]["sikker"]-N["tek"]["sikker"]): # finner mulige (lops-)ovelsesutvalg
+                lopsutvalg = [] ### finner mulige lops ovelsesutvalg fra gjenværende antall ovelser
+                for utvalg in itertools.combinations(a_fordelt[False].values(),krav_obl-N_tek-N["lop"]["sikker"]-N["tek"]["sikker"]):
                     lopsutvalg.append(utvalg)
 
-                for tek_komb,lop_komb in itertools.product(tekutvalg,lopsutvalg):
-                    nr += 1
-
+                for tek_komb,lop_komb in itertools.product(tekutvalg,lopsutvalg): ## finner antall ovelsesutvalg med både løp og tek.
                     kombinert_utvalg = tek_komb + lop_komb
 
-                    obl_oppstillinger = cls.__hent_oppstillinger(kombinert_utvalg,utoverres,N_null)
+                    obl_oppstillinger = cls.__hent_oppstillinger(kombinert_utvalg,utoverres,N_null) ## finner antall mulige (gyldige) obl kombinasjoner tilhørende øvelsesutvalget
                     liste.extend(obl_oppstillinger)
 
         liste = sorted(liste, key = lambda x: -cls.__poengsum(x))
 
-        "1.3.2.13. Finner høyeste (praktisk) mulig poengsum for valgfri oppstilling"
+        "2.1.1.14. Finner høyeste (praktisk sett) mulig poengsum for valgfri oppstilling"
 
-        b_val = [res for res in bi if (res not in ikkeval) or res.erNull()] ######### regner ut den høyeste mulig b og c summen for å exite beregning når de obligatoriske øvelsene gir en for lav sum til å kunne forbedre seriepoengene.
+        b_val = [res for res in bi if (res not in ikkeval) or res.erNull()] ######## regner ut den høyeste mulig b og c summen for å exite beregning når de obligatoriske øvelsene gir en for lav sum til å kunne forbedre seriepoengene.
         c_val = [res for res in ci if (res not in ikkeval) or res.erNull()]
         
         b_c = cls.__sorter(b_val+c_val)
@@ -531,14 +506,12 @@ class Kalkulator:
         else:
             maks_val = cls.__poengsum(b_val[:krav_val_tek]+c_val[:(krav_val - krav_val_tek)])
 
-        "1.3.2.14. Til hver lagkombinasjon, beregner poengsum, og eventuelt lagrer laginfo"
+        "2.1.1.15. Til hver lagkombinasjon, beregner poengsum, og eventuelt lagrer laginfo"
         
-        "1.3.2.14.1. Itererer gjennom kombinasjoner av obligatoriske oppstillinger"
+        "2.1.1.15.1. Itererer gjennom kombinasjoner av obligatoriske oppstillinger"
 
-        counter = 0
         n = -1
         for obl_usikker in liste:
-            counter += 1
 
             utovere = [res.hentUtover() for res in obl_usikker] # trenger kun å sjekke for utoverne i obl_usikker, for alle >5 utovere samles her
 
@@ -552,7 +525,7 @@ class Kalkulator:
             if cls.__poengsum(obl_komb)+maks_val<n: ## dersom obl. kombinasjonen (og alle etter den ettersom de er sortert etter poeng) har for lite poeng (selv med sterkeste mulige valgfri oppstilling) til a kunne erstatte beste n-verdi
                 break
 
-            " Henter aktuelle valgfrie ovelser"
+            "2.1.1.15.2. Fjerner ikke-mulige valgfrie ovelser"
 
             obl_res_tek = [res for res in obl_komb if res.er(tek)]
             obl_res_lop = [res for res in obl_komb if res.er(lop)]
@@ -564,9 +537,19 @@ class Kalkulator:
             if len(obl_res_lop)>0:
                 svakeste_obl_res[1] = min(obl_res_lop, key=lambda komb: komb.hentPoeng()).hentPoeng()
 
-            b = []
-            c = []
-            for lis,lis_i,svakt_res in zip([b,c],[bi,ci],svakeste_obl_res):
+    
+            # Utnytter nedenfor at det er noen premisser for at et resultat skal kunne være valgfritt:
+            # 1. Resultatet kan ikke være i obl komb (untatt nullresultater)
+            # 2. Resultatet kan ikke være bedre enn et resultat i obl komb (i samme øvelse)
+            # 3. Resultatet kan ikke samtidig være av en obl øvelse som ikke er brukt, og være bedre enn svakeste res i obl komb
+
+            # Dersom en av 1-3 stemmer for et resultat, er det sikkert at det resultatet ikke vil kunne være valgfritt. Grunnen til
+            # at de ikke kan være valgfrie er fordi da ville obl oppstilling hatt disse resultatene. Strategien til kalkulatoren
+            # er å bygge seg nedover, det vil si at en situasjon der disse resultatene tas med (men i obl) er allerede vurdert.
+
+            b_si = []
+            c_si = []
+            for lis,lis_i,svakt_res in zip([b_si,c_si],[bi,ci],svakeste_obl_res):
                 for res in lis_i:
 
                     finnes = False
@@ -575,10 +558,10 @@ class Kalkulator:
                         if res.hentOvelse()==obl_res.hentOvelse():
                             finnes = True
 
-                            if (res is obl_res) and (not res.erNull()):
+                            if (res is obl_res) and (not res.erNull()): # -> premiss 1
                                 break
 
-                            if not res>obl_res:
+                            if not res>obl_res: # -> premiss 2
                                 lis.append(res)
                             break
 
@@ -587,14 +570,14 @@ class Kalkulator:
                         con1 = (res.er(obl))
                         con2 = (res.hentPoeng()<=svakt_res)
 
-                        if all((con1,con2)):
+                        if all((con1,con2)): # -> premiss 3
                             lis.append(res)
                         if not con1:
                             lis.append(res)
         
-            b_c = cls.__sorter(b+c)
+            b_c = cls.__sorter(b_si+c_si)
             
-            "1.3.2.14.2. Finner antall gjenværende øvelser til utøvere med over 5 resultater totalt"
+            "2.1.1.15.3. Finner antall gjenværende øvelser til utøvere med over 5 resultater totalt"
                     
             utovere = [res.hentUtover() for res in d]
             utovere_obl = [res.hentUtover() for res in obl_komb]
@@ -603,147 +586,97 @@ class Kalkulator:
             for utover in cls.__set_obj(utovere):
                 if (utovere+utovere_obl).count(utover) > N_maks and not utover.erNull(): # hvis utøveren har flere totalt har flere enn 5 resultater
                     N_obl_ut = utovere_obl.count(utover)
-                    begrensing[utover] = [N_maks-N_obl_ut,N_maks-N_obl_ut,N_maks-N_obl_ut,N_maks-N_obl_ut] # gj. øvelser til utøveren
+                    begrensing[utover] = [N_maks-N_obl_ut,N_maks-N_obl_ut,N_maks-N_obl_ut] # gj. øvelser til utøveren
                     
                 
-            "1.3.2.14.3. Finner en valgfri oppstilling like god eller bedre enn beste gyldig oppstilling"
-            
+            "2.1.1.15.4. Finner en valgfri oppstilling like god eller bedre enn beste gyldig oppstilling"
             
             N_tek = cls.__tell_tek(b_c[:krav_val+N_ek],lop) 
                     
             if N_tek>=krav_val_tek+N_ek:
                 d = cls.__sorter(b_c[:krav_val+N_ek])
             else:
-                d = cls.__sorter(b[:krav_val_tek+N_ek]+c[:krav_val-krav_val_tek+N_ek])
+                d = cls.__sorter(b_si[:krav_val_tek+N_ek]+c_si[:krav_val-krav_val_tek+N_ek])
 
+            b_c = [] # teoretisk valgfri oppstilling. Vil være lik eller bedre enn faktisk beste oppstilling
             
-            """
-            delen under maa skrives om. Antakelig kan bare .index brukes uten problemer
-            
-            
-            
-            
-            
-            
-            ------------------------------------------
-            """
-
-            
-
-            t_valgfri = [] # teoretisk valgfri oppstilling. Vil være lik eller bedre enn faktisk beste oppstilling
-            if len(begrensing)>0:                
-                begr_utovere = list(begrensing.keys())
-                
-                for i in range(len(d)):
-                    oop = 1
-                    if d[i].hentUtover() in begr_utovere: # hvis utøveren har begrensing i antall gj. øvelser (fordi >5 totalt)
-                        
-                        begr = begrensing[d[i].hentUtover()]
-
-                        if d[i].er(lop):                        
-                            if begr[2]<=0:
-                                oop = 0
-                            else:
-                                begr[2] -= 1
-                        else:
-                            if begr[3]<=0:
-                                oop = 0
-                            else:
-                                begr[3] -= 1         
-                    if oop == 1:
-                        t_valgfri.append(d[i])
-            else:
-                t_valgfri = d
-                
-            "1.3.2.14.4. Skipper til neste obligatoriske oppstillingen dersom den teoretiske valgfri oppstillingen er for svak"
-                        
-            if len(t_valgfri)>krav_val:
-                t_valgfri = t_valgfri[:krav_val]
+            begr_utovere = list(begrensing.keys())
+            for res in d:
+                if res.hentUtover() in begr_utovere: # hvis utøveren har begrensing i antall gj. øvelser (fordi >5 totalt)
                     
-            if cls.__poengsum(t_valgfri+obl_komb)<n:
+                    begr = begrensing[res.hentUtover()]
+
+                    if res.er(lop):                    
+                        if begr[1]<=0: ### hvis utøveren har brukt opp sin kvote på løpsresultater
+                            continue
+                        begr[1] -= 1
+                    else:
+                        if begr[2]<=0: ### hvis utøveren har brukt opp sin kvote på løpsresultater
+                            continue
+                        begr[2] -= 1         
+                b_c.append(res)
+                           
+            if cls.__poengsum(b_c[:krav_val]+obl_komb)<n: # går videre til neste obligatorisk oppstilling dersom teoretisk val oppstilling (mhp. obl oppstilling) er for svak
                 continue
 
-            "1.3.2.14.5. Fjerner for dårlige valgfri løps- og tekniske resultater av utøvere med over 5 resultater totalt"
-
-            if len(begrensing)>0: ####... Henter kun de 5-x beste valgfri øvelsene, der x er antall obl. øvelser av utøveren
-                res = []
-                for i in range(len(b_c)):
-                    begr = None ##### finner iterasjons nr. i begrensing til utøveren
-
-                    for utover in begrensing: ##### darlig skrevet (i lik grad som resten av denne kodeblokka)
-                        if utover==b_c[i].hentUtover():
-                            begr = begrensing[utover]
-                            break
-                    
-                    if begr != None:
-                        if b_c[i].er(lop): ### hvis gj. lopsovelser er 0 -> henter ikke flere valgfri løpsøvelser fra utøveren
-                            if begr[1]<=0:
-                                continue
-                            else: ### ellers -> henter res og setter en mindre plass igjen
-                                begr[1] -= 1
-                        else:
-                            if begr[0]<=0: ### hvis gj. tek ovelser er 0 -> henter ikke flere valgfri tekniske øvelser fra utøveren
-                                continue
-                            else: ### ellers -> henter res og en mindre plass igjen
-                                begr[0] -= 1
-                                    
-                    res.append(b_c[i])
-                                
-                b_c = res[:]
-                    
+            "2.1.1.15.5. Fjerner for dårlige valgfri løps- og tekniske resultater av utøvere med over 5 resultater totalt"
+                                  
             while len(b_c)<krav_val+N_ek: ## fyller eventuelle rest plasser med null resultater
                 b_c.append(cls.nullresultat)   
                                 
             b = [res for res in b_c if (not res.erNull()) and (not res.er(lop))] ### henter de beste tekniske øvelsene
             
+            b_pot = cls.__sorter([res for res in b_si if not any((res in b+obl_komb, res.erNull()))]) # mulige tek resultater som kan ha like mange poeng
+
             while len(b)<krav_val_tek+N_ek:
-                b.append(cls.nullresultat)
+                b.append(cls.nullresultat)            
             
-            
-            "1.3.2.14.6. Finner start- og sluttverdi av antall tekniske øvelser blant de valgfrie"    
+            "2.1.1.15.6. Finner start- og sluttverdi til antall tekniske øvelser blant de valgfrie"    
             
             N_maks_tek = min((krav_val,len(b))) # finner start- og sluttverdi for antall tekniske valgfri øvelser som det skal sjekkes for
                 
-            "1.3.2.14.7. Henter eventuelle resultater like gode som den/de svakeste blant valgfri tekniske"    
-            
-            b_pot = cls.__sorter([res for res in bi if not any((res in b, res.erNull(), res.hentUtover() in utovere_obl))]) ############# Legger til tekniske valgfri øvelser som har lik poeng som den dårligste i valgfri tek. listen
+
+            "2.1.1.15.7. Henter eventuelle resultater like gode som den svakeste blant valgfri tekniske"    
             
             P_svak_res = int(b[-1].hentPoeng()) # resultatet av tekniske valgfri med minst poeng av de gjeldende
             i = 0
             
             while len(b_pot)>i:
-                
-                if int(b_pot[i].hentPoeng()) != P_svak_res or P_svak_res == 0: ## om neste tek. res har ulik (mindre) poeng exites løkken (listen er sortert så derfor betyr dette at ingen har lik poeng som dårligste i tek. listen)
-                    break
-                                    
-                condition1 = (not b_pot[i] in b)
-                
-                try:
-                    begr = begrensing[b_pot[i].hentUtover()]
 
-                    cond1 = (b_pot[i].er(tek) and begr[1]>0)
-                    cond2 = (b_pot[i].er(lop) and begr[2]>0)
-                    
-                    condition2 = (cond1 or cond2)
-                except KeyError:
-                    condition2 = True
-                    
-                if condition1 and condition2:
-                    b.append(b_pot[i])
+                res = b_pot[i]
+
+                poeng = int(res.hentPoeng())
+
+                if poeng<P_svak_res or P_svak_res==0:
+                    break
                 i += 1
-    
-            "1.3.2.14.8. Finner kombinasjoner med antall gjenværende tekniske resultater til utøvere med over 5 resultater totalt"    
+                if poeng>P_svak_res:
+                    continue
+                                    
+                try:
+                    begr = begrensing[res.hentUtover()]
+
+                    if not (begr[0]>0):
+                        continue
+                    begr[0] -= 1
+
+                except KeyError:
+                    pass
+                    
+                b.append(res) # legger til tek resultater like gode som svakeste potensielle tek
+
+            "2.1.1.15.8. Finner kombinasjoner av antall gjenværende resultater til utøvere med over 5 resultater totalt"    
 
             utovere = [res.hentUtover() for res in b_c]
 
             begr = [] ##### finner de gj. tekniske øvelsene til >5 res utøvere
             for utover in cls.__set_obj(utovere):
-                if (utovere+utovere_obl).count(utover) > N_maks and not utover.erNull(): ## sjekker om utøveren har begrensing på valgfri øvelser (pga >5 totalt)
+                if (utovere+utovere_obl).count(utover) > N_maks and not utover.erNull(): # om utøveren har begrensing på valgfri øvelser (pga >5 totalt)
                     N_obl_ut = utovere_obl.count(utover)
                     begr.append([utover,N_maks-N_obl_ut])
             
             
-            b_5 = [] # samleliste med de tek. res til de ulike utøverne.
+            b_5 = [] # samleliste med de tek. res til de ulike 5> utøverne.
             liste_N_tek = [] # samleliste med antall tek res som kan brukes av de ulike utøverne
                             
             for i in range(len(begr)):
@@ -764,15 +697,16 @@ class Kalkulator:
                 liste_N_tek.append(N_ov)
                 
             b_5_unostet = [res for utover_res in b_5 for res in utover_res]
-                    
-            b_i = b[:] ## lagrer en initiell b og c(som senere endres) slik at den kan 'nullstilles' for hver nye iterering
-            c_i = c[:]
+
+            b_i = b[:] ## lagrer en initiell b- og c-liste, slik at de senere modifiserte b- og c-liste kan nullstilles
+            c_i = c_si[:]
 
             liste_tek_i = [el for el in itertools.product(*liste_N_tek)] # finner kombinasjoner av antall tekniske resultater til 5> res utovere
 
-            "1.3.2.14.9. Beregner samlet poengsum, og lagrer laginfo, til beste valgfri og den gitte obligatoriske oppstillingen"    
 
-            "1.3.2.14.9.1. Itererer gjennom et intervall av antall mulige teknisk valgfrie øvelser"
+            "2.1.1.15.9. Beregner samlet poengsum, og evt. lagrer laginfo, til beste valgfri og den gitte obligatoriske oppstillingen"    
+
+            "2.1.1.15.9.1. Itererer gjennom et intervall av antall mulige teknisk valgfrie øvelser"
 
             for N_tek in range(krav_val_tek,N_maks_tek+1): # tek = antall tekniske valgfri resultater
 
@@ -782,7 +716,7 @@ class Kalkulator:
 
                 b_i2 = b[:]
                     
-                "1.3.2.14.9.2. Itererer gjennom kombinasjoner av valgfri tekniske øvelser av utøvere med over 5 resultater totalt"
+                "2.1.1.15.9.2. Itererer gjennom kombinasjoner av valgfri tekniske øvelser av utøvere med over 5 resultater totalt"
                 
                 for liste_N_tek_5 in kombs_tek: # liste_N_tek_5 = liste med antall øvelser som skal benyttes av >5 res utøvere
 
@@ -801,15 +735,14 @@ class Kalkulator:
                                     
                     else:
                         tek_res = cls.__sorter(res_5 + b)
-                        
                     
-                    "1.3.2.14.9.3. Henter eventuelle resultater like gode som det svakeste av de tekniske valgfri"
+                    "2.1.1.15.9.3. Henter eventuelle resultater like gode som det svakeste av de tekniske valgfri"
                     
                     b = [res for res in b if res not in tek_res] # finner b-resultater som ikke overlapper med tek_sikker
-                    
+
                     P_svak_res = tek_res[-1].hentPoeng() # finner poeng til det svakeste resultatet
                     
-                    like_res = [] ####### finner resultatene med dårligst poeng i tek_sikker.
+                    like_res = [] ####### finner resultatene med dårligst poeng i tek_sikker
                     
                     i = len(tek_res)-1
                     
@@ -825,27 +758,26 @@ class Kalkulator:
                     
                     tek_sikker = [res for res in tek_res if res not in like_res] # fjerner dårligste tek. res
                     
-                    i = 0 ####### Henter inn eventuelle resultater med likt antall poeng som de den/de svakeste i val. tek. Enhver av disse kan erstatte den eller de dårligste.
+                    i = 0 ####### Henter inn eventuelle resultater med likt antall poeng som de den/de svakeste i val tek. Enhver av disse kan potensielt erstatte den eller de dårligste
                     while len(b)>i:
                         if b[i].hentPoeng()==P_svak_res and P_svak_res != 0:
                             like_res.append(b[i])
                             i += 1
                         else:
                             break
-                        
-                        
-                    "1.3.2.14.9.4. Itererer gjennom kombinasjoner av den/de svakeste resultatene blant tekniske valgfri"
+
+                    "2.1.1.15.9.4. Itererer gjennom kombinasjoner av den/de svakeste resultatene blant tekniske valgfri"
                     
-                    for tek_usikker in itertools.combinations(like_res,N_gj_res): # itererer gjennom kombinasjoner svakeste res. i de valgfri tekniske øvelsene. Dette er viktig for å finne beste lagoppstilling mhp. beste 2. lag.
-                    
+                    for tek_usikker in itertools.combinations(like_res,N_gj_res): # itererer gjennom kombinasjoner svakeste res i de valgfri tekniske øvelsene. Dette er viktig for å finne beste lagoppstilling mhp. det neste laget
+
                         tek_komb = tek_sikker + list(tek_usikker) # samler de valgfri tekniske øvelsene
                         
                         if len(tek_komb)>krav_val:
                             tek_komb = tek_komb[:krav_val]
                             
-                        "1.3.2.14.9.5. Fyller gjenværende valgfrie plasser med løpsøvelser og beregner poengsum"
+                        "2.1.1.15.9.5. Fyller gjenværende valgfrie plasser med løpsøvelser og beregner poengsum"
         
-                        if krav_val - len(tek_komb)>0: # sjekker om det er gjenværende plass til løpsøvelser. Hvis ikke, har vi en allerede en komplett oppstilling.
+                        if krav_val - len(tek_komb)>0: # sjekker om det er gjenværende plass til løpsøvelser. Hvis ikke, har vi en allerede en komplett oppstilling
                             
                             c = c_i[:]
 
@@ -937,7 +869,7 @@ class Kalkulator:
         
 
     @classmethod
-    def __hent_oppstillinger(cls,utvalg,utoverres,N_null):
+    def __hent_oppstillinger(cls,utvalg,utoverres,N_null): # henter alle kombinasjoner av oppstillinger fra ovelsesutvalg, og diverse begrensninger
 
         gjeldende = [[utfall] for utfall in utvalg[0]]
 
@@ -965,11 +897,11 @@ class Kalkulator:
         return gjeldende
 
     @staticmethod
-    def __sorter(liste):     
+    def __sorter(liste): # sorterer en liste etter synkende poeng
         return sorted(liste, key = lambda x: -int(x.hentPoeng()))
             
     @staticmethod
-    def __tell_tek(liste,lop): ###### ikke lop, for at nullresultater skal telle som tek
+    def __tell_tek(liste,lop): # teller antall tekniske resultater til en liste med resultater
         s = 0
         for res in liste:
             if not res.er(lop):
@@ -977,13 +909,13 @@ class Kalkulator:
         return s
 
     @staticmethod
-    def __poengsum(liste):
+    def __poengsum(liste): # beregner seriepoeng til en liste med resultater
         poeng = lambda x: x.hentPoeng()
 
         return sum(map(poeng, liste))
 
     @staticmethod
-    def __set_obj(liste):
+    def __set_obj(liste): # henter alle unike elementer fra en liste
         set_objects = []
         for obj in liste:
             if obj not in set_objects:
