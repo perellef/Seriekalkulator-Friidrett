@@ -46,7 +46,7 @@ class Filskriver:
                     for lag in tabell.hentDivisjon(div)["Tabell"]:
 
                         fil.write(kjonn + "|")
-                        fil.write(str(div-1) + "|")
+                        fil.write(str(div) + "|")
                         fil.write(str(lag.hentPosisjon()) + "|")
                         fil.write(str(lag.hentPoeng()) + "|")
                         fil.write(lag.hentLagnavn() + "\n")
