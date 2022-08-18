@@ -77,7 +77,7 @@ class Filleser:
 
                         data[tidspunkt] = tabell
                     else:
-                        tabell.append(linje)
+                        tabell.append(linje.strip().split("|"))
         except FileNotFoundError:
             print(f"MERKNAD: Fant ingen tabellhistorie ('{tabellhistorie}'). Fortsetter uten.")
             return
@@ -94,18 +94,15 @@ class Filleser:
             if dagerSiden > 14*0.97:
                 tabell = data[tidspunkt]
         
+        for linje in tabell:
 
-        for tabellinje in tabell:
-            
-            el = tabellinje.split(",")
-
-            lagnavn = el[4]
+            lagnavn = linje[4]
             klubbnavn,lag_nr = cls._hentInfoFraLagnavn(lagnavn)
 
-            kj = el[0]
-            poeng = int(el[3])
-            plassering = int(el[2])
-            div = int(el[1])
+            kj = linje[0]
+            poeng = int(linje[3])
+            plassering = int(linje[2])
+            div = int(linje[1])
             
             klubb = datasenter.hentKlubbFraNavn(kj,klubbnavn,lagNy=False)
             klubb.leggTilDiv(div)   
