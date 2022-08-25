@@ -102,10 +102,8 @@ class Filleser:
             kj = linje[0]
             poeng = int(linje[3])
             plassering = int(linje[2])
-            div = int(linje[1])
             
             klubb = datasenter.hentKlubbFraNavn(kj,klubbnavn,lagNy=False)
-            klubb.leggTilDiv(div)   
             
             lag = klubb.hentLag(lag_nr)
             lag.settForrige(poeng,plassering)
