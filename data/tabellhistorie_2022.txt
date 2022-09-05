@@ -2249,7 +2249,6 @@ kvinner|3|88|5403|Botne SK
 kvinner|3|89|5304|Gjesdal IL
 kvinner|3|90|5161|Lillehammer IF 3. lag
 kvinner|3|91|5081|Stårheim IL
-
 |2022-08-24 12:09:55.961125| | |
 menn|1|0|27579|IK Tjalve
 menn|1|1|25153|Sandnes IL
@@ -2549,7 +2548,6 @@ kvinner|3|88|5403|Botne SK
 kvinner|3|89|5304|Gjesdal IL
 kvinner|3|90|5161|Lillehammer IF 3. lag
 kvinner|3|91|5081|Stårheim IL
-
 |2022-08-27 12:11:06.152104| | |
 menn|1|0|27579|IK Tjalve
 menn|1|1|25153|Sandnes IL
@@ -2834,7 +2832,6 @@ kvinner|3|107|5304|Gjesdal IL
 kvinner|3|108|5161|Lillehammer IF 3. lag
 kvinner|3|109|5122|Stårheim IL
 kvinner|3|110|5084|Sandnes IL 4. lag
-
 |2022-08-31 12:10:58.204953| | |
 menn|1|0|27635|IK Tjalve
 menn|1|1|25328|Sandnes IL

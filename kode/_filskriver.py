@@ -38,7 +38,7 @@ class Filskriver:
 
         with open(f"./data/tabellhistorie_{aar}.txt","a") as fil:
 
-            fil.write("\n|" + str(datasenter.inititieringTid()) + "| | |\n")
+            fil.write("|" + str(datasenter.inititieringTid()) + "| | |\n")
 
             for kjonn in ["menn","kvinner"]:
                 tabell = datasenter.tabell(kjonn)
