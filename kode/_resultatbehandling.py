@@ -211,7 +211,7 @@ class Resultatbehandling:
             
             utoverRes = utover.hentResultater()
             
-            for res in utoverRes:
+            for res in utoverRes[:]:
                 klubb = res.hentKlubbFra()
                 
                 klubb.fjernRes(res)
@@ -303,7 +303,7 @@ class Resultatbehandling:
 
                     utoverResultater = utover.hentResultater()
 
-                    for utoverRes in utoverResultater:
+                    for utoverRes in utoverResultater[:]:
 
                         if utoverRes.hentKlubbFra() is not overbygKlubb:
                             continue
