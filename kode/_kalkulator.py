@@ -421,6 +421,8 @@ class Kalkulator:
         utoverres = {}
         for utover in utovere_5:
 
+            " Under må det ses grundig igjennom. Premisset er helt feil. Har beregnet antall maks antall val, ikke maks antall obl"
+
             N_potensiale = 0
             for omTek in [True,False]:
                 for ovelse,ovelsesres in a_fordelt[omTek].items():
@@ -432,8 +434,8 @@ class Kalkulator:
                     if utoverensRes:
                         N_potensiale += 1
 
-            N_utover_iv = utovere_iv.count(utover)
-            N_utover_d = utovere_d.count(utover)
+            N_utover_iv = utovere_iv.count(utover) # antall ovelser til utover som ikke kan vaere val
+            N_utover_d = utovere_d.count(utover)   # antall ovelser totalt til utover
 
             N_null += max(min((N_utover_d-N_maks, N_potensiale)),0)
 
@@ -442,7 +444,8 @@ class Kalkulator:
             if N_res_min<=0:
                 continue
 
-            utoverres[utover] = N_res_min            
+            utoverres[utover] = N_res_min     
+  
 
         "2.1.1.13. Finner alle aktuelle kombinasjoner av obligatoriske oppstillinger"
 
@@ -459,7 +462,7 @@ class Kalkulator:
             (N["lop"]["tot"]<=krav_obl-krav_obl_tek),       # 1. antall obl lopsresultater vil aldri overgå kvoten
             (N["tek"]["tot"]+N["lop"]["tot"]<=krav_obl),    # 2. antall totale obl resultater er mindre (<=) enn antall som skal brukes
         ))
-        
+
 
         if ingenUsikreOblRes:
             liste = [(cls.nullresultat,)]
@@ -500,11 +503,7 @@ class Kalkulator:
         b_c = cls.__sorter(b_val+c_val)
         
         N_tek = cls.__tell_tek(b_c[:krav_val],lop)
-
-        if N_tek>=krav_val_tek+N_ek:
-            maks_val = cls.__poengsum(b_c[:krav_val]) # høyeste mulig poengsum til en valgfri oppstilling
-        else:
-            maks_val = cls.__poengsum(b_val[:krav_val_tek]+c_val[:(krav_val - krav_val_tek)])
+        maks_val = cls.__poengsum(b_val[:max((N_tek,krav_val_tek))]+c_val[:(krav_val - max((N_tek,krav_val_tek)))]) # høyeste mulig poengsum til en valgfri oppstilling 
 
         "2.1.1.15. Til hver lagkombinasjon, beregner poengsum, og eventuelt lagrer laginfo"
         
