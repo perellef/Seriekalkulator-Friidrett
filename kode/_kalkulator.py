@@ -393,7 +393,7 @@ class Kalkulator:
 
             if (omTek := res.er(tek)):
                 condition1 = (t<krav_obl_tek or t<krav_obl-N["lop"]["tot"]) # om tek resultatet erstatter en ellers garantert tom obl plass
-                condition2 = (N_tek>=krav_val_tek+N_ek and t+l<krav_obl) # om valgfri oppstilling ikke har mangel på tekniske øvelser, og det er plass til resultatet i obl oppstillingen
+                condition2 = (N_tek>krav_val_tek+t+N_ek and t+l<krav_obl) # om valgfri oppstilling ikke har mangel på tekniske øvelser, og det er plass til resultatet i obl oppstillingen
 
                 con1 = any((condition1,condition2))
                 con2 = (len(a_fordelt[True][ovelse])==1)
@@ -459,7 +459,7 @@ class Kalkulator:
             (N["lop"]["tot"]<=krav_obl-krav_obl_tek),       # 1. antall obl lopsresultater vil aldri overgå kvoten
             (N["tek"]["tot"]+N["lop"]["tot"]<=krav_obl),    # 2. antall totale obl resultater er mindre (<=) enn antall som skal brukes
         ))
-
+        
 
         if ingenUsikreOblRes:
             liste = [(cls.nullresultat,)]
@@ -487,7 +487,7 @@ class Kalkulator:
                 for tek_komb,lop_komb in itertools.product(tekutvalg,lopsutvalg): ## finner antall ovelsesutvalg med både løp og tek.
                     kombinert_utvalg = tek_komb + lop_komb
 
-                    obl_oppstillinger = cls.__hent_oppstillinger(kombinert_utvalg,utoverres,N_null) ## finner antall mulige (gyldige) obl kombinasjoner tilhørende øvelsesutvalget
+                    obl_oppstillinger = cls.__hent_oppstillinger(kombinert_utvalg,utoverres,N_null) ## finner mulige (gyldige) obl kombinasjoner tilhørende øvelsesutvalget
                     liste.extend(obl_oppstillinger)
 
         liste = sorted(liste, key = lambda x: -cls.__poengsum(x))

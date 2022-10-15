@@ -48,7 +48,14 @@ class Datasenter:
         Statistikkhenting.definerKlubbIDer(self)
         Filleser.fjorarstabell(self)
         Filleser.tabellhistorie(self)
-    
+
+    def settTagger(self):
+        for tag,klubbdata in self._settinger["tagger"].items():
+            for klubbnavn,kjonn in klubbdata:
+                klubb = self.hentKlubbFraNavn(kjonn,klubbnavn,lagNy=False)
+                klubb.settTag(tag)
+
+
     def hentKlubbstatistikk(self,klubb):
         Statistikkhenting.hentKlubbstatistikk(self,klubb)
 
@@ -65,7 +72,7 @@ class Datasenter:
     def hentStatistikkFraFil(self,filnavn):
         Statistikkhenting.hentStatistikkFraFil(self,filnavn)
 
-    def korrigerKlubbStatistikk(self): 
+    def korrigerKlubbStatistikk(self):
 
         for kjonn in ["menn","kvinner"]:
 
@@ -90,6 +97,7 @@ class Datasenter:
         for kjonn in ["menn","kvinner"]:
             for klubb in self._klubber[kjonn]:
                 Kalkulator.LagKalk(self,klubb)
+                print(datetime.now(),": ",klubb)
 
     def oppdaterTabellhistorie(self):
         Filskriver.tabellhistorie(self)

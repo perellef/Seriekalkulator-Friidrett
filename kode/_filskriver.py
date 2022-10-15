@@ -1,15 +1,16 @@
 import openpyxl
 from openpyxl.styles import PatternFill, Border, Side, Alignment, Font
 
-fill1 = PatternFill(fill_type='solid',start_color='8AB8EA')
-fill2 = PatternFill(fill_type='solid',start_color='DADCDC')
-fill3 = PatternFill(fill_type='solid',start_color='041465')
+fill1 = PatternFill(fill_type='solid',start_color='8AB8EA') # blaa, bakgrunn
+fill2 = PatternFill(fill_type='solid',start_color='DADCDC') # graa, tekstfelt
+fill3 = PatternFill(fill_type='solid',start_color='041465') # morkeblaa, overskrifts-tekstfelt og marg
 
-font1 = Font(name='Arial',size=10,bold=True,color='FFFFFF')
-font2 = Font(name='Arial',size=10,bold=True,color='974706')
-font3 = Font(name='Arial',size=18,bold=True,color='974706')
-font4 = Font(name='Arial',size=12,bold=True,color='000000')
-font5 = Font(name='Arial',size=14,bold=True,color='FFFFFF')
+font1 = Font(name='Arial',size=10,bold=True,color='FFFFFF') # hvitt
+font2 = Font(name='Arial',size=10,bold=True,color='974706') # brunt
+font3 = Font(name='Arial',size=18,bold=True,color='974706') # brunt
+font4 = Font(name='Arial',size=12,bold=True,color='000000') # svart
+font5 = Font(name='Arial',size=14,bold=True,color='FFFFFF') # hvitt
+font6 = Font(name='Arial',size=10,bold=True,color='FF0000') # rod
 
 thick_around = Border(left=Side(border_style='thick'),right=Side(border_style='thick'),top=Side(border_style='thick'),bottom=Side(border_style='thick'))
 thick_left_else_thin = Border(left=Side(border_style='thick'),right=Side(border_style='thin'),top=Side(border_style='thin'),bottom=Side(border_style='thin'))
@@ -286,13 +287,18 @@ class Filskriver:
                     krets = lag.hentKrets()
 
                     pos = lag.hentPosisjon()
+
+                    if lag.harTag("mangler res"):
+                        tabellfont = font6
+                    else:
+                        tabellfont = font2
                     
-                    Filskriver._formaterCelle(tabellark,pos+3,1, font=font2, fyll=fill2, verdi=pos+1)
-                    Filskriver._formaterCelle(tabellark,pos+3,2, font=font2, fyll=fill2, verdi=lag.hentLagnavn())
-                    Filskriver._formaterCelle(tabellark,pos+3,3, font=font2, fyll=fill2, verdi='('+lag.hentNotat()+')')
-                    Filskriver._formaterCelle(tabellark,pos+3,4, font=font2, fyll=fill2, verdi=lag.hentPoeng())
-                    Filskriver._formaterCelle(tabellark,pos+3,5, font=font2, fyll=fill2, verdi="("+lag.hentFjoraarsplassering()+")")
-                    Filskriver._formaterCelle(tabellark,pos+3,6, font=font2, fyll=fill2, verdi=krets)
+                    Filskriver._formaterCelle(tabellark,pos+3,1, font=tabellfont, fyll=fill2, verdi=pos+1)
+                    Filskriver._formaterCelle(tabellark,pos+3,2, font=tabellfont, fyll=fill2, verdi=lag.hentLagnavn())
+                    Filskriver._formaterCelle(tabellark,pos+3,3, font=tabellfont, fyll=fill2, verdi='('+lag.hentNotat()+')')
+                    Filskriver._formaterCelle(tabellark,pos+3,4, font=tabellfont, fyll=fill2, verdi=lag.hentPoeng())
+                    Filskriver._formaterCelle(tabellark,pos+3,5, font=tabellfont, fyll=fill2, verdi="("+lag.hentFjoraarsplassering()+")")
+                    Filskriver._formaterCelle(tabellark,pos+3,6, font=tabellfont, fyll=fill2, verdi=krets)
                     
                     tabellark.cell(row=pos+3, column=5).alignment = Alignment(horizontal='right')
 

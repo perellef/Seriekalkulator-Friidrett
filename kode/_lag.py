@@ -97,6 +97,9 @@ class Lag:
     def settPlass(self,plassering):
         self._plassering = plassering
 
+    def harTag(self,tag):
+        return self._klubb.harTag(tag)
+
     def __str__(self):
         return self.hentLagnavn() + " (" + str(self._laginfo["poeng"]) + ")"
         

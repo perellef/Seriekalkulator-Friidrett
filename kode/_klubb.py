@@ -13,6 +13,8 @@ class Klubb:
         self._klubbnavn = klubbnavn
         self._ID = None
         self._krets = None
+
+        self._tags = []
         
     def __str__(self):
         return self._klubbnavn+" ("+self._kjonn+")"
@@ -37,7 +39,13 @@ class Klubb:
         
     def fjernRes(self,res):
         self._resultater.remove(res)
-        
+
+    def settTag(self,tag):
+        self._tags.append(tag)
+
+    def harTag(self,tag):
+        return (tag in self._tags)
+    
     def hentDiv(self,lag_nr):
         if len(self._klubbdivs)>=lag_nr:
             return self._klubbdivs[lag_nr-1]
