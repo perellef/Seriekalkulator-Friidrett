@@ -9,6 +9,7 @@
         "Steinkjer Friidrettsklubb":[[false,true,false], ["Beitstad IL","Sør-Beitstad IL"]],
         "Stord IL":                 [[false,true,false], ["Bremnes IL","Fitjar IL"]],
         "Tingvoll FIK":             [[false,true,true],  ["Straumsnes IL","Tingvoll IL","Triumf"]],
+        "Tingvoll IL":              [[true,false,false], ["Tingvoll FIK"]],
         "IK Tjalve":                [[false,true,false], ["IL Koll"]],
         "IL Tyrving":               [[false,true,false], ["Nesøya IL"]],
         "Ullensaker/Kisa IL":       [[false,true,false], ["Eidsvold Turnforening Friidrett","Hurdal IL","Nordre Eidsvoll IL","Sørum IL"]]
@@ -51,13 +52,21 @@
 
         "kvinner": [
             {
-                "resultat": ["Rjukan Idrettslag","Matilde Flor Størvold","2004","524","60m","8,78","Rjukan","27.09.2022"],
-                "begrunnelse": "Prebehandling for unngaa for lang beregning"
+                "resultat": ["Rjukan Idrettslag","Matilde Flor Størvold","2004","283","Slegge","16,50","Rjukan","28.09.2022"],
+                "begrunnelse": "Resultat som fjernes for lettgjøring av beregning "
             },
             {
-                "resultat": ["Rjukan Idrettslag","Matilde Flor Størvold","2004","498","60m","8,89","Rjukan","29.07.2022"],
-                "begrunnelse": "Prebehandling for unngaa for lang beregning"
-            }
+                "resultat": ["Rjukan Idrettslag","Matilde Flor Størvold","2004","327","Kule","6,84","Rjukan","21.09.2022"],
+                "begrunnelse": "Resultat som fjernes for lettgjøring av beregning "
+            },
+            {
+                "resultat": ["Rjukan Idrettslag","Matilde Flor Størvold","2004","377","Kule","7,40","Rjukan","08.02.2022"],
+                "begrunnelse": "Resultat som fjernes for lettgjøring av beregning "
+            } ,
+            {
+                "resultat": ["Rjukan Idrettslag","Matilde Flor Størvold","2004","403","Diskos","20,69","Rjukan","28.09.2022"],
+                "begrunnelse": "Resultat som fjernes for lettgjøring av beregning "
+            }          
         ]
     },
 
