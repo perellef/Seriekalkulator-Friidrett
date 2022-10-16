@@ -14,6 +14,8 @@
 
     "aldersgrense for deltakelse": 11,
 
-    "tagger": {}
+    "tagger": {
+        "mangler res": []
+    }
 
 }

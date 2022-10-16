@@ -2,7 +2,7 @@ from _datasenter import Datasenter
 
 from datetime import datetime
 
-print("Initialiserer")
+print(datetime.now(),"Initialiserer")
 datasenter = Datasenter("2022")
 
 print(datetime.now(),"Henter seriedata")

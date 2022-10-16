@@ -1,5 +1,3 @@
 Notater:
 
 - Se på asynkrone funksjoner (særlig ved innhenting av resultater)
-- sortere obl resultater ved oppstilling generering. 2,2,1 kan gi ta færre instrukser enn 1,2,2 (?)
-- beregne seg frem til ved å se på visse oppstillinger hva N_null maks kan være

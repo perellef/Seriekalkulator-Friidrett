@@ -169,6 +169,8 @@ class Kalkulator:
             
             a = cls.__sorter(a_tek + a_lop)
 
+        a_i = a[:]
+
         "2.1.1.4. Finner resultater som (praktisk sett) ikke vil kunne befinne seg i valgfri oppstilling"
         
         tek_ikkeval = [res for res in a if res.er(tek)][:krav_obl_tek] # tekres som aldri vil kunne befinne seg i val oppstilling
@@ -229,12 +231,12 @@ class Kalkulator:
         while True: # uendelig løkke fordi erstatter resultatene kan igjen bryte "maks 5"-kravet som igjen krever at det hentes resultater. Exiter løkken ved første iterasjon der kravet ikke brytes.
             
             N_ek = 0 # antall ganger "maks 5"-kravet brytes
-            
-            utovere = [res.hentUtover() for res in d]
 
-            for utover in cls.__set_obj(utovere):
-                
-                N_res = utovere.count(utover) # N_res = antall res av utøver blant (foreløpig) gjeldende obl og val
+            utovere_d = [res.hentUtover() for res in d]
+
+            for utover in cls.__set_obj(utovere_d):
+
+                N_res = utovere_d.count(utover) # N_res = antall res av utøver blant (foreløpig) gjeldende obl og val
                 
                 condition1 = N_res>N_maks
                 condition2 = not utover.erNull()
@@ -243,7 +245,7 @@ class Kalkulator:
                 if condition1 and condition2:
                     
                     N_ek += N_res-N_maks
-                
+                    
                     if condition3:
 
                         utovere_5.append(utover)
@@ -323,7 +325,8 @@ class Kalkulator:
                     
             if cond1 and cond2:
                 break
-            
+
+
         "2.1.1.9. Legger til like gode resultater i obl listen for håndtering av 'beste neste lag'"
 
         a_ers = [res for res in a_ers if not (res in a+a_ers_ny)]
@@ -421,8 +424,6 @@ class Kalkulator:
         utoverres = {}
         for utover in utovere_5:
 
-            " Under må det ses grundig igjennom. Premisset er helt feil. Har beregnet antall maks antall val, ikke maks antall obl"
-
             N_potensiale = 0
             for omTek in [True,False]:
                 for ovelse,ovelsesres in a_fordelt[omTek].items():
@@ -462,7 +463,6 @@ class Kalkulator:
             (N["lop"]["tot"]<=krav_obl-krav_obl_tek),       # 1. antall obl lopsresultater vil aldri overgå kvoten
             (N["tek"]["tot"]+N["lop"]["tot"]<=krav_obl),    # 2. antall totale obl resultater er mindre (<=) enn antall som skal brukes
         ))
-
 
         if ingenUsikreOblRes:
             liste = [(cls.nullresultat,)]
@@ -870,20 +870,25 @@ class Kalkulator:
     @classmethod
     def __hent_oppstillinger(cls,utvalg,utoverres,N_null): # henter alle kombinasjoner av oppstillinger fra ovelsesutvalg, og diverse begrensninger
 
+        utvalg = sorted(utvalg, key=lambda x: len(x))
+
         gjeldende = [[utfall] for utfall in utvalg[0]]
 
         i = 0
         while i<len(utvalg)-1:
             temp = []
             for komb in gjeldende:
+
+                utovere = [res.hentUtover() for res in komb]
+
                 for utfall in utvalg[i+1]:
 
                     ny_komb = komb+[utfall]
 
-                    utovere = [res.hentUtover() for res in ny_komb]
+                    utovere_ny = utovere + [utfall.hentUtover()]
 
-                    omUtoveravvik = any(((utovere.count(utover)+len(utvalg)-len(ny_komb)<verdi) for utover,verdi in utoverres.items()))
-                    omNullavvik = utovere.count(cls.nullutover)>N_null
+                    omUtoveravvik = any(((utovere_ny.count(utover)+len(utvalg)-len(ny_komb)<verdi) for utover,verdi in utoverres.items()))
+                    omNullavvik = utovere_ny.count(cls.nullutover)>N_null
 
                     if any((omUtoveravvik,omNullavvik)):
                         continue
