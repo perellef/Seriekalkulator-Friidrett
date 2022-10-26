@@ -6591,3 +6591,4 @@ kvinner|3|124|5315|Søndre Land IL
 kvinner|3|125|5278|Larvik Turn & IF 2. lag
 kvinner|3|126|5253|IF Sturla 2. lag
 kvinner|3|127|5058|IL Tyrving 5. lag
+|2022-10-26 12:13:00.983289| | |
