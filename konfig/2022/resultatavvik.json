@@ -56,17 +56,37 @@
                 "begrunnelse": "Resultat som fjernes for lettgjøring av beregning "
             },
             {
+                "resultat": ["Rjukan Idrettslag","Matilde Flor Størvold","2004","325","Kule","6,82","Rjukan","20.12.2022"],
+                "begrunnelse": "Resultat som fjernes for lettgjøring av beregning "
+            } ,
+            {
                 "resultat": ["Rjukan Idrettslag","Matilde Flor Størvold","2004","327","Kule","6,84","Rjukan","21.09.2022"],
                 "begrunnelse": "Resultat som fjernes for lettgjøring av beregning "
             },
             {
                 "resultat": ["Rjukan Idrettslag","Matilde Flor Størvold","2004","377","Kule","7,40","Rjukan","08.02.2022"],
                 "begrunnelse": "Resultat som fjernes for lettgjøring av beregning "
-            } ,
+            },
             {
                 "resultat": ["Rjukan Idrettslag","Matilde Flor Størvold","2004","403","Diskos","20,69","Rjukan","28.09.2022"],
                 "begrunnelse": "Resultat som fjernes for lettgjøring av beregning "
-            }          
+            },
+            {
+                "resultat": ["Rjukan Idrettslag","Matilde Flor Størvold","2004","500","Spyd","27,10","Rjukan","04.10.2022"],
+                "begrunnelse": "Resultat som fjernes for lettgjøring av beregning "
+            },
+            {
+                "resultat": ["Rjukan Idrettslag","Matilde Flor Størvold","2004","524","60m","8,78","Rjukan","27.09.2022"],
+                "begrunnelse": "Resultat som fjernes for lettgjøring av beregning "
+            },
+            {
+                "resultat": ["Rjukan Idrettslag","Matilde Flor Størvold","2004","498","60m","8,89","Rjukan","29.07.2022"],
+                "begrunnelse": "Resultat som fjernes for lettgjøring av beregning "
+            },
+            {
+                "resultat": ["Rjukan Idrettslag","Matilde Flor Størvold","2004","386","200m","31,14","Rjukan","27.09.2022"],
+                "begrunnelse": "Resultat som fjernes for lettgjøring av beregning "
+            }     
         ]
     },
 
