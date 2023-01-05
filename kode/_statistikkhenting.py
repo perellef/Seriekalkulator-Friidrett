@@ -12,10 +12,10 @@ class Statistikkhenting:
     def definerKlubbIDer(datasenter):
                 
         try:
-            data = BeautifulSoup(requests.get(url, timeout=10).text, "lxml")
+            data = BeautifulSoup(requests.get(url, timeout=1000).text, "lxml")
         except (requests.ConnectionError, requests.Timeout):
             print(f"Mangler nett-tilgang og får ikke hentet klubbid-er.")
-            return      
+            raise LookupError
         klubber = data.find("select",{"name":"showclub"})
         
         unnga = True
@@ -54,10 +54,10 @@ class Statistikkhenting:
         while True:
 
             try:
-                data = BeautifulSoup(requests.post(url, data=inputs, timeout=10).text, "lxml")
+                data = BeautifulSoup(requests.post(url, data=inputs, timeout=1000).text, "lxml")
             except (requests.ConnectionError, requests.Timeout):
                 print(f"Mangler nett-tilgang og får ikke hentet statistikk til {klubb}.")
-                return                       
+                raise LookupError                    
             all_data = data.findAll("table",{"id":"liten"})
             
             try:
