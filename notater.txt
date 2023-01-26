@@ -1,3 +1,0 @@
-Notater:
-
-- Se på asynkrone funksjoner (særlig ved innhenting av resultater)
