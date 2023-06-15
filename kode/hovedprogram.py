@@ -2,8 +2,10 @@ from _datasenter import Datasenter
 
 from datetime import datetime
 
+aar = "2023"
+
 print(datetime.now(),"Initialiserer")
-datasenter = Datasenter("2022")
+datasenter = Datasenter(aar)
 
 print(datetime.now(),"Henter seriedata")
 datasenter.hentSeriedata()
@@ -28,6 +30,6 @@ print(datetime.now(),"Oppdaterer tabellhistorie")
 datasenter.oppdaterTabellhistorie()
 
 print(datetime.now(),"Lager serietabeller")
-datasenter.lagOffisiellSerietabell("Lagserien 2022")
+datasenter.lagOffisiellSerietabell(f"Lagserien {aar}")
 
 print(datetime.now(),"Ferdig")

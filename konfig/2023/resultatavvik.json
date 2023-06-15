@@ -1,0 +1,56 @@
+{
+               
+    "overbygningsklubber": {
+        "IL i BUL":                 [[false,true,false], ["Nesodden IF"]],
+        "Gloppen Friidrettslag":    [[false,true,true],  ["Breimsbygda IL","Brodd IL","Fjellhug/Vereide IL","Hyen IL","Sandane Turn og Idrettslag"]],
+        "IL Gular":                 [[false,true,false], ["IL Korlevoll-Odda","Strandebarm IL","Turn & IL Hovding"]],
+        "Kongsvinger IL Friidrett": [[false,true,false], ["Grue IL"]],
+        "Norna-Salhus IL":          [[false,true,false], ["Eidsvåg IL, Åsane","FIL Aks-77","Loddefjord IL"]],
+        "Steinkjer Friidrettsklubb":[[false,true,false], ["Beitstad IL","Sør-Beitstad IL"]],
+        "Stord IL":                 [[false,true,false], ["Bremnes IL","Fitjar IL"]],
+        "Tingvoll FIK":             [[false,true,true],  ["Straumsnes IL","Tingvoll IL","Triumf"]],
+        "Tingvoll IL":              [[true,false,false], ["Tingvoll FIK"]],
+        "IK Tjalve":                [[false,true,false], ["IL Koll"]],
+        "IL Tyrving":               [[false,true,false], ["Nesøya IL"]],
+        "Ullensaker/Kisa IL":       [[false,true,false], ["Eidsvold Turnforening Friidrett","Hurdal IL","Nordre Eidsvoll IL","Sørum IL"]]
+    },
+    
+    "klubber unntatt overbygning": {
+        "Ullensaker/Kisa IL":       [[false,true,false], ["Raumnes & Årnes IL"]]
+    },    
+    
+    "utøvere unntatt overbygning": {
+        "menn": {
+            "FIL Aks-77":           ["Johannes Hopland/2005", "Phillip Morken/2004"]
+        },
+
+        "kvinner": {
+
+        }
+    },
+
+    "rullestolutøvere": {
+        "menn":    [],
+        "kvinner": ["Anisa Abdihakin Abdulle/2005","Sofie Østerbø Jansen/1996","Julie Lervik Saursaunet/1983"]      
+    },
+            
+    "ugyldige resultater": {
+        "menn": [
+
+        ],
+
+        "kvinner": [
+            
+        ]
+    },
+
+    "manglende resultater": {
+        "menn":[
+
+        ],
+
+        "kvinner": [
+            
+        ]
+    }
+}

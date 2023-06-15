@@ -1,0 +1,34 @@
+{
+    "i statistikk": [["60 meter"],["100 meter"],["200 meter"],["400 meter"],["800 meter"],["1500 meter"],["3000 meter"],["5000 meter"],["10000 meter"],["3000 meter hinder (91,4cm)","3000 meter hinder (76,2cm)"],["60 meter hekk (106,7 cm)","60 meter hekk (84,0cm)"],["100 meter hekk (84,0cm)"],["110 meter hekk (106,7cm)"],["400 meter hekk (91,4cm)","400 meter hekk (76,2cm)"],["Kappgang 3000 meter"],["Kappgang 5000 meter"],["Kappgang 10000 meter","Kappgang 10 km"],["Høyde"],["Stav"],["Lengde"],["Tresteg"],["Høyde uten tilløp"],["Lengde uten tilløp"],["Kule 7,26Kg","Kule 4,0Kg"],["Diskos 2,0Kg","Diskos 1,0Kg"],["Slegge 7,26Kg","Slegge 4,0Kg"],["Spyd 800gram","Spyd 600gram"]],
+    
+    "sluttform": {
+        "60m":          {"menn": ["obl","løp"], "kvinner": ["obl","løp"], "mellomtid": ["løp",1], "manuell": false},
+        "100m":         {"menn": ["obl","løp"], "kvinner": ["obl","løp"], "mellomtid": ["løp",2]},
+        "200m":         {"menn": ["obl","løp"], "kvinner": ["obl","løp"], "mellomtid": ["løp",3]},
+        "400m":         {"menn": ["obl","løp"], "kvinner": ["obl","løp"], "mellomtid": ["løp",4]},
+        "800m":         {"menn": ["obl","løp"], "kvinner": ["obl","løp"], "mellomtid": ["løp",5]},
+        "1500m":        {"menn": ["obl","løp"], "kvinner": ["obl","løp"], "mellomtid": ["løp",6]},
+        "3000m":        {"menn": ["obl","løp"], "kvinner": ["obl","løp"], "mellomtid": ["løp",7]},
+        "5000m":        {"menn": ["obl","løp"], "kvinner": ["obl","løp"], "mellomtid": ["løp",8]},
+        "10000m":       {"menn": ["obl","løp"], "kvinner": ["obl","løp"], "mellomtid": ["løp",9]},
+        "3000m hinder": {"menn": ["obl","løp"], "kvinner": ["obl","løp"]},
+        "60m hekk":     {"menn": ["obl","løp"], "kvinner": ["obl","løp"]},
+        "100m hekk":    {"menn": [           ], "kvinner": ["obl","løp"]},
+        "110m hekk":    {"menn": ["obl","løp"], "kvinner": [           ]},
+        "400m hekk":    {"menn": ["obl","løp"], "kvinner": ["obl","løp"]},
+        "3000m kapp.":  {"menn": [           ], "kvinner": ["obl","løp"], "mellomtid": ["kappgang",1]},
+        "5000m kapp.":  {"menn": ["obl","løp"], "kvinner": ["obl","løp"], "mellomtid": ["kappgang",2]},
+        "10000m kapp.": {"menn": ["obl","løp"], "kvinner": [           ], "mellomtid": ["kappgang",3]},
+    
+        "Høyde":        {"menn": ["obl","tek"], "kvinner": ["obl","tek"]},
+        "Stav":         {"menn": ["obl","tek"], "kvinner": ["obl","tek"]},
+        "Lengde":       {"menn": ["obl","tek"], "kvinner": ["obl","tek"]},
+        "Tresteg":      {"menn": ["obl","tek"], "kvinner": ["obl","tek"]},
+        "Høyde u.t":    {"menn": ["obl","tek"], "kvinner": ["obl","tek"]},
+        "Lengde u.t":   {"menn": ["obl","tek"], "kvinner": ["obl","tek"]},        
+        "Kule":         {"menn": ["obl","tek"], "kvinner": ["obl","tek"]},
+        "Diskos":       {"menn": ["obl","tek"], "kvinner": ["obl","tek"]},
+        "Slegge":       {"menn": ["obl","tek"], "kvinner": ["obl","tek"]},
+        "Spyd":         {"menn": ["obl","tek"], "kvinner": ["obl","tek"]}
+    }
+}
