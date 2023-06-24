@@ -57,7 +57,7 @@ kvinner|2|9|15031|Bergens Turnforening
 kvinner|2|10|14896|Laksevåg TIL
 kvinner|2|11|14511|Asker Sk. Friidrett
 kvinner|2|12|13973|Larvik Turn & IF
-kvinner|2|13|12895|IL Runar IF
+kvinner|2|13|12895|IL Runar
 kvinner|3|0|14374|Steinkjer Friidrettsklubb
 kvinner|3|1|13452|IK Tjalve 2. lag
 kvinner|3|2|13156|Ask Friidrett
