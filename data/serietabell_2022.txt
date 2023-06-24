@@ -1,0 +1,64 @@
+menn|1|0|27694|IK Tjalve
+menn|1|1|25860|Sandnes IL
+menn|1|2|24694|Norna-Salhus IL
+menn|1|3|24512|IL Gneist
+menn|1|4|23812|Ullensaker/Kisa IL
+menn|1|5|23387|IL Tyrving
+menn|1|6|23343|IL i BUL
+menn|1|7|22975|Idrettslaget Skjalg
+menn|1|8|22696|Tønsberg Friidrettsklubb
+menn|1|9|22061|Steinkjer Friidrettsklubb
+menn|1|10|20360|Ask Friidrett
+menn|1|11|19903|Stord IL
+menn|1|12|19115|IL Gular
+menn|1|13|15255|Nittedal IL
+menn|2|0|20224|Fana IL
+menn|2|1|18373|Sportsklubben Vidar
+menn|2|2|18056|Ranheim IL
+menn|2|3|17002|Osterøy IL
+menn|2|4|16720|IK Tjalve 2. lag
+menn|2|5|16408|Haugesund IL
+menn|2|6|16217|Moss IL
+menn|2|7|16179|IL Sandvin
+menn|2|8|16160|IF Sturla
+menn|2|9|15493|IK Hind
+menn|2|10|14309|Dimna IL
+menn|2|11|14254|Lillehammer IF
+menn|2|12|13824|IL Fri
+menn|2|13|12933|Bækkelagets SK
+menn|3|0|15280|Kristiansands IF Friidrett
+menn|3|1|14780|Moelven IL
+menn|3|2|13864|Sørild FIK
+menn|3|3|13858|Fyllingen IL
+kvinner|1|0|26293|IK Tjalve
+kvinner|1|1|24089|Sandnes IL
+kvinner|1|2|23756|IL Tyrving
+kvinner|1|3|23591|Norna-Salhus IL
+kvinner|1|4|22109|IL i BUL
+kvinner|1|5|22063|Idrettslaget Skjalg
+kvinner|1|6|21990|Ranheim IL
+kvinner|1|7|21939|Fredrikstad IF
+kvinner|1|8|21220|Haugesund IL
+kvinner|1|9|20228|Dimna IL
+kvinner|1|10|19376|Stjørdal Friidrettsklubb
+kvinner|1|11|18569|Tønsberg Friidrettsklubb
+kvinner|1|12|17494|Nittedal IL
+kvinner|1|13|15211|Fana IL
+kvinner|2|0|19096|Sportsklubben Vidar
+kvinner|2|1|18201|Ullensaker/Kisa IL
+kvinner|2|2|16911|Sørild FIK
+kvinner|2|3|16895|IL Gneist
+kvinner|2|4|16508|Kristiansands IF Friidrett
+kvinner|2|5|16081|IL Tyrving 2. lag
+kvinner|2|6|15531|Moss IL
+kvinner|2|7|15242|BUL-Tromsø Friidrett
+kvinner|2|8|15157|IF Sturla
+kvinner|2|9|15031|Bergens Turnforening
+kvinner|2|10|14896|Laksevåg TIL
+kvinner|2|11|14511|Asker Sk. Friidrett
+kvinner|2|12|13973|Larvik Turn & IF
+kvinner|2|13|12895|IL Runar IF
+kvinner|3|0|14374|Steinkjer Friidrettsklubb
+kvinner|3|1|13452|IK Tjalve 2. lag
+kvinner|3|2|13156|Ask Friidrett
+kvinner|3|3|13076|Sarpsborg IL
