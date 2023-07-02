@@ -11,6 +11,7 @@ from _kalkulator import Kalkulator
 
 import asyncio
 from datetime import datetime
+import time
 
 
 class Datasenter:
@@ -91,13 +92,24 @@ class Datasenter:
             Resultatbehandling.handterKlubberUnntattOverbygning(self,kjonn)
 
     def beregnKlubb(self,klubb):
-        Kalkulator.LagKalk(self,klubb)
+        start = time.time()
+        try:
+            Kalkulator.LagKalk(self,klubb)
+        except Exception:
+            print(f"Feil ved beregning av poeng til '{klubb}'.")
+            raise ValueError
+        
+        end = time.time()
+        
+        minutter_brukt = (end - start)//60
+        if minutter_brukt > 3:
+            print(f"Beregning av '{klubb}' krevde {minutter_brukt} minutter.")
+
 
     def beregnAlleKlubber(self):
         for kjonn in ["menn","kvinner"]:
             for klubb in self._klubber[kjonn]:
-                Kalkulator.LagKalk(self,klubb)
-                print(datetime.now(),": ",klubb)
+                self.beregnKlubb(klubb)
 
     def oppdaterTabellhistorie(self):
         Filskriver.tabellhistorie(self)

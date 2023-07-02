@@ -169,8 +169,6 @@ class Kalkulator:
             
             a = cls.__sorter(a_tek + a_lop)
 
-        a_i = a[:]
-
         "2.1.1.4. Finner resultater som (praktisk sett) ikke vil kunne befinne seg i valgfri oppstilling"
         
         tek_ikkeval = [res for res in a if res.er(tek)][:krav_obl_tek] # tekres som aldri vil kunne befinne seg i val oppstilling
@@ -211,7 +209,7 @@ class Kalkulator:
                         
         b_c = cls.__sorter(b + c)
 
-        "2.1.1.8. Henter inn nye obligatoriske resultater for hver gang 'maks 5'-kravet 'brytes'."
+        "2.1.1.8. Henter inn nye obligatoriske resultater for hver gang 'maks 5'-kravet brytes."
             
         N_tek = cls.__tell_tek(b_c[:krav_val],lop) # antall tek. øvelser  
                 
@@ -438,9 +436,9 @@ class Kalkulator:
             N_utover_iv = utovere_iv.count(utover) # antall ovelser til utover som ikke kan vaere val
             N_utover_d = utovere_d.count(utover)   # antall ovelser totalt til utover
 
-            N_null += max(min((N_utover_d-N_maks, N_potensiale)),0)
+            N_null += min(max(N_utover_d-N_maks,0), N_potensiale)
 
-            N_res_min = min((N_maks+N_utover_iv-N_utover_d,N_utover_iv))
+            N_res_min = min(N_maks+N_utover_iv-N_utover_d,N_utover_iv)
 
             if N_res_min<=0:
                 continue
@@ -473,9 +471,10 @@ class Kalkulator:
             liste = cls.__hent_oppstillinger(utvalg,utoverres,N_null)
 
         else:
-            N_tek_start = max((krav_obl_tek - N["tek"]["sikker"],0))
-            N_tek_slutt = min((N["tek"]["usikker"],krav_obl-N["tek"]["sikker"]-N["lop"]["sikker"]))
-           
+
+            N_tek_start = min(N["tek"]["usikker"],max(krav_obl_tek - N["tek"]["sikker"],0))
+            N_tek_slutt = min(N["tek"]["usikker"],krav_obl-N["tek"]["sikker"]-N["lop"]["sikker"])
+
             liste = []
             for N_tek in range(N_tek_start,N_tek_slutt+1):
 
@@ -503,7 +502,7 @@ class Kalkulator:
         b_c = cls.__sorter(b_val+c_val)
         
         N_tek = cls.__tell_tek(b_c[:krav_val],lop)
-        maks_val = cls.__poengsum(b_val[:max((N_tek,krav_val_tek))]+c_val[:(krav_val - max((N_tek,krav_val_tek)))]) # høyeste mulig poengsum til en valgfri oppstilling 
+        maks_val = cls.__poengsum(b_val[:max(N_tek,krav_val_tek)]+c_val[:(krav_val - max(N_tek,krav_val_tek))]) # høyeste mulig poengsum til en valgfri oppstilling 
 
         "2.1.1.15. Til hver lagkombinasjon, beregner poengsum, og eventuelt lagrer laginfo"
         
@@ -632,7 +631,7 @@ class Kalkulator:
             
             "2.1.1.15.6. Finner start- og sluttverdi til antall tekniske øvelser blant de valgfrie"    
             
-            N_maks_tek = min((krav_val,len(b))) # finner start- og sluttverdi for antall tekniske valgfri øvelser som det skal sjekkes for
+            N_maks_tek = min(krav_val,len(b)) # finner start- og sluttverdi for antall tekniske valgfri øvelser som det skal sjekkes for
                 
 
             "2.1.1.15.7. Henter eventuelle resultater like gode som den svakeste blant valgfri tekniske"    
@@ -864,6 +863,7 @@ class Kalkulator:
                 
                                 utovere_brukt.append(set_utovere)
                                 lag.append([obl_komb,tek_komb])
+
         return n,lag,utovere_brukt
         
 
