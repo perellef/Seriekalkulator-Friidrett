@@ -36,7 +36,14 @@
             
     "ugyldige resultater": {
         "menn": [
-
+            {
+                "resultat": ["IL Fri","Nicholas Coghill","1997","889","Kule","16,59","Knarvik","13.06.2023"],
+                "begrunnelse": "Utenlandsk utøver"
+            },
+            {
+                "resultat": ["IL Fri","Nicholas Coghill","1997","855","Diskos","49,82","Knarvik","20.06.2023"],
+                "begrunnelse": "Utenlandsk utøver"
+            }
         ],
 
         "kvinner": [
