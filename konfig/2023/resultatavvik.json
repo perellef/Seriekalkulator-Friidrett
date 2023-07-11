@@ -12,7 +12,7 @@
         "Tingvoll IL":              [[true,false,false], ["Tingvoll FIK"]],
         "IK Tjalve":                [[false,true,false], ["IL Koll"]],
         "IL Tyrving":               [[false,true,false], ["Nesøya IL"]],
-        "Ullensaker/Kisa IL":       [[false,true,false], ["Eidsvold Turnforening Friidrett","Hurdal IL","Nordre Eidsvoll IL","Sørum IL"]]
+        "Ullensaker/Kisa IL":       [[false,true,false], ["Eidsvold Turnforening Friidrett","Hurdal IL","Hvam IL","Nordre Eidsvoll IL","Sørum IL"]]
     },
     
     "klubber unntatt overbygning": {

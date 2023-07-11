@@ -537,7 +537,7 @@ class Kalkulator:
 
     
             # Utnytter nedenfor at det er noen premisser for at et resultat skal kunne være valgfritt:
-            # 1. Resultatet kan ikke være i obl komb (untatt nullresultater)
+            # 1. Resultatet kan ikke være i obl komb (unntatt nullresultater)
             # 2. Resultatet kan ikke være bedre enn et resultat i obl komb (i samme øvelse)
             # 3. Resultatet kan ikke samtidig være av en obl øvelse som ikke er brukt, og være bedre enn svakeste res i obl komb
 
