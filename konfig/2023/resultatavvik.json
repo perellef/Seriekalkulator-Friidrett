@@ -43,6 +43,10 @@
             {
                 "resultat": ["IL Fri","Nicholas Coghill","1997","855","Diskos","49,82","Knarvik","20.06.2023"],
                 "begrunnelse": "Utenlandsk utøver"
+            },
+            {
+                "resultat": ["Ullensaker/Kisa IL","Sondre Søgård Lehmann","2007","800","800m","1,54,67","Jessheim","06.07.2023"],
+                "begrunnelse": "Flyttes til Lørenskog Friidrettslag"
             }
         ],
 
@@ -53,7 +57,10 @@
 
     "manglende resultater": {
         "menn":[
-
+            {
+                "resultat": ["Lørenskog Friidrettslag","Sondre Søgård Lehmann","2007","800","800m","1,54,67","Jessheim","06.07.2023"],
+                "begrunnelse": "Flyttet fra Ullensaker/Kisa IL"
+            }
         ],
 
         "kvinner": [
