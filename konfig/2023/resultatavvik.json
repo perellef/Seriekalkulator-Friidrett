@@ -61,7 +61,7 @@
                 "begrunnelse": "Forenkle beregning"
             },
             {
-                "resultat": ["Moelven IL","Simen Nystuen","0000","25","Stav","1,60","Moelv","23.09.2023"],
+                "resultat": ["Moelven IL","Simen Nystuen","2002","25","Stav","1,60","Moelv","23.09.2023"],
                 "begrunnelse": "Forenkle beregning"
             },
             {
@@ -69,35 +69,15 @@
                 "begrunnelse": "Forenkle beregning"
             },
             {
-                "resultat": ["Moelven IL","Simen Nystuen","0000","96","Høyde","1,30","Moelv","22.09.2023"],
+                "resultat": ["Moelven IL","Alexander Løvik Nyheim","1996","295","Høyde","1,45","Moelv","22.09.2023"],
                 "begrunnelse": "Forenkle beregning"
             },
             {
-                "resultat": ["Moelven IL","Simen Nystuen","0000","160","Spyd","20,91","Moelv","23.09.2023"],
+                "resultat": ["Moelven IL","Simen Nystuen","2002","96","Høyde","1,30","Moelv","22.09.2023"],
                 "begrunnelse": "Forenkle beregning"
             },
             {
-                "resultat": ["Moelven IL","Simen Nystuen","0000","179","Lengde","4,23","Moelv","22.09.2023"],
-                "begrunnelse": "Forenkle beregning"
-            },
-            {
-                "resultat": ["Moelven IL","Fredrik Sveen Schonhowd","2003","84","Spyd","17,59","Moelv","23.09.2023"],
-                "begrunnelse": "Forenkle beregning"
-            },
-            {
-                "resultat": ["Moelven IL","Anders Kvesetberget","2002","214","Spyd","23,56","Moelv","23.09.2023"],
-                "begrunnelse": "Forenkle beregning"
-            },
-            {
-                "resultat": ["Moelven IL","Tesfay Brhane","1995","226","Spyd","24,20","Moelv","23.09.2023"],
-                "begrunnelse": "Forenkle beregning"
-            },
-            {
-                "resultat": ["Moelven IL","Alexander Løvik Nyheim","1996","273","Spyd","26,70","Moelv","23.09.2023"],
-                "begrunnelse": "Forenkle beregning"
-            },
-            {
-                "resultat": ["Moelven IL","Tesfay Brhane","1995","243","Lengde","4,48","Moelv","22.09.2023"],
+                "resultat": ["Moelven IL","Simen Nystuen","2002","179","Lengde","4,23","Moelv","22.09.2023"],
                 "begrunnelse": "Forenkle beregning"
             },
             {
@@ -105,7 +85,59 @@
                 "begrunnelse": "Forenkle beregning"
             },
             {
-                "resultat": ["Moelven IL","Alexander Løvik Nyheim","1996","295","Høyde","1,45","Moelv","22.09.2023"],
+                "resultat": ["Moelven IL","Tesfay Brhane","1995","243","Lengde","4,48","Moelv","22.09.2023"],
+                "begrunnelse": "Forenkle beregning"
+            },
+            {
+                "resultat": ["Moelven IL","Alexander Løvik Nyheim","1996","273","Spyd","26,70","Moelv","23.09.2023"],
+                "begrunnelse": "Forenkle beregning"
+            },
+            {
+                "resultat": ["Moelven IL","Tesfay Brhane","1995","226","Spyd","24,20","Moelv","23.09.2023"],
+                "begrunnelse": "Forenkle beregning"
+            },
+            {
+                "resultat": ["Moelven IL","Anders Kvesetberget","2002","214","Spyd","23,56","Moelv","23.09.2023"],
+                "begrunnelse": "Forenkle beregning"
+            },
+            {
+                "resultat": ["Moelven IL","Simen Nystuen","2002","160","Spyd","20,91","Moelv","23.09.2023"],
+                "begrunnelse": "Forenkle beregning"
+            },
+            {
+                "resultat": ["Moelven IL","Fredrik Sveen Schonhowd","2003","84","Spyd","17,59","Moelv","23.09.2023"],
+                "begrunnelse": "Forenkle beregning"
+            },
+            {
+                "resultat": ["Moelven IL","Torstein Ingvaldsen","1968","196","Diskos","19,37","Moelv","23.09.2023"],
+                "begrunnelse": "Forenkle beregning"
+            },
+            {
+                "resultat": ["Moelven IL","Morten Grimerud","1971","149","Diskos","17,78","Moelv","23.09.2023"],
+                "begrunnelse": "Forenkle beregning"
+            },
+            {
+                "resultat": ["Moelven IL","Anders Kvesetberget","2002","140","Diskos","17,49","Moelv","23.09.2023"],
+                "begrunnelse": "Forenkle beregning"
+            },
+            {
+                "resultat": ["Moelven IL","Alexander Løvik Nyheim","1996","139","Diskos","17,46","Moelv","23.09.2023"],
+                "begrunnelse": "Forenkle beregning"
+            },
+            {
+                "resultat": ["Moelven IL","Dag Eivind Kåshagen","1960","138","Diskos","17,42","Moelv","23.09.2023"],
+                "begrunnelse": "Forenkle beregning"
+            },
+            {
+                "resultat": ["Moelven IL","Simen Nystuen","2002","126","Diskos","17,00","Moelv","23.09.2023"],
+                "begrunnelse": "Forenkle beregning"
+            },
+            {
+                "resultat": ["Moelven IL","Tesfay Brhane","1995","108","Diskos","16,41","Moelv","23.09.2023"],
+                "begrunnelse": "Forenkle beregning"
+            },
+            {
+                "resultat": ["Moelven IL","Fredrik Sveen Schonhowd","2003","55","Diskos","14,65","Moelv","23.09.2023"],
                 "begrunnelse": "Forenkle beregning"
             }
         ],
