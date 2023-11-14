@@ -584,7 +584,7 @@ class Kalkulator:
             for utover in cls.__set_obj(utovere):
                 if (utovere+utovere_obl).count(utover) > N_maks and not utover.erNull(): # hvis utøveren har flere totalt har flere enn 5 resultater
                     N_obl_ut = utovere_obl.count(utover)
-                    begrensing[utover] = [N_maks-N_obl_ut,N_maks-N_obl_ut,N_maks-N_obl_ut] # gj. øvelser til utøveren
+                    begrensing[utover] = [N_maks-N_obl_ut,N_maks-N_obl_ut] # gj. øvelser til utøveren
                     
                 
             "2.1.1.15.4. Finner en valgfri oppstilling like god eller bedre enn beste gyldig oppstilling"
@@ -605,13 +605,13 @@ class Kalkulator:
                     begr = begrensing[res.hentUtover()]
 
                     if res.er(lop):                    
-                        if begr[1]<=0: ### hvis utøveren har brukt opp sin kvote på løpsresultater
+                        if begr[0]<=0: ### hvis utøveren har brukt opp sin kvote på løpsresultater
                             continue
-                        begr[1] -= 1
+                        begr[0] -= 1
                     else:
-                        if begr[2]<=0: ### hvis utøveren har brukt opp sin kvote på løpsresultater
+                        if begr[1]<=0: ### hvis utøveren har brukt opp sin kvote på tekresultater
                             continue
-                        begr[2] -= 1         
+                        begr[1] -= 1         
                 b_c.append(res)
                            
             if cls.__poengsum(b_c[:krav_val]+obl_komb)<n: # går videre til neste obligatorisk oppstilling dersom teoretisk val oppstilling (mhp. obl oppstilling) er for svak
@@ -654,9 +654,9 @@ class Kalkulator:
                 try:
                     begr = begrensing[res.hentUtover()]
 
-                    if not (begr[0]>0):
+                    if begr[1]<=0:
                         continue
-                    begr[0] -= 1
+                    begr[1] -= 1
 
                 except KeyError:
                     pass
