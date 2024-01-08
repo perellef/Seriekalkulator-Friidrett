@@ -15,7 +15,7 @@
     "aldersgrense for deltakelse": 11,
 
     "tagger": {
-        "mangler res": [["Moelven IL","menn"]]
+        "mangler res": [["Moelven IL","menn"],["IL Norodd","kvinner"]]
     }
 
 }
