@@ -60,5 +60,5 @@ kvinner|2|12|14068|Bækkelagets SK
 kvinner|2|13|4377|Selsbakk IF
 kvinner|3|0|11426|Kristiansands IF Friidrett
 kvinner|3|1|12988|IF Sturla
-kvinner|3|2|11666|BUL-Tromsø Friidrett
+kvinner|3|2|11666|IL i BUL Tromsø
 kvinner|3|3|9640|Asker Sk. Friidrett

@@ -1,0 +1,43 @@
+menn|1|0|0|Norna-Salhus IL
+menn|1|1|0|IL Gneist
+menn|1|2|0|Ask Friidrett
+menn|1|3|0|Stord IL
+menn|1|4|0|IL Gular
+menn|1|5|0|Fana IL
+menn|1|6|0|Osterøy IL
+menn|1|7|0|IL Fri
+menn|2|0|0|Fyllingen IL
+menn|2|1|0|IL Gneist 2. lag
+menn|2|2|0|Fana IL 2. lag
+menn|2|3|0|IL Gular 2. lag
+menn|2|4|0|Laksevåg TIL
+menn|2|5|0|Mjøsdalen IL
+menn|2|6|0|IL Gneist 3. lag
+menn|2|7|0|IL Gular 3. lag
+menn|2|8|0|Varegg IL
+menn|2|9|0|FIL Aks-77
+menn|2|10|0|IL Gular 4. lag
+menn|2|11|0|T&IF Viking
+menn|3|0|0|Norna-Salhus IL 2. lag
+menn|3|1|0|Norna-Salhus IL 3. lag
+menn|3|2|0|Ask Friidrett 2. lag
+kvinner|1|0|0|Norna-Salhus IL
+kvinner|1|1|0|IL Gneist
+kvinner|1|2|0|Bergens Turnforening
+kvinner|1|3|0|Fana IL
+kvinner|1|4|0|Laksevåg TIL
+kvinner|2|0|0|Ask Friidrett
+kvinner|2|1|0|Norna-Salhus IL 2. lag
+kvinner|2|2|0|Fyllingen IL
+kvinner|2|3|0|Varegg IL
+kvinner|2|4|0|IL Gular
+kvinner|2|5|0|Stord IL
+kvinner|2|6|0|Os Turnforening
+kvinner|2|7|0|Ask Friidrett 2. lag
+kvinner|2|8|0|IL Fri
+kvinner|2|9|0|IL Gular 2. lag
+kvinner|2|10|0|Osterøy IL
+kvinner|2|11|0|Fana IL 2. lag
+kvinner|3|0|0|Norna-Salhus IL 3. lag
+kvinner|3|1|0|Varegg IL 2. lag
+kvinner|3|2|0|T&IF Viking

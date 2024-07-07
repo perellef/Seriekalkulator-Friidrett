@@ -51,7 +51,7 @@ kvinner|2|3|16895|IL Gneist
 kvinner|2|4|16508|Kristiansands IF Friidrett
 kvinner|2|5|16081|IL Tyrving 2. lag
 kvinner|2|6|15531|Moss IL
-kvinner|2|7|15242|BUL-Tromsø Friidrett
+kvinner|2|7|15242|IL i BUL Tromsø
 kvinner|2|8|15157|IF Sturla
 kvinner|2|9|15031|Bergens Turnforening
 kvinner|2|10|14896|Laksevåg TIL

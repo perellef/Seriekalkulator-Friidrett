@@ -9,7 +9,6 @@ from _statistikkhenting import Statistikkhenting
 from _resultatbehandling import Resultatbehandling
 from _kalkulator import Kalkulator
 
-import asyncio
 from datetime import datetime
 import time
 
@@ -17,11 +16,15 @@ import time
 class Datasenter:
 
     def __init__(self,aar):
+        self._kretsserien = False
 
         self._aar = aar
         self._initieringTid = datetime.now()
 
-        self._settinger = Filleser.json(f"./konfig/{aar}/settinger")
+        settingfil = "settinger"
+        if self._kretsserien:
+            settingfil = "settinger_kretsserie"
+        self._settinger = Filleser.json(f"./konfig/{aar}/{settingfil}")
         self._ovelsesinfo = Filleser.json(f"./konfig/{aar}/ovelsesinfo")
         self._resultatavvik = Filleser.json(f"./konfig/{aar}/resultatavvik")
         self._innstillinger = Filleser.json(f"./konfig/innstillinger")
@@ -35,6 +38,29 @@ class Datasenter:
         self._klubber = {"menn": klubberMenn, "kvinner": klubberKvinner}
         self._tabell = {"menn": Tabell(self), "kvinner": Tabell(self)}
 
+    def kjor_og_last(self, kjonn=["menn","kvinner"], klubber=[]):
+
+        self.hentSeriedata()
+        self.settTagger()
+
+        for kj in kjonn:
+            if not klubber:
+                self.hentKlubbstatistikkTilAlle(kj)
+            else:
+                for klubbid in klubber:
+                    klubb = self.hentKlubbFraID(kj, klubbid)
+                    self.hentKlubbstatistikk(klubb)
+                    for overb_klubb in self.hentOverbygningsklubberTilKlubb(klubb):
+                        self.hentKlubbstatistikk(overb_klubb)
+
+        self.korrigerKlubbStatistikk()
+        self.lagResultatFil()
+        self.beregnAlleKlubber()
+        self.oppdaterTabellhistorie()
+        self.lagOffisiellSerietabell()
+
+        print(datetime.now(),"Ferdig")
+
     def __str__(self):
 
         antallLagMenn = sum(len(klubb.hentAlleLag()) for klubb in self._klubber["menn"])
@@ -46,11 +72,13 @@ class Datasenter:
               + f"{len(self._utovere['kvinner'])} utovere, {len(self._resultater['kvinner'])} resultater |")
 
     def hentSeriedata(self):
+        print(datetime.now(),"Henter seriedata")
         Statistikkhenting.definerKlubbIDer(self)
         Filleser.fjorarstabell(self)
         Filleser.tabellhistorie(self)
 
     def settTagger(self):
+        print(datetime.now(),"Sett tagger")
         for tag,klubbdata in self._settinger["tagger"].items():
             for klubbnavn,kjonn in klubbdata:
                 klubb = self.hentKlubbFraNavn(kjonn,klubbnavn,lagNy=False)
@@ -58,15 +86,16 @@ class Datasenter:
 
 
     def hentKlubbstatistikk(self,klubb):
+        print(datetime.now(),f"Henter klubbstatistikk til {klubb}")
         Statistikkhenting.hentKlubbstatistikk(self,klubb)
 
     def hentKlubbstatistikkTilAlle(self,kjonn):
-
+        print(datetime.now(),f"Henter all klubbstatistikk til {kjonn}")
         i = 0
         for klubb in self._klubber[kjonn]:
             if i%250==0:
                 print(f"{i}/{len(self._klubber[kjonn])} ({kjonn})",datetime.now())
-            self.hentKlubbstatistikk(klubb)
+            Statistikkhenting.hentKlubbstatistikk(self,klubb)
 
             i+= 1
 
@@ -74,6 +103,7 @@ class Datasenter:
         Statistikkhenting.hentStatistikkFraFil(self,filnavn)
 
     def korrigerKlubbStatistikk(self):
+        print(datetime.now(),"Korrigerer statistikk")
 
         for kjonn in ["menn","kvinner"]:
 
@@ -92,36 +122,59 @@ class Datasenter:
             Resultatbehandling.handterKlubberUnntattOverbygning(self,kjonn)
 
     def beregnKlubb(self,klubb):
+        if self._kretsserien and klubb._krets != "Hordaland":
+            return
+
         start = time.time()
         try:
             Kalkulator.LagKalk(self,klubb)
         except Exception:
-            print(f"Feil ved beregning av poeng til '{klubb}'.")
+            print(datetime.now(), f"Feil ved beregning av poeng til '{klubb}'.")
             raise ValueError
         
         end = time.time()
+
+        if klubb.hentLag(1)._laginfo["poeng"]>0:
+            print(datetime.now(), klubb,klubb.hentLag(1)._laginfo["poeng"])
         
         minutter_brukt = (end - start)//60
         if minutter_brukt > 3:
-            print(f"Beregning av '{klubb}' krevde {minutter_brukt} minutter.")
+            print(datetime.now(), f"Beregning av '{klubb}' krevde {minutter_brukt} minutter.")
 
 
     def beregnAlleKlubber(self):
+        print("Beregner seriepoeng")
         for kjonn in ["menn","kvinner"]:
             for klubb in self._klubber[kjonn]:
                 self.beregnKlubb(klubb)
 
     def oppdaterTabellhistorie(self):
+        print(datetime.now(),"Oppdaterer tabellhistorie")
         Filskriver.tabellhistorie(self)
 
-    def lagOffisiellSerietabell(self,filnavn):
-        Filskriver.offisieltSerieark(self,filnavn)
+    def lagOffisiellSerietabell(self):
+        print(datetime.now(),"Lager serietabeller")
+        Filskriver.offisieltSerieark(self,f"Lagserien {self._aar}")
 
     def lagUtviklingsSerietabell(self,filnavn):
-        print("utviklingsserietabell (print)")
+        print(datetime.now(),"Lager utviklingsserietabell")
 
-    def lagResultatFil(self,filnavn):
-        Filskriver.resultatark(self,filnavn)
+    def lagResultatFil(self):
+        print(datetime.now(),"Lager resultatark")
+        Filskriver.resultatark(self,"Resultater")
+
+    def hentOverbygningsklubberTilKlubb(self, klubb):
+        kjonn = klubb.hentKjonn()
+        overb_klubber = []
+        
+        klubber = self._resultatavvik["overbygningsklubber"]
+        try:
+            for klubbnavn in klubber[klubb.hentKlubbnavn()][1]:
+                klubb = self.hentKlubbFraNavn(kjonn, klubbnavn, lagNy=False)
+                overb_klubber.append(klubb)
+        except KeyError:
+            pass
+        return overb_klubber
 
     def hentAlleKretser(self):
 

@@ -1,0 +1,26 @@
+{
+    "divisjonsgrenser": {
+        "1. div": {"nedrykk": 4, "opprykk": 0},
+        "2. div": {"nedrykk": 4, "opprykk": 4},
+        "3. div": {"nedrykk": 0, "opprykk": 4}
+    },
+
+    "antall øvelser": {
+        "1. div": {"obl": 15, "obl-tek": 5, "val": 15, "val-tek": 5},
+        "2. div": {"obl": 13, "obl-tek": 4, "val": 12, "val-tek": 4},
+        "3. div": {"obl": 12, "obl-tek": 3, "val": 8,  "val-tek": 3}
+    },
+
+    "poenggrenser 3. div": [5000,2000],
+
+    "tillat mellomtider": true,
+
+    "maks resultater per person": 5,
+
+    "aldersgrense for deltakelse": 11,
+
+    "tagger": {
+        "mangler res": [["Moelven IL","menn"],["IL Norodd","kvinner"]]
+    }
+
+}

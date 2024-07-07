@@ -1,0 +1,64 @@
+menn|1|0|0|IK Tjalve
+menn|1|1|0|Sandnes IL
+menn|1|2|0|Norna-Salhus IL
+menn|1|3|0|IL i BUL
+menn|1|4|0|IL Gneist
+menn|1|5|0|Fana IL
+menn|1|6|0|Ullensaker/Kisa IL
+menn|1|7|0|Sportsklubben Vidar
+menn|1|8|0|IL Tyrving
+menn|1|9|0|Idrettslaget Skjalg
+menn|1|10|0|Ranheim IL
+menn|1|11|0|Osterøy IL
+menn|1|12|0|Tønsberg Friidrettsklubb
+menn|1|13|0|Steinkjer Friidrettsklubb
+menn|2|0|0|Sørild FIK
+menn|2|1|0|IK Tjalve 2. lag
+menn|2|2|0|Moelven IL
+menn|2|3|0|IL Sandvin
+menn|2|4|0|Kristiansands IF Friidrett
+menn|2|5|0|Haugesund IL
+menn|2|6|0|Stord IL
+menn|2|7|0|Ask Friidrett
+menn|2|8|0|Fyllingen IL
+menn|2|9|0|IK Hind
+menn|2|10|0|IF Sturla
+menn|2|11|0|Moss IL
+menn|2|12|0|IL Gular
+menn|2|13|0|Nittedal IL
+menn|3|0|0|IL i BUL 2. lag
+menn|3|1|0|Dimna IL
+menn|3|2|0|Asker Sk. Friidrett
+menn|3|3|0|IL i BUL 3. lag
+kvinner|1|0|0|IK Tjalve
+kvinner|1|1|0|Norna-Salhus IL
+kvinner|1|2|0|IL Tyrving
+kvinner|1|3|0|Sandnes IL
+kvinner|1|4|0|Fredrikstad IF
+kvinner|1|5|0|IL i BUL
+kvinner|1|6|0|Ullensaker/Kisa IL
+kvinner|1|7|0|Ranheim IL
+kvinner|1|8|0|Dimna IL
+kvinner|1|9|0|Idrettslaget Skjalg
+kvinner|1|10|0|Haugesund IL
+kvinner|1|11|0|Sportsklubben Vidar
+kvinner|1|12|0|Sørild FIK
+kvinner|1|13|0|IL Gneist
+kvinner|2|0|0|IK Tjalve 2. lag
+kvinner|2|1|0|Fana IL
+kvinner|2|2|0|IL Tyrving 2. lag
+kvinner|2|3|0|Kristiansands IF Friidrett
+kvinner|2|4|0|Tønsberg Friidrettsklubb
+kvinner|2|5|0|Sarpsborg IL
+kvinner|2|6|0|IF Sturla
+kvinner|2|7|0|IL i BUL Tromsø
+kvinner|2|8|0|Bergens Turnforening
+kvinner|2|9|0|Nittedal IL
+kvinner|2|10|0|Ask Friidrett
+kvinner|2|11|0|Steinkjer Friidrettsklubb
+kvinner|2|12|0|Stjørdal Friidrettsklubb
+kvinner|2|13|0|Moss IL
+kvinner|3|0|0|Fyllingen IL
+kvinner|3|1|0|Bækkelagets SK
+kvinner|3|2|0|Norna-Salhus IL 2. lag
+kvinner|3|3|0|Urædd Friidrett
