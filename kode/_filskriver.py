@@ -248,7 +248,7 @@ class Filskriver:
                 
                 tabellark.merge_cells(start_row=1, start_column=1, end_row=1, end_column=6)
                 tabellark.cell(row=1, column=1).fill = fill3
-                tabellark.cell(row=1, column=1,value=str(div)+'. DIVISJON ' + kj.upper() + ' ' + aar + ' TOTALT')
+                tabellark.cell(row=1, column=1,value=str(div)+'. DIVISJON ' + kj.upper() + ' ' + str(aar) + ' TOTALT')
                 tabellark.cell(row=1, column=1).alignment = Alignment(horizontal='center')
                 tabellark.cell(row=1, column=1).font = font5  
                 
