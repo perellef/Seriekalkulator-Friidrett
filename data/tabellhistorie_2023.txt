@@ -35,10 +35,10 @@ menn|3|12|5266|Laksevåg TIL 2. lag
 menn|3|13|5132|Ask Friidrett 3. lag
 menn|3|14|5085|IL Trio
 menn|3|15|4669|Voss IL
-menn|3|16|4632|Bremnes IL
+menn|3|16|4632|Bremnes Idrettslag
 menn|3|17|4435|Norna-Salhus IL 4. lag
 menn|3|18|4062|IL Bjarg
-menn|3|19|3841|Fitjar IL
+menn|3|19|3841|Fitjar Idrettslag
 menn|3|20|3514|Eikanger IL
 menn|3|21|3490|Austevoll IK Friidrett 2. lag
 menn|3|22|3430|Osterøy IL 3. lag
@@ -103,7 +103,7 @@ kvinner|3|22|2340|Strandebarm IL
 kvinner|3|23|2230|Austevoll IK Friidrett 4. lag
 kvinner|3|24|2184|Ask Friidrett 3. lag
 kvinner|3|25|2158|IL Gular 3. lag
-kvinner|3|26|2113|Fitjar IL
+kvinner|3|26|2113|Fitjar Idrettslag
 kvinner|3|27|1985|Øygarden IL
 kvinner|3|28|1832|IL Bjarg 2. lag
 kvinner|3|29|1799|Loddefjord IL
