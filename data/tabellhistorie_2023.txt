@@ -3,7 +3,7 @@ menn|1|0|21852|Norna-Salhus IL
 menn|1|1|20711|Fana IL
 menn|1|2|20617|IL Gneist
 menn|1|3|17857|Osterøy IL
-menn|1|4|17628|Stord IL
+menn|1|4|17628|Stord Idrettslag
 menn|1|5|17274|Ask Friidrett
 menn|1|6|16629|Fyllingen IL
 menn|1|7|15910|IL Gular
@@ -21,7 +21,7 @@ menn|2|10|7196|Norna-Salhus IL 3. lag
 menn|2|11|7000|Mjøsdalen IL
 menn|3|0|8795|Os Turnforening
 menn|3|1|6898|T&IF Viking
-menn|3|2|6876|Stord IL 2. lag
+menn|3|2|6876|Stord Idrettslag 2. lag
 menn|3|3|6677|Osterøy IL 2. lag
 menn|3|4|6570|Bergens Turnforening
 menn|3|5|6470|Austevoll IK Friidrett
@@ -45,7 +45,7 @@ menn|3|22|3430|Osterøy IL 3. lag
 menn|3|23|3332|Fyllingen IL 2. lag
 menn|3|24|3247|Fana IL 4. lag
 menn|3|25|3138|IL Fri 2. lag
-menn|3|26|2665|Stord IL 3. lag
+menn|3|26|2665|Stord Idrettslag 3. lag
 menn|3|27|2474|Øygarden IL
 menn|3|28|2328|Varegg IL 3. lag
 menn|3|29|2118|Austevoll IK Friidrett 3. lag
@@ -55,7 +55,7 @@ menn|3|32|1517|Austevoll IK Friidrett 4. lag
 menn|3|33|1354|Strandebarm IL
 menn|3|34|1295|Rosendal Turnlag
 menn|3|35|1286|IL Gular 5. lag
-menn|3|36|1246|Lysekloster IL
+menn|3|36|1246|Lysekloster Idrettslag
 menn|3|37|1197|Tørvikbygd IL
 menn|3|38|1173|Uskedal IL
 menn|3|39|1036|Austevoll IK Friidrett 5. lag
@@ -72,7 +72,7 @@ kvinner|2|3|10406|Norna-Salhus IL 3. lag
 kvinner|2|4|10271|Varegg IL
 kvinner|2|5|9701|Os Turnforening
 kvinner|2|6|9279|T&IF Viking
-kvinner|2|7|9076|Stord IL
+kvinner|2|7|9076|Stord Idrettslag
 kvinner|2|8|8565|IL Gular
 kvinner|2|9|7699|IL Fri
 kvinner|2|10|7162|Varegg IL 2. lag
@@ -86,7 +86,7 @@ kvinner|3|5|5268|Fana IL 3. lag
 kvinner|3|6|4991|Austevoll IK Friidrett
 kvinner|3|7|4615|Fyllingen IL 2. lag
 kvinner|3|8|4290|Skogsvåg IL
-kvinner|3|9|4265|Lysekloster IL
+kvinner|3|9|4265|Lysekloster Idrettslag
 kvinner|3|10|4075|IL Trio
 kvinner|3|11|3725|Osterøy IL
 kvinner|3|12|3476|Os Turnforening 2. lag

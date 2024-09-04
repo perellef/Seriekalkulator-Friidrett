@@ -18,7 +18,7 @@ menn|2|2|0|Moelven IL
 menn|2|3|0|IL Sandvin
 menn|2|4|0|Kristiansands IF Friidrett
 menn|2|5|0|Haugesund IL
-menn|2|6|0|Stord IL
+menn|2|6|0|Stord Idrettslag
 menn|2|7|0|Ask Friidrett
 menn|2|8|0|Fyllingen IL
 menn|2|9|0|IK Hind

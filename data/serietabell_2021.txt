@@ -6,7 +6,7 @@ menn|1|4|1|Tønsberg Friidrettsklubb
 menn|1|5|1|Norna-Salhus IL
 menn|1|6|1|IL i BUL
 menn|1|7|1|Ullensaker/Kisa IL
-menn|1|8|1|Stord IL
+menn|1|8|1|Stord Idrettslag
 menn|1|9|1|Nittedal IL
 menn|1|10|1|IK Tjalve 2. lag
 menn|1|11|1|Dimna IL

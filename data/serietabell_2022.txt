@@ -9,7 +9,7 @@ menn|1|7|22975|Idrettslaget Skjalg
 menn|1|8|22696|Tønsberg Friidrettsklubb
 menn|1|9|22061|Steinkjer Friidrettsklubb
 menn|1|10|20360|Ask Friidrett
-menn|1|11|19903|Stord IL
+menn|1|11|19903|Stord Idrettslag
 menn|1|12|19115|IL Gular
 menn|1|13|15255|Nittedal IL
 menn|2|0|20224|Fana IL

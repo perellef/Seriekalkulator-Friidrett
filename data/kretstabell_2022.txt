@@ -1,7 +1,7 @@
 menn|1|0|0|Norna-Salhus IL
 menn|1|1|0|IL Gneist
 menn|1|2|0|Ask Friidrett
-menn|1|3|0|Stord IL
+menn|1|3|0|Stord Idrettslag
 menn|1|4|0|IL Gular
 menn|1|5|0|Fana IL
 menn|1|6|0|Osterøy IL
@@ -31,7 +31,7 @@ kvinner|2|1|0|Norna-Salhus IL 2. lag
 kvinner|2|2|0|Fyllingen IL
 kvinner|2|3|0|Varegg IL
 kvinner|2|4|0|IL Gular
-kvinner|2|5|0|Stord IL
+kvinner|2|5|0|Stord Idrettslag
 kvinner|2|6|0|Os Turnforening
 kvinner|2|7|0|Ask Friidrett 2. lag
 kvinner|2|8|0|IL Fri

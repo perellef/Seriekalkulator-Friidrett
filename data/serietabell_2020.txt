@@ -8,7 +8,7 @@ menn|1|6|1|Idrettslaget Skjalg
 menn|1|7|1|Nittedal IL
 menn|1|8|1|Dimna IL
 menn|1|9|1|Fana IL
-menn|1|10|1|Stord IL
+menn|1|10|1|Stord Idrettslag
 menn|1|11|1|IL Gular
 menn|1|12|1|Ranheim IL
 menn|1|13|1|FIK Orion

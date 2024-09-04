@@ -18,7 +18,7 @@ menn|2|1|17744|IL i BUL 2. lag
 menn|2|2|17371|Kristiansands IF Friidrett
 menn|2|3|17103|Tønsberg Friidrettsklubb
 menn|2|4|16873|IK Hind
-menn|2|5|16772|Stord IL
+menn|2|5|16772|Stord Idrettslag
 menn|2|6|16268|Ask Friidrett
 menn|2|7|15777|Haugesund IL
 menn|2|8|15742|Osterøy IL
@@ -216,7 +216,7 @@ kvinner|3|40|8946|IK Tjalve 3. lag
 kvinner|3|41|8908|Sørild FIK 2. lag
 kvinner|3|42|8846|Heggedal FIK
 kvinner|3|43|8740|Lillehammer IF
-kvinner|3|44|8696|Stord IL
+kvinner|3|44|8696|Stord Idrettslag
 kvinner|3|45|8624|Larvik Turn & IF
 kvinner|3|46|8614|IL Gular
 kvinner|3|47|8530|Os Turnforening
@@ -285,7 +285,7 @@ kvinner|3|109|5310|IK Tjalve 4. lag
 kvinner|3|110|5249|Nesodden IF
 kvinner|3|111|5232|Bryne FIK
 kvinner|3|112|5224|Stadsbygd IL
-kvinner|3|113|5176|Lysekloster IL
+kvinner|3|113|5176|Lysekloster Idrettslag
 kvinner|3|114|5130|Byåsen IL 2. lag
 kvinner|3|115|5091|Sandefjord Turn & IF
 kvinner|3|116|5079|Fredrikstad IF 3. lag
@@ -310,7 +310,7 @@ menn|2|1|17744|IL i BUL 2. lag
 menn|2|2|17590|Kristiansands IF Friidrett
 menn|2|3|17103|Tønsberg Friidrettsklubb
 menn|2|4|16873|IK Hind
-menn|2|5|16772|Stord IL
+menn|2|5|16772|Stord Idrettslag
 menn|2|6|16268|Ask Friidrett
 menn|2|7|15777|Haugesund IL
 menn|2|8|15457|Osterøy IL
@@ -506,7 +506,7 @@ kvinner|3|38|9050|IL Bjarg
 kvinner|3|39|9041|Otra IL
 kvinner|3|40|8908|Sørild FIK 2. lag
 kvinner|3|41|8740|Lillehammer IF
-kvinner|3|42|8696|Stord IL
+kvinner|3|42|8696|Stord Idrettslag
 kvinner|3|43|8624|Larvik Turn & IF
 kvinner|3|44|8614|IL Gular
 kvinner|3|45|8530|Os Turnforening
@@ -575,7 +575,7 @@ kvinner|3|107|5324|Narvik IL
 kvinner|3|108|5249|Nesodden IF
 kvinner|3|109|5232|Bryne FIK
 kvinner|3|110|5224|Stadsbygd IL
-kvinner|3|111|5176|Lysekloster IL
+kvinner|3|111|5176|Lysekloster Idrettslag
 kvinner|3|112|5130|Byåsen IL 2. lag
 kvinner|3|113|5091|Sandefjord Turn & IF
 kvinner|3|114|5079|Fredrikstad IF 3. lag
@@ -600,7 +600,7 @@ menn|2|1|17744|IL i BUL 2. lag
 menn|2|2|17590|Kristiansands IF Friidrett
 menn|2|3|17103|Tønsberg Friidrettsklubb
 menn|2|4|16873|IK Hind
-menn|2|5|16776|Stord IL
+menn|2|5|16776|Stord Idrettslag
 menn|2|6|16268|Ask Friidrett
 menn|2|7|15777|Haugesund IL
 menn|2|8|15461|Osterøy IL
@@ -798,7 +798,7 @@ kvinner|3|38|9109|IL i BUL 2. lag
 kvinner|3|39|9041|Otra IL
 kvinner|3|40|8908|Sørild FIK 2. lag
 kvinner|3|41|8746|Lillehammer IF
-kvinner|3|42|8731|Stord IL
+kvinner|3|42|8731|Stord Idrettslag
 kvinner|3|43|8624|Larvik Turn & IF
 kvinner|3|44|8614|IL Gular
 kvinner|3|45|8567|Os Turnforening
@@ -867,7 +867,7 @@ kvinner|3|107|5349|Tønsberg Friidrettsklubb 2. lag
 kvinner|3|108|5324|Narvik IL
 kvinner|3|109|5249|Nesodden IF
 kvinner|3|110|5232|Bryne FIK
-kvinner|3|111|5208|Lysekloster IL
+kvinner|3|111|5208|Lysekloster Idrettslag
 kvinner|3|112|5157|Sem IF 2. lag
 kvinner|3|113|5130|Byåsen IL 2. lag
 kvinner|3|114|5091|Sandefjord Turn & IF
@@ -893,7 +893,7 @@ menn|2|1|17744|IL i BUL 2. lag
 menn|2|2|17590|Kristiansands IF Friidrett
 menn|2|3|17103|Tønsberg Friidrettsklubb
 menn|2|4|16873|IK Hind
-menn|2|5|16776|Stord IL
+menn|2|5|16776|Stord Idrettslag
 menn|2|6|16268|Ask Friidrett
 menn|2|7|15777|Haugesund IL
 menn|2|8|15525|Osterøy IL
@@ -1093,7 +1093,7 @@ kvinner|3|39|9278|Hinna IL
 kvinner|3|40|9109|IL i BUL 2. lag
 kvinner|3|41|9041|Otra IL
 kvinner|3|42|8746|Lillehammer IF
-kvinner|3|43|8731|Stord IL
+kvinner|3|43|8731|Stord Idrettslag
 kvinner|3|44|8624|Larvik Turn & IF
 kvinner|3|45|8614|IL Gular
 kvinner|3|46|8567|Os Turnforening
@@ -1161,7 +1161,7 @@ kvinner|3|107|5555|Voss IL
 kvinner|3|108|5349|Tønsberg Friidrettsklubb 2. lag
 kvinner|3|109|5324|Narvik IL
 kvinner|3|110|5232|Bryne FIK
-kvinner|3|111|5208|Lysekloster IL
+kvinner|3|111|5208|Lysekloster Idrettslag
 kvinner|3|112|5157|Sem IF 2. lag
 kvinner|3|113|5130|Byåsen IL 2. lag
 kvinner|3|114|5091|Sandefjord Turn & IF
@@ -1187,7 +1187,7 @@ menn|2|1|17744|IL i BUL 2. lag
 menn|2|2|17590|Kristiansands IF Friidrett
 menn|2|3|17103|Tønsberg Friidrettsklubb
 menn|2|4|16943|IK Hind
-menn|2|5|16776|Stord IL
+menn|2|5|16776|Stord Idrettslag
 menn|2|6|16279|Ask Friidrett
 menn|2|7|15777|Haugesund IL
 menn|2|8|15525|Osterøy IL
@@ -1388,7 +1388,7 @@ kvinner|3|39|9371|IL Tyrving 3. lag
 kvinner|3|40|9146|IL i BUL 2. lag
 kvinner|3|41|9041|Otra IL
 kvinner|3|42|8786|Lillehammer IF
-kvinner|3|43|8731|Stord IL
+kvinner|3|43|8731|Stord Idrettslag
 kvinner|3|44|8624|Larvik Turn & IF
 kvinner|3|45|8614|IL Gular
 kvinner|3|46|8567|Os Turnforening
@@ -1457,7 +1457,7 @@ kvinner|3|108|5555|Voss IL
 kvinner|3|109|5349|Tønsberg Friidrettsklubb 2. lag
 kvinner|3|110|5324|Narvik IL
 kvinner|3|111|5232|Bryne FIK
-kvinner|3|112|5208|Lysekloster IL
+kvinner|3|112|5208|Lysekloster Idrettslag
 kvinner|3|113|5157|Sem IF 2. lag
 kvinner|3|114|5130|Byåsen IL 2. lag
 kvinner|3|115|5091|Sandefjord Turn & IF
@@ -1483,7 +1483,7 @@ menn|2|1|17744|IL i BUL 2. lag
 menn|2|2|17604|Kristiansands IF Friidrett
 menn|2|3|17239|Tønsberg Friidrettsklubb
 menn|2|4|16986|IK Hind
-menn|2|5|16776|Stord IL
+menn|2|5|16776|Stord Idrettslag
 menn|2|6|16279|Ask Friidrett
 menn|2|7|15984|Haugesund IL
 menn|2|8|15525|Osterøy IL
@@ -1688,7 +1688,7 @@ kvinner|3|39|9406|IL Bjarg
 kvinner|3|40|9170|IL i BUL 2. lag
 kvinner|3|41|9041|Otra IL
 kvinner|3|42|8786|Lillehammer IF
-kvinner|3|43|8731|Stord IL
+kvinner|3|43|8731|Stord Idrettslag
 kvinner|3|44|8624|Larvik Turn & IF
 kvinner|3|45|8614|IL Gular
 kvinner|3|46|8585|IK Hind 2. lag
@@ -1757,7 +1757,7 @@ kvinner|3|108|5555|Voss IL
 kvinner|3|109|5349|Tønsberg Friidrettsklubb 2. lag
 kvinner|3|110|5324|Narvik IL
 kvinner|3|111|5232|Bryne FIK
-kvinner|3|112|5208|Lysekloster IL
+kvinner|3|112|5208|Lysekloster Idrettslag
 kvinner|3|113|5157|Sem IF 2. lag
 kvinner|3|114|5133|Fredrikstad IF 3. lag
 kvinner|3|115|5130|Byåsen IL 2. lag
@@ -1783,7 +1783,7 @@ menn|2|1|17744|IL i BUL 2. lag
 menn|2|2|17604|Kristiansands IF Friidrett
 menn|2|3|17239|Tønsberg Friidrettsklubb
 menn|2|4|16986|IK Hind
-menn|2|5|16776|Stord IL
+menn|2|5|16776|Stord Idrettslag
 menn|2|6|16279|Ask Friidrett
 menn|2|7|16170|Haugesund IL
 menn|2|8|15525|Osterøy IL
@@ -1988,7 +1988,7 @@ kvinner|3|39|9406|IL Bjarg
 kvinner|3|40|9170|IL i BUL 2. lag
 kvinner|3|41|9041|Otra IL
 kvinner|3|42|8786|Lillehammer IF
-kvinner|3|43|8731|Stord IL
+kvinner|3|43|8731|Stord Idrettslag
 kvinner|3|44|8614|IL Gular
 kvinner|3|45|8585|IK Hind 2. lag
 kvinner|3|46|8567|Os Turnforening
@@ -2057,7 +2057,7 @@ kvinner|3|108|5555|Voss IL
 kvinner|3|109|5349|Tønsberg Friidrettsklubb 2. lag
 kvinner|3|110|5324|Narvik IL
 kvinner|3|111|5232|Bryne FIK
-kvinner|3|112|5208|Lysekloster IL
+kvinner|3|112|5208|Lysekloster Idrettslag
 kvinner|3|113|5157|Sem IF 2. lag
 kvinner|3|114|5133|Fredrikstad IF 3. lag
 kvinner|3|115|5130|Byåsen IL 2. lag
@@ -2083,7 +2083,7 @@ menn|2|1|17744|IL i BUL 2. lag
 menn|2|2|17604|Kristiansands IF Friidrett
 menn|2|3|17241|Tønsberg Friidrettsklubb
 menn|2|4|16986|IK Hind
-menn|2|5|16815|Stord IL
+menn|2|5|16815|Stord Idrettslag
 menn|2|6|16392|Ask Friidrett
 menn|2|7|16172|Haugesund IL
 menn|2|8|15525|Osterøy IL
@@ -2289,7 +2289,7 @@ kvinner|3|39|9413|Hinna IL
 kvinner|3|40|9170|IL i BUL 2. lag
 kvinner|3|41|9041|Otra IL
 kvinner|3|42|8786|Lillehammer IF
-kvinner|3|43|8731|Stord IL
+kvinner|3|43|8731|Stord Idrettslag
 kvinner|3|44|8643|Fredrikstad IF 2. lag
 kvinner|3|45|8614|IL Gular
 kvinner|3|46|8585|IK Hind 2. lag
@@ -2360,7 +2360,7 @@ kvinner|3|110|5555|Voss IL
 kvinner|3|111|5349|Tønsberg Friidrettsklubb 2. lag
 kvinner|3|112|5324|Narvik IL
 kvinner|3|113|5232|Bryne FIK
-kvinner|3|114|5208|Lysekloster IL
+kvinner|3|114|5208|Lysekloster Idrettslag
 kvinner|3|115|5157|Sem IF 2. lag
 kvinner|3|116|5130|Byåsen IL 2. lag
 kvinner|3|117|5091|Sandefjord Turn & IF
@@ -2385,7 +2385,7 @@ menn|2|1|17744|IL i BUL 2. lag
 menn|2|2|17604|Kristiansands IF Friidrett
 menn|2|3|17241|Tønsberg Friidrettsklubb
 menn|2|4|16986|IK Hind
-menn|2|5|16815|Stord IL
+menn|2|5|16815|Stord Idrettslag
 menn|2|6|16392|Ask Friidrett
 menn|2|7|16172|Haugesund IL
 menn|2|8|15525|Osterøy IL
@@ -2591,7 +2591,7 @@ kvinner|3|39|9413|Hinna IL
 kvinner|3|40|9170|IL i BUL 2. lag
 kvinner|3|41|9041|Otra IL
 kvinner|3|42|8786|Lillehammer IF
-kvinner|3|43|8731|Stord IL
+kvinner|3|43|8731|Stord Idrettslag
 kvinner|3|44|8643|Fredrikstad IF 2. lag
 kvinner|3|45|8614|IL Gular
 kvinner|3|46|8585|IK Hind 2. lag
@@ -2662,7 +2662,7 @@ kvinner|3|110|5555|Voss IL
 kvinner|3|111|5349|Tønsberg Friidrettsklubb 2. lag
 kvinner|3|112|5324|Narvik IL
 kvinner|3|113|5232|Bryne FIK
-kvinner|3|114|5208|Lysekloster IL
+kvinner|3|114|5208|Lysekloster Idrettslag
 kvinner|3|115|5157|Sem IF 2. lag
 kvinner|3|116|5130|Byåsen IL 2. lag
 kvinner|3|117|5091|Sandefjord Turn & IF
@@ -2687,7 +2687,7 @@ menn|2|1|17744|IL i BUL 2. lag
 menn|2|2|17604|Kristiansands IF Friidrett
 menn|2|3|17241|Tønsberg Friidrettsklubb
 menn|2|4|16986|IK Hind
-menn|2|5|16815|Stord IL
+menn|2|5|16815|Stord Idrettslag
 menn|2|6|16392|Ask Friidrett
 menn|2|7|16172|Haugesund IL
 menn|2|8|15525|Osterøy IL
@@ -2893,7 +2893,7 @@ kvinner|3|39|9413|Hinna IL
 kvinner|3|40|9170|IL i BUL 2. lag
 kvinner|3|41|9041|Otra IL
 kvinner|3|42|8786|Lillehammer IF
-kvinner|3|43|8731|Stord IL
+kvinner|3|43|8731|Stord Idrettslag
 kvinner|3|44|8643|Fredrikstad IF 2. lag
 kvinner|3|45|8614|IL Gular
 kvinner|3|46|8578|IK Hind 2. lag
@@ -2964,7 +2964,7 @@ kvinner|3|110|5555|Voss IL
 kvinner|3|111|5349|Tønsberg Friidrettsklubb 2. lag
 kvinner|3|112|5324|Narvik IL
 kvinner|3|113|5232|Bryne FIK
-kvinner|3|114|5208|Lysekloster IL
+kvinner|3|114|5208|Lysekloster Idrettslag
 kvinner|3|115|5157|Sem IF 2. lag
 kvinner|3|116|5130|Byåsen IL 2. lag
 kvinner|3|117|5091|Sandefjord Turn & IF
@@ -2991,7 +2991,7 @@ menn|2|2|17744|IL i BUL 2. lag
 menn|2|3|17278|Tønsberg Friidrettsklubb
 menn|2|4|17092|Ask Friidrett
 menn|2|5|17033|IK Hind
-menn|2|6|16842|Stord IL
+menn|2|6|16842|Stord Idrettslag
 menn|2|7|16172|Haugesund IL
 menn|2|8|15577|Osterøy IL
 menn|2|9|15505|Steinkjer Friidrettsklubb
@@ -3195,7 +3195,7 @@ kvinner|3|37|9462|Oppegård IL
 kvinner|3|38|9416|Stjørdal Friidrettsklubb
 kvinner|3|39|9413|Hinna IL
 kvinner|3|40|9170|IL i BUL 2. lag
-kvinner|3|41|9141|Stord IL
+kvinner|3|41|9141|Stord Idrettslag
 kvinner|3|42|9094|Otra IL
 kvinner|3|43|8786|Lillehammer IF
 kvinner|3|44|8680|Spirit Friidrettsklubb
@@ -3270,7 +3270,7 @@ kvinner|3|112|5555|Kongsberg IF
 kvinner|3|113|5555|Voss IL
 kvinner|3|114|5324|Narvik IL
 kvinner|3|115|5232|Bryne FIK
-kvinner|3|116|5208|Lysekloster IL
+kvinner|3|116|5208|Lysekloster Idrettslag
 kvinner|3|117|5157|Sem IF 2. lag
 kvinner|3|118|5130|Byåsen IL 2. lag
 kvinner|3|119|5091|Sandefjord Turn & IF
@@ -3297,7 +3297,7 @@ menn|2|2|17807|IL i BUL 2. lag
 menn|2|3|17278|Tønsberg Friidrettsklubb
 menn|2|4|17092|Ask Friidrett
 menn|2|5|17033|IK Hind
-menn|2|6|16842|Stord IL
+menn|2|6|16842|Stord Idrettslag
 menn|2|7|16220|Haugesund IL
 menn|2|8|15707|Steinkjer Friidrettsklubb
 menn|2|9|15577|Osterøy IL
@@ -3503,7 +3503,7 @@ kvinner|3|38|9416|Stjørdal Friidrettsklubb
 kvinner|3|39|9413|Hinna IL
 kvinner|3|40|9283|IK Tjalve 3. lag
 kvinner|3|41|9170|IL i BUL 2. lag
-kvinner|3|42|9150|Stord IL
+kvinner|3|42|9150|Stord Idrettslag
 kvinner|3|43|9094|Otra IL
 kvinner|3|44|8799|Lillehammer IF
 kvinner|3|45|8691|Fredrikstad IF 2. lag
@@ -3579,7 +3579,7 @@ kvinner|3|114|5324|Narvik IL
 kvinner|3|115|5310|IK Tjalve 4. lag
 kvinner|3|116|5239|Sportsklubben Vidar 4. lag
 kvinner|3|117|5232|Bryne FIK
-kvinner|3|118|5208|Lysekloster IL
+kvinner|3|118|5208|Lysekloster Idrettslag
 kvinner|3|119|5130|Byåsen IL 2. lag
 kvinner|3|120|5091|Sandefjord Turn & IF
 kvinner|3|121|5063|Frol IL
@@ -3605,7 +3605,7 @@ menn|2|2|17807|IL i BUL 2. lag
 menn|2|3|17278|Tønsberg Friidrettsklubb
 menn|2|4|17092|Ask Friidrett
 menn|2|5|17033|IK Hind
-menn|2|6|16842|Stord IL
+menn|2|6|16842|Stord Idrettslag
 menn|2|7|16220|Haugesund IL
 menn|2|8|15707|Steinkjer Friidrettsklubb
 menn|2|9|15577|Osterøy IL
@@ -3811,7 +3811,7 @@ kvinner|3|38|9416|Stjørdal Friidrettsklubb
 kvinner|3|39|9413|Hinna IL
 kvinner|3|40|9283|IK Tjalve 3. lag
 kvinner|3|41|9170|IL i BUL 2. lag
-kvinner|3|42|9150|Stord IL
+kvinner|3|42|9150|Stord Idrettslag
 kvinner|3|43|9094|Otra IL
 kvinner|3|44|8799|Lillehammer IF
 kvinner|3|45|8691|Fredrikstad IF 2. lag
@@ -3888,7 +3888,7 @@ kvinner|3|115|5324|Narvik IL
 kvinner|3|116|5310|IK Tjalve 4. lag
 kvinner|3|117|5239|Sportsklubben Vidar 4. lag
 kvinner|3|118|5232|Bryne FIK
-kvinner|3|119|5208|Lysekloster IL
+kvinner|3|119|5208|Lysekloster Idrettslag
 kvinner|3|120|5130|Byåsen IL 2. lag
 kvinner|3|121|5091|Sandefjord Turn & IF
 kvinner|3|122|5063|Frol IL
@@ -3914,7 +3914,7 @@ menn|2|2|17807|IL i BUL 2. lag
 menn|2|3|17278|Tønsberg Friidrettsklubb
 menn|2|4|17092|Ask Friidrett
 menn|2|5|17033|IK Hind
-menn|2|6|16946|Stord IL
+menn|2|6|16946|Stord Idrettslag
 menn|2|7|16297|Haugesund IL
 menn|2|8|15707|Steinkjer Friidrettsklubb
 menn|2|9|15577|Osterøy IL
@@ -4118,7 +4118,7 @@ kvinner|3|36|9719|Idrettslaget Skjalg 2. lag
 kvinner|3|37|9559|IL Tyrving 3. lag
 kvinner|3|38|9511|Oppegård IL
 kvinner|3|39|9413|Hinna IL
-kvinner|3|40|9395|Stord IL
+kvinner|3|40|9395|Stord Idrettslag
 kvinner|3|41|9283|IK Tjalve 3. lag
 kvinner|3|42|9170|IL i BUL 2. lag
 kvinner|3|43|9094|Otra IL
@@ -4193,7 +4193,7 @@ kvinner|3|111|5601|Raufoss Idrettslag Friidrett
 kvinner|3|112|5572|IK Grane
 kvinner|3|113|5564|IL i BUL Tromsø 2. lag
 kvinner|3|114|5555|Kongsberg IF
-kvinner|3|115|5513|Lysekloster IL
+kvinner|3|115|5513|Lysekloster Idrettslag
 kvinner|3|116|5324|Narvik IL
 kvinner|3|117|5310|IK Tjalve 4. lag
 kvinner|3|118|5239|Sportsklubben Vidar 4. lag
@@ -4223,7 +4223,7 @@ menn|2|2|17857|IL i BUL 2. lag
 menn|2|3|17278|Tønsberg Friidrettsklubb
 menn|2|4|17113|IK Hind
 menn|2|5|17092|Ask Friidrett
-menn|2|6|16946|Stord IL
+menn|2|6|16946|Stord Idrettslag
 menn|2|7|16297|Haugesund IL
 menn|2|8|15707|Steinkjer Friidrettsklubb
 menn|2|9|15577|Osterøy IL
@@ -4429,7 +4429,7 @@ kvinner|3|37|9511|Oppegård IL
 kvinner|3|38|9467|IL Tyrving 3. lag
 kvinner|3|39|9425|IL i BUL 2. lag
 kvinner|3|40|9413|Hinna IL
-kvinner|3|41|9395|Stord IL
+kvinner|3|41|9395|Stord Idrettslag
 kvinner|3|42|9283|IK Tjalve 3. lag
 kvinner|3|43|9094|Otra IL
 kvinner|3|44|8799|Lillehammer IF
@@ -4504,7 +4504,7 @@ kvinner|3|112|5572|IK Grane
 kvinner|3|113|5564|IL i BUL Tromsø 2. lag
 kvinner|3|114|5555|Kongsberg IF
 kvinner|3|115|5517|Voss IL
-kvinner|3|116|5513|Lysekloster IL
+kvinner|3|116|5513|Lysekloster Idrettslag
 kvinner|3|117|5324|Narvik IL
 kvinner|3|118|5310|IK Tjalve 4. lag
 kvinner|3|119|5239|Sportsklubben Vidar 4. lag
