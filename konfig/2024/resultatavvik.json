@@ -7,7 +7,7 @@
         "Kongsvinger IL Friidrett": [[false,true,false], ["Grue IL"]],
         "Norna-Salhus IL":          [[false,true,false], ["Eidsvåg IL, Åsane","FIL Aks-77","Loddefjord IL"]],
         "Steinkjer Friidrettsklubb":[[false,true,false], ["Beitstad IL","Sør-Beitstad IL"]],
-        "Stord IL":                 [[false,true,false], ["Bremnes Idrettslag","Fitjar Idrettslag"]],
+        "Stord Idrettslag":         [[false,true,false], ["Bremnes Idrettslag","Fitjar Idrettslag"]],
         "Tingvoll FIK":             [[false,true,true],  ["Straumsnes IL","Tingvoll IL","Triumf"]],
         "Tingvoll IL":              [[true,false,false], ["Tingvoll FIK"]],
         "IK Tjalve":                [[false,true,false], ["IL Koll"]],
@@ -36,7 +36,64 @@
             
     "ugyldige resultater": {
         "menn": [],
-        "kvinner": []
+        "kvinner": [
+            {
+                "resultat": ["Fredrikstad IF","Jamila Isman","2005","786","200m","25,25","Fana","25.05.2024"],
+                "begrunnelse": "Forenkle beregning"
+            },
+            {
+                "resultat": ["Fredrikstad IF","Jamila Isman","2005","768","200m","25,47","Lima/Peru","27.08.2024"],
+                "begrunnelse": "Forenkle beregning"
+            },
+            {
+                "resultat": ["Fredrikstad IF","Jamila Isman","2005","765","200m","25,51","Bodø","04.08.2024"],
+                "begrunnelse": "Forenkle beregning"
+            },
+            {
+                "resultat": ["Fredrikstad IF","Jamila Isman","2005","748","200m","25,71","Bodø","03.08.2024"],
+                "begrunnelse": "Forenkle beregning"
+            },
+            {
+                "resultat": ["Fredrikstad IF","Jamila Isman","2005","727","200m","25,99","Sandnes","10.03.2024"],
+                "begrunnelse": "Forenkle beregning"
+            },
+            {
+                "resultat": ["Fredrikstad IF","Jamila Isman","2005","710","200m","26,20","Oslo/St","13.07.2024"],
+                "begrunnelse": "Forenkle beregning"
+            },
+            {
+                "resultat": ["Fredrikstad IF","Jamila Isman","2005","798","400m","56,55","Oslo/Bi","01.06.2024"],
+                "begrunnelse": "Forenkle beregning"
+            },
+            {
+                "resultat": ["IK Hind","Leandra Sandness","2009","472","100m", "14,26","Narvik","15.06.2024"],
+                "begrunnelse": "Forenkle beregning"
+            },
+            {
+                "resultat": ["IK Hind","Leandra Sandness","2009","469","100m", "14,28","Harstad","04.06.2024"],
+                "begrunnelse": "Forenkle beregning"
+            },
+            {
+                "resultat": ["IK Hind","Helene Monsen","2006","465","400m", "1,08,17","Narvik","15.06.2024"],
+                "begrunnelse": "Forenkle beregning"
+            },
+            {
+                "resultat": ["IK Hind","Helene Monsen","2006","454","400m", "1,08,64","Tromsø","08.06.2024"],
+                "begrunnelse": "Forenkle beregning"
+            },
+            {
+                "resultat": ["IK Hind","Helene Monsen","2006","434","400m", "1,09,61","Kemi/FIN","24.08.2024"],
+                "begrunnelse": "Forenkle beregning"
+            },
+            {
+                "resultat": ["IK Hind","Helene Monsen","2006","403","400m", "1,11,15","Oslo/Bi","30.08.2024"],
+                "begrunnelse": "Forenkle beregning"
+            },
+            {
+                "resultat": ["IK Hind","Erika Vedø-Carlsen","2006","444","60m", "9,13","Sortland","17.02.2024"],
+                "begrunnelse": "Forenkle beregning"
+            }
+        ]
     },
 
     "manglende resultater": {
@@ -44,8 +101,6 @@
             
         ],
 
-        "kvinner": [
-            
-        ]
+        "kvinner": []
     }
 }
