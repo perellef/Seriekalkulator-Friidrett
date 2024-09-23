@@ -35,7 +35,28 @@
     },
             
     "ugyldige resultater": {
-        "menn": [],
+        "menn": [
+            {
+                "resultat": ["Modum FIK","Dag-Eirik Strømstad","1975","288","100m","13,82","Oslo/St","28.05.2024"],
+                "begrunnelse": "Forenkle beregning"
+            },
+            {
+                "resultat": ["Modum FIK","Dag-Eirik Strømstad","1975","241","100m","13,9","Oslo/St","07.05.2024"],
+                "begrunnelse": "Forenkle beregning"
+            },
+            {
+                "resultat": ["Modum FIK","Dag-Eirik Strømstad","1975","241","100m","13,9","Oslo/St","07.05.2024"],
+                "begrunnelse": "Forenkle beregning"
+            },
+            {
+                "resultat": ["Modum FIK","Dag-Eirik Strømstad","1975","273","200m","28,8","Oslo/St","21.05.2024"],
+                "begrunnelse": "Forenkle beregning"
+            },
+            {
+                "resultat": ["Modum FIK","Dag-Eirik Strømstad","1975","19","Høyde","1,25","Fet","05.06.2024"],
+                "begrunnelse": "Forenkle beregning"
+            }
+        ],
         "kvinner": [
             {
                 "resultat": ["Fredrikstad IF","Jamila Isman","2005","786","200m","25,25","Fana","25.05.2024"],
