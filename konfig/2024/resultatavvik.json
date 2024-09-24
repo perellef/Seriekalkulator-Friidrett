@@ -35,28 +35,7 @@
     },
             
     "ugyldige resultater": {
-        "menn": [
-            {
-                "resultat": ["Modum FIK","Dag-Eirik Strømstad","1975","288","100m","13,82","Oslo/St","28.05.2024"],
-                "begrunnelse": "Forenkle beregning"
-            },
-            {
-                "resultat": ["Modum FIK","Dag-Eirik Strømstad","1975","241","100m","13,9","Oslo/St","07.05.2024"],
-                "begrunnelse": "Forenkle beregning"
-            },
-            {
-                "resultat": ["Modum FIK","Dag-Eirik Strømstad","1975","241","100m","13,9","Oslo/St","07.05.2024"],
-                "begrunnelse": "Forenkle beregning"
-            },
-            {
-                "resultat": ["Modum FIK","Dag-Eirik Strømstad","1975","273","200m","28,8","Oslo/St","21.05.2024"],
-                "begrunnelse": "Forenkle beregning"
-            },
-            {
-                "resultat": ["Modum FIK","Dag-Eirik Strømstad","1975","19","Høyde","1,25","Fet","05.06.2024"],
-                "begrunnelse": "Forenkle beregning"
-            }
-        ],
+        "menn": [],
         "kvinner": [
             {
                 "resultat": ["Fredrikstad IF","Jamila Isman","2005","786","200m","25,25","Fana","25.05.2024"],
@@ -112,6 +91,30 @@
             },
             {
                 "resultat": ["IK Hind","Erika Vedø-Carlsen","2006","444","60m", "9,13","Sortland","17.02.2024"],
+                "begrunnelse": "Forenkle beregning"
+            },
+            {
+                "resultat": ["IK Hind","Erika Vedø-Carlsen","2006","144","Spyd", "13,95", "Harstad","23.06.2024"],
+                "begrunnelse": "Forenkle beregning"
+            },
+            {
+                "resultat": ["IK Hind","Erika Vedø-Carlsen","2006","155","Diskos", "13,81", "Narvik","15.06.2024"],
+                "begrunnelse": "Forenkle beregning"
+            },
+            {
+                "resultat": ["IK Hind","Leandra Sandness","2009","359","1500m","5,56,66", "Tromsø","04.02.2024"],
+                "begrunnelse": "Forenkle beregning"
+            },
+            {
+                "resultat": ["IK Hind","Leandra Sandness","2009","505","60m","8,86", "Sortland","17.02.2024"],
+                "begrunnelse": "Forenkle beregning"
+            },
+            {
+                "resultat": ["IK Hind","Leandra Sandness","2009","486","60m","8,94", "Sortland","17.02.2024"],
+                "begrunnelse": "Forenkle beregning"
+            },
+            {
+                "resultat": ["IK Hind","Leandra Sandness","2009","473","60m","9,00", "Tromsø","03.02.2024"],
                 "begrunnelse": "Forenkle beregning"
             }
         ]
