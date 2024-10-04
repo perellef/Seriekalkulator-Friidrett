@@ -132,7 +132,7 @@ menn|3|101|6446|Havørn IL
 menn|3|102|6429|Namdal Løpeklubb
 menn|3|103|6428|Kristiansands IF Friidrett 2. lag
 menn|3|104|6404|Bratsberg IL
-menn|3|105|6401|Oppegård IL
+menn|3|105|6401|Oppegård Idrettslag
 menn|3|106|6346|Lambertseter IF
 menn|3|107|6340|Tromsø Løpeklubb
 menn|3|108|6311|Drøbak-Frogn IL Friidrett
@@ -232,7 +232,7 @@ kvinner|3|37|9930|Stjørdal Friidrettsklubb
 kvinner|3|38|9741|IL Bjarg
 kvinner|3|39|9692|IL i BUL 2. lag
 kvinner|3|40|9691|Ski IL Friidrett
-kvinner|3|41|9511|Oppegård IL
+kvinner|3|41|9511|Oppegård Idrettslag
 kvinner|3|42|9440|Otra IL
 kvinner|3|43|9422|Stord Idrettslag
 kvinner|3|44|9413|Hinna IL
@@ -457,7 +457,7 @@ menn|3|101|6516|Jotun IL
 menn|3|102|6468|Brandbu IF
 menn|3|103|6429|Namdal Løpeklubb
 menn|3|104|6404|Bratsberg IL
-menn|3|105|6401|Oppegård IL
+menn|3|105|6401|Oppegård Idrettslag
 menn|3|106|6346|Lambertseter IF
 menn|3|107|6340|Tromsø Løpeklubb
 menn|3|108|6333|IL Trio
@@ -557,7 +557,7 @@ kvinner|3|37|9930|Stjørdal Friidrettsklubb
 kvinner|3|38|9741|IL Bjarg
 kvinner|3|39|9692|IL i BUL 2. lag
 kvinner|3|40|9691|Ski IL Friidrett
-kvinner|3|41|9511|Oppegård IL
+kvinner|3|41|9511|Oppegård Idrettslag
 kvinner|3|42|9440|Otra IL
 kvinner|3|43|9422|Stord Idrettslag
 kvinner|3|44|9413|Hinna IL
@@ -784,7 +784,7 @@ menn|3|103|6584|Bratsberg IL
 menn|3|104|6538|Verdal Friidrettsklubb
 menn|3|105|6516|Jotun IL
 menn|3|106|6436|Lambertseter IF
-menn|3|107|6401|Oppegård IL
+menn|3|107|6401|Oppegård Idrettslag
 menn|3|108|6340|Tromsø Løpeklubb
 menn|3|109|6333|IL Trio
 menn|3|110|6328|Drøbak-Frogn IL Friidrett
@@ -883,7 +883,7 @@ kvinner|3|37|9930|Stjørdal Friidrettsklubb
 kvinner|3|38|9819|IL i BUL 2. lag
 kvinner|3|39|9808|Ski IL Friidrett
 kvinner|3|40|9773|IL Bjarg
-kvinner|3|41|9549|Oppegård IL
+kvinner|3|41|9549|Oppegård Idrettslag
 kvinner|3|42|9452|Stord Idrettslag
 kvinner|3|43|9440|Otra IL
 kvinner|3|44|9413|Hinna IL
@@ -1115,7 +1115,7 @@ menn|3|107|6584|Bratsberg IL
 menn|3|108|6542|Lambertseter IF
 menn|3|109|6516|Jotun IL
 menn|3|110|6431|Moss IL 2. lag
-menn|3|111|6401|Oppegård IL
+menn|3|111|6401|Oppegård Idrettslag
 menn|3|112|6340|Tromsø Løpeklubb
 menn|3|113|6333|IL Trio
 menn|3|114|6198|IL Koll
@@ -1210,7 +1210,7 @@ kvinner|3|37|10041|IL Tyrving 3. lag
 kvinner|3|38|9979|Sørild FIK 2. lag
 kvinner|3|39|9859|Idrettslaget Skjalg 2. lag
 kvinner|3|40|9773|IL Bjarg
-kvinner|3|41|9563|Oppegård IL
+kvinner|3|41|9563|Oppegård Idrettslag
 kvinner|3|42|9452|Stord Idrettslag
 kvinner|3|43|9445|Fredrikstad IF 2. lag
 kvinner|3|44|9440|Otra IL
@@ -1443,7 +1443,7 @@ menn|3|107|6593|Drøbak-Frogn IL Friidrett
 menn|3|108|6584|Bratsberg IL
 menn|3|109|6542|Lambertseter IF
 menn|3|110|6516|Jotun IL
-menn|3|111|6401|Oppegård IL
+menn|3|111|6401|Oppegård Idrettslag
 menn|3|112|6340|Tromsø Løpeklubb
 menn|3|113|6333|IL Trio
 menn|3|114|6198|IL Koll
@@ -1539,7 +1539,7 @@ kvinner|3|37|9979|Sørild FIK 2. lag
 kvinner|3|38|9887|IL Tyrving 3. lag
 kvinner|3|39|9859|Idrettslaget Skjalg 2. lag
 kvinner|3|40|9773|IL Bjarg
-kvinner|3|41|9563|Oppegård IL
+kvinner|3|41|9563|Oppegård Idrettslag
 kvinner|3|42|9489|Fredrikstad IF 2. lag
 kvinner|3|43|9452|Stord Idrettslag
 kvinner|3|44|9440|Otra IL
@@ -1773,7 +1773,7 @@ menn|3|108|6593|Drøbak-Frogn IL Friidrett
 menn|3|109|6584|Bratsberg IL
 menn|3|110|6516|Jotun IL
 menn|3|111|6479|IL Koll
-menn|3|112|6401|Oppegård IL
+menn|3|112|6401|Oppegård Idrettslag
 menn|3|113|6340|Tromsø Løpeklubb
 menn|3|114|6333|IL Trio
 menn|3|115|5982|Sportsklubben Vidar 6. lag
@@ -1869,7 +1869,7 @@ kvinner|3|37|9979|Sørild FIK 2. lag
 kvinner|3|38|9898|IL Bjarg
 kvinner|3|39|9887|IL Tyrving 3. lag
 kvinner|3|40|9859|Idrettslaget Skjalg 2. lag
-kvinner|3|41|9563|Oppegård IL
+kvinner|3|41|9563|Oppegård Idrettslag
 kvinner|3|42|9489|Fredrikstad IF 2. lag
 kvinner|3|43|9452|Stord Idrettslag
 kvinner|3|44|9440|Otra IL
