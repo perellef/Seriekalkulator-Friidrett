@@ -8,8 +8,8 @@
         "Norna-Salhus IL":          [[false,true,false], ["Eidsvåg IL, Åsane","FIL Aks-77","Loddefjord IL"]],
         "Steinkjer Friidrettsklubb":[[false,true,false], ["Beitstad IL","Sør-Beitstad IL"]],
         "Stord IL":                 [[false,true,false], ["Bremnes Idrettslag","Fitjar Idrettslag"]],
-        "Tingvoll FIK":             [[false,true,true],  ["Straumsnes IL","Tingvoll IL","Triumf"]],
-        "Tingvoll IL":              [[true,false,false], ["Tingvoll FIK"]],
+        "Tingvoll Friidrettsklubb":             [[false,true,true],  ["Straumsnes IL","Tingvoll Idrettslag","Triumf"]],
+        "Tingvoll Idrettslag":              [[true,false,false], ["Tingvoll Friidrettsklubb"]],
         "IK Tjalve":                [[false,true,false], ["IL Koll"]],
         "IL Tyrving":               [[false,true,false], ["Nesøya IL"]],
         "Ullensaker/Kisa IL":       [[false,true,false], ["Eidsvold Turnforening Friidrett","Hurdal IL","Hvam IL","Nordre Eidsvoll IL","Sørum IL"]]
