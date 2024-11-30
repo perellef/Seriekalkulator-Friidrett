@@ -6372,3 +6372,345 @@ kvinner|3|135|5295|Byåsen IL 2. lag
 kvinner|3|136|5142|Sandefjord Turn & IF
 kvinner|3|137|5083|Brandbu IF
 kvinner|3|138|5029|Stein FIK
+|2024-11-30 12:11:29.881975| | |
+menn|1|0|28845|IK Tjalve
+menn|1|1|26009|Sandnes IL
+menn|1|2|25896|Sportsklubben Vidar
+menn|1|3|25764|IL i BUL
+menn|1|4|25446|Ullensaker/Kisa IL
+menn|1|5|25143|Norna-Salhus IL
+menn|1|6|24505|IL Gneist
+menn|1|7|23798|IL Tyrving
+menn|1|8|23675|IK Tjalve 2. lag
+menn|1|9|23278|Fana IL
+menn|1|10|21964|Idrettslaget Skjalg
+menn|1|11|21895|Moelven IL
+menn|1|12|21596|IL Sandvin
+menn|1|13|18908|Sørild FIK
+menn|2|0|20511|Kristiansands IF Friidrett
+menn|2|1|18932|IL i BUL 2. lag
+menn|2|2|18456|Ranheim IL
+menn|2|3|18177|Fyllingen IL
+menn|2|4|17990|Tønsberg Friidrettsklubb
+menn|2|5|17584|Stord Idrettslag
+menn|2|6|17292|IK Hind
+menn|2|7|17220|Ask Friidrett
+menn|2|8|16576|IL i BUL 3. lag
+menn|2|9|16490|Haugesund IL
+menn|2|10|16424|Osterøy IL
+menn|2|11|16399|Dimna IL
+menn|2|12|15526|Steinkjer Friidrettsklubb
+menn|2|13|12292|Asker Sk. Friidrett
+menn|3|0|14457|IL Gular
+menn|3|1|13705|Moss IL
+menn|3|2|13584|Hattfjelldal IL
+menn|3|3|13464|IL Tyrving 2. lag
+menn|3|4|13057|Søndre Land IL
+menn|3|5|12930|Bækkelagets SK
+menn|3|6|12811|Sandnes IL 2. lag
+menn|3|7|12627|Fredrikstad IF
+menn|3|8|12624|IL i BUL Tromsø
+menn|3|9|12607|IF Sturla
+menn|3|10|12574|Ullensaker/Kisa IL 2. lag
+menn|3|11|12545|Sportsklubben Vidar 2. lag
+menn|3|12|12517|IL Gneist 2. lag
+menn|3|13|12447|Stjørdal Friidrettsklubb
+menn|3|14|12294|Laksevåg TIL
+menn|3|15|12251|Hamar IL
+menn|3|16|12213|Ringerike Friidrettsklubb
+menn|3|17|12116|IK Tjalve 3. lag
+menn|3|18|12115|Lillehammer IF
+menn|3|19|11984|Snøgg Friidrett
+menn|3|20|11963|Norna-Salhus IL 2. lag
+menn|3|21|11502|Sarpsborg IL
+menn|3|22|11358|Mjøsdalen IL
+menn|3|23|11302|IL i BUL 4. lag
+menn|3|24|11273|Bøler IF
+menn|3|25|11209|Sømna IL
+menn|3|26|11191|Egersunds IK
+menn|3|27|11182|Sortland Friidrettsklubb
+menn|3|28|11059|Larvik Turn & IF
+menn|3|29|10960|IL Gular 2. lag
+menn|3|30|10936|Rjukan Idrettslag
+menn|3|31|10838|Sandefjord Turn & IF
+menn|3|32|10712|Byåsen IL
+menn|3|33|10679|Ås IL
+menn|3|34|10641|FIK Orion
+menn|3|35|10639|Strindheim IL
+menn|3|36|10363|Lørenskog Friidrettslag
+menn|3|37|10318|Overhalla IL
+menn|3|38|10286|FIK Ren-Eng
+menn|3|39|10098|Jølster IL
+menn|3|40|10011|IK Hind 2. lag
+menn|3|41|9926|Nittedal IL
+menn|3|42|9852|Modum FIK
+menn|3|43|9774|Fyllingen IL 2. lag
+menn|3|44|9761|IK Grane
+menn|3|45|9708|Sem IF
+menn|3|46|9697|Moelven IL 2. lag
+menn|3|47|9625|IF Hellas
+menn|3|48|9525|IL Fri
+menn|3|49|9516|IL Tyrving 3. lag
+menn|3|50|9513|Førde IL Friidrett
+menn|3|51|9500|Gloppen Friidrettslag
+menn|3|52|9480|Fana IL 2. lag
+menn|3|53|9434|Sandnes IL 3. lag
+menn|3|54|9423|IL Norodd
+menn|3|55|9416|Utleira IL Friidrett
+menn|3|56|9400|Romerike Friidrett
+menn|3|57|9348|Stadsbygd IL
+menn|3|58|9344|Ranheim IL 2. lag
+menn|3|59|9328|Herkules Friidrett
+menn|3|60|9273|Idrettslaget Skjalg 2. lag
+menn|3|61|9190|Florø Turn og IF
+menn|3|62|9187|Ski IL Friidrett
+menn|3|63|9141|Ask Friidrett 2. lag
+menn|3|64|8821|Sportsklubben Vidar 3. lag
+menn|3|65|8758|Svorkmo N.O.I.
+menn|3|66|8727|Ullensaker/Kisa IL 3. lag
+menn|3|67|8629|IK Tjalve 4. lag
+menn|3|68|8556|Trondheim Friidrett
+menn|3|69|8525|Moss IL 2. lag
+menn|3|70|8485|Haugesund IL 2. lag
+menn|3|71|8429|Ålesund Friidrettsklubb
+menn|3|72|8417|Bækkelagets SK 2. lag
+menn|3|73|8410|Aremark IF
+menn|3|74|8369|Flåværingen IL
+menn|3|75|8273|Fredrikstad IF 2. lag
+menn|3|76|8237|Bodø Friidrettsklubb
+menn|3|77|8227|IL i BUL Tromsø 2. lag
+menn|3|78|8147|Tingvoll Friidrettsklubb
+menn|3|79|8131|Nesbyen IL
+menn|3|80|8111|Kristiansands IF Friidrett 2. lag
+menn|3|81|8108|Varegg IL
+menn|3|82|8069|Spirit Friidrettsklubb
+menn|3|83|8021|IL Gneist 3. lag
+menn|3|84|7962|IL Runar
+menn|3|85|7898|Hinna IL
+menn|3|86|7770|Sportsklubben Vidar 4. lag
+menn|3|87|7645|Steinkjer Friidrettsklubb 2. lag
+menn|3|88|7629|IL i BUL 5. lag
+menn|3|89|7582|Skarphedin IL
+menn|3|90|7578|Os Turnforening
+menn|3|91|7490|Urædd Friidrett
+menn|3|92|7488|Namdal Løpeklubb
+menn|3|93|7390|Oppegård Idrettslag
+menn|3|94|7337|Brandbu IF
+menn|3|95|7310|Lambertseter IF
+menn|3|96|7303|Havørn IL
+menn|3|97|7282|Gausdal FIK
+menn|3|98|7262|Rana FIK
+menn|3|99|7248|IL Gular 3. lag
+menn|3|100|7213|Søgne IL
+menn|3|101|7140|IL Tyrving 4. lag
+menn|3|102|7115|Lørenskog Friidrettslag 2. lag
+menn|3|103|7070|Verdal Friidrettsklubb
+menn|3|104|7042|Drøbak-Frogn IL Friidrett
+menn|3|105|7004|Sportsklubben Vidar 5. lag
+menn|3|106|6990|Rindal IL
+menn|3|107|6970|Løten Friidrett
+menn|3|108|6909|Kragerø IF Friidrett
+menn|3|109|6883|Ullensaker/Kisa IL 4. lag
+menn|3|110|6650|Spirit Friidrettsklubb 2. lag
+menn|3|111|6587|Raufoss Idrettslag Friidrett
+menn|3|112|6584|Bratsberg IL
+menn|3|113|6528|Idrettslaget Skjalg 3. lag
+menn|3|114|6516|Jotun IL
+menn|3|115|6516|IL Trio
+menn|3|116|6479|IL Koll
+menn|3|117|6340|Tromsø Løpeklubb
+menn|3|118|6331|GTI
+menn|3|119|6240|Trondheim & Omegn Sportsklubb
+menn|3|120|6238|Kongsvinger IL Friidrett
+menn|3|121|6203|Kjelsås IL
+menn|3|122|6051|Sportsklubben Vidar 6. lag
+menn|3|123|5921|Tvedestrand Turn & IF
+menn|3|124|5897|Ullensaker/Kisa IL 5. lag
+menn|3|125|5867|Gjesdal IL
+menn|3|126|5816|Rjukan Idrettslag 2. lag
+menn|3|127|5809|IL Pioner
+menn|3|128|5768|Rygge IL
+menn|3|129|5737|Målselv IL
+menn|3|130|5736|Halden IL
+menn|3|131|5731|Lillehammer IF 2. lag
+menn|3|132|5699|Spirit Friidrettsklubb 3. lag
+menn|3|133|5665|Spydeberg IL
+menn|3|134|5653|Stord Idrettslag 2. lag
+menn|3|135|5580|Varegg IL 2. lag
+menn|3|136|5475|Bækkelagets SK 3. lag
+menn|3|137|5456|Laksevåg TIL 2. lag
+menn|3|138|5368|IL Bjarg
+menn|3|139|5303|Frol IL
+menn|3|140|5257|Oslostudentenes IK Friidrett
+menn|3|141|5251|Øygarden IL
+menn|3|142|5207|Nesodden IF
+menn|3|143|5185|Idrettslaget Skjalg 4. lag
+menn|3|144|5013|IL Sandvin 2. lag
+kvinner|1|0|27831|IK Tjalve
+kvinner|1|1|25446|Norna-Salhus IL
+kvinner|1|2|24139|Sandnes IL
+kvinner|1|3|23146|IL Tyrving
+kvinner|1|4|22867|Ullensaker/Kisa IL
+kvinner|1|5|22834|IL i BUL
+kvinner|1|6|22575|IK Tjalve 2. lag
+kvinner|1|7|22341|Idrettslaget Skjalg
+kvinner|1|8|21453|Fredrikstad IF
+kvinner|1|9|21076|Ranheim IL
+kvinner|1|10|20403|Dimna IL
+kvinner|1|11|19347|Fana IL
+kvinner|1|12|18512|IL Tyrving 2. lag
+kvinner|1|13|18087|Kristiansands IF Friidrett
+kvinner|2|0|21457|Sportsklubben Vidar
+kvinner|2|1|18579|IL Gneist
+kvinner|2|2|18546|Haugesund IL
+kvinner|2|3|17680|Sørild FIK
+kvinner|2|4|17000|Norna-Salhus IL 2. lag
+kvinner|2|5|16941|Fyllingen IL
+kvinner|2|6|16872|Bækkelagets SK
+kvinner|2|7|15781|Nittedal IL
+kvinner|2|8|15683|IF Sturla
+kvinner|2|9|15268|Tønsberg Friidrettsklubb
+kvinner|2|10|14619|Sarpsborg IL
+kvinner|2|11|14420|IL i BUL Tromsø
+kvinner|2|12|14272|Bergens Turnforening
+kvinner|2|13|12831|Urædd Friidrett
+kvinner|3|0|13821|Sem IF
+kvinner|3|1|13519|FIK Orion
+kvinner|3|2|13475|Steinkjer Friidrettsklubb
+kvinner|3|3|13283|Laksevåg TIL
+kvinner|3|4|13043|Gloppen Friidrettslag
+kvinner|3|5|12780|Ask Friidrett
+kvinner|3|6|12768|Moss IL
+kvinner|3|7|12732|IL Runar
+kvinner|3|8|12687|IL Norodd
+kvinner|3|9|12618|Sandnes IL 2. lag
+kvinner|3|10|12419|Herkules Friidrett
+kvinner|3|11|11852|IK Hind
+kvinner|3|12|11612|Hattfjelldal IL
+kvinner|3|13|11589|Lambertseter IF
+kvinner|3|14|11581|Mandal & Halse IL
+kvinner|3|15|11552|Sportsklubben Vidar 2. lag
+kvinner|3|16|11409|Idrettslaget Skjalg 2. lag
+kvinner|3|17|11401|IL i BUL 2. lag
+kvinner|3|18|11319|Tingvoll Friidrettsklubb
+kvinner|3|19|11267|Trondheim Friidrett
+kvinner|3|20|11101|Hareid IL
+kvinner|3|21|11082|Førde IL Friidrett
+kvinner|3|22|11077|Byåsen IL
+kvinner|3|23|11063|Varegg IL
+kvinner|3|24|11039|Gui Sportsklubb
+kvinner|3|25|11001|Fagernes IL
+kvinner|3|26|10712|Ski IL Friidrett
+kvinner|3|27|10637|Rjukan Idrettslag
+kvinner|3|28|10622|Haugesund IL 2. lag
+kvinner|3|29|10479|Halden IL
+kvinner|3|30|10446|Ørsta IL
+kvinner|3|31|10428|Sandnes IL 3. lag
+kvinner|3|32|10415|Asker Sk. Friidrett
+kvinner|3|33|10395|IK Tjalve 3. lag
+kvinner|3|34|10386|Stjørdal Friidrettsklubb
+kvinner|3|35|10292|Romerike Friidrett
+kvinner|3|36|10235|Verdal Friidrettsklubb
+kvinner|3|37|10214|Hamar IL
+kvinner|3|38|10180|IL Bjarg
+kvinner|3|39|10062|Lillehammer IF
+kvinner|3|40|9901|Sømna IL
+kvinner|3|41|9888|Ullensaker/Kisa IL 2. lag
+kvinner|3|42|9887|IL Tyrving 3. lag
+kvinner|3|43|9649|Oppegård Idrettslag
+kvinner|3|44|9599|Fredrikstad IF 2. lag
+kvinner|3|45|9534|Stord Idrettslag
+kvinner|3|46|9445|Otra IL
+kvinner|3|47|9439|Hinna IL
+kvinner|3|48|9434|IK Hind 2. lag
+kvinner|3|49|9356|IL Gular
+kvinner|3|50|9205|Søgne IL
+kvinner|3|51|9167|IL Fri
+kvinner|3|52|9107|IL Koll
+kvinner|3|53|9102|IF Sturla 2. lag
+kvinner|3|54|8995|Ringerike Friidrettsklubb
+kvinner|3|55|8863|Larvik Turn & IF
+kvinner|3|56|8834|Sørild FIK 2. lag
+kvinner|3|57|8767|Jardar IL
+kvinner|3|58|8758|IL Gneist 2. lag
+kvinner|3|59|8739|Ås IL
+kvinner|3|60|8738|IF Hellas
+kvinner|3|61|8714|Snøgg Friidrett
+kvinner|3|62|8687|Utleira IL Friidrett
+kvinner|3|63|8680|Spirit Friidrettsklubb
+kvinner|3|64|8672|Ask Friidrett 2. lag
+kvinner|3|65|8671|Strindheim IL
+kvinner|3|66|8624|Os Turnforening
+kvinner|3|67|8619|Egersunds IK
+kvinner|3|68|8608|Bodø Friidrettsklubb
+kvinner|3|69|8587|Ranheim IL 2. lag
+kvinner|3|70|8524|T&IF Viking
+kvinner|3|71|8369|Varegg IL 2. lag
+kvinner|3|72|8265|Modum FIK
+kvinner|3|73|8012|Sortland Friidrettsklubb
+kvinner|3|74|7936|Målselv IL
+kvinner|3|75|7908|Moss IL 2. lag
+kvinner|3|76|7702|IL Gular 2. lag
+kvinner|3|77|7693|Herkules Friidrett 2. lag
+kvinner|3|78|7636|Lambertseter IF 2. lag
+kvinner|3|79|7630|Bækkelagets SK 2. lag
+kvinner|3|80|7604|Bardu IL
+kvinner|3|81|7536|Nittedal IL 2. lag
+kvinner|3|82|7490|Groruddalen Friidrettsklubb
+kvinner|3|83|7489|Tønsberg Friidrettsklubb 2. lag
+kvinner|3|84|7474|Florø Turn og IF
+kvinner|3|85|7405|Gjesdal IL
+kvinner|3|86|7387|IL i BUL 3. lag
+kvinner|3|87|7374|Norna-Salhus IL 3. lag
+kvinner|3|88|7350|Nesodden IF
+kvinner|3|89|7339|Kristiansands IF Friidrett 2. lag
+kvinner|3|90|7311|IL Tyrving 4. lag
+kvinner|3|91|7310|Lyngdal IL
+kvinner|3|92|7302|Gjøvik FIK
+kvinner|3|93|7234|Sandnes IL 4. lag
+kvinner|3|94|7122|Raufoss Idrettslag Friidrett
+kvinner|3|95|7120|Haugesund IL 3. lag
+kvinner|3|96|6952|Drøbak-Frogn IL Friidrett
+kvinner|3|97|6898|Selbu IL
+kvinner|3|98|6894|Rjukan Idrettslag 2. lag
+kvinner|3|99|6888|Sportsklubben Vidar 3. lag
+kvinner|3|100|6860|Fana IL 2. lag
+kvinner|3|101|6790|IF Eiker-Kvikk
+kvinner|3|102|6778|IK Grane
+kvinner|3|103|6666|Aremark IF
+kvinner|3|104|6559|Dimna IL 2. lag
+kvinner|3|105|6543|Fredrikstad IF 3. lag
+kvinner|3|106|6498|Frol IL
+kvinner|3|107|6476|Lørenskog Friidrettslag
+kvinner|3|108|6438|Bratsberg IL
+kvinner|3|109|6434|Moelven IL
+kvinner|3|110|6416|Bryne FIK
+kvinner|3|111|6366|Stadsbygd IL
+kvinner|3|112|6240|Lillehammer IF 2. lag
+kvinner|3|113|6211|IL Pioner
+kvinner|3|114|6180|Flåværingen IL
+kvinner|3|115|6157|IL Runar 2. lag
+kvinner|3|116|6076|Kongsberg IF
+kvinner|3|117|6060|Idrettslaget Skjalg 3. lag
+kvinner|3|118|6037|Ørsta IL 2. lag
+kvinner|3|119|5997|IL Gular 3. lag
+kvinner|3|120|5914|Spirit Friidrettsklubb 2. lag
+kvinner|3|121|5823|Lysekloster Idrettslag
+kvinner|3|122|5789|Overhalla IL
+kvinner|3|123|5766|Sørild FIK 3. lag
+kvinner|3|124|5754|Fyllingen IL 2. lag
+kvinner|3|125|5721|IL i BUL Tromsø 2. lag
+kvinner|3|126|5717|Mjøsdalen IL
+kvinner|3|127|5705|Sem IF 2. lag
+kvinner|3|128|5668|IL Koll 2. lag
+kvinner|3|129|5578|Sportsklubben Vidar 4. lag
+kvinner|3|130|5544|Voss IL
+kvinner|3|131|5530|IL Norodd 2. lag
+kvinner|3|132|5456|Narvik IL
+kvinner|3|133|5445|Ålesund Friidrettsklubb
+kvinner|3|134|5368|Sandnessjøen IL
+kvinner|3|135|5358|Mosjøen Friidrettsklubb
+kvinner|3|136|5295|Byåsen IL 2. lag
+kvinner|3|137|5142|Sandefjord Turn & IF
+kvinner|3|138|5083|Brandbu IF
+kvinner|3|139|5029|Stein FIK
