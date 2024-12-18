@@ -308,7 +308,7 @@ kvinner|3|113|5706|Overhalla IL
 kvinner|3|114|5679|IL i BUL Tromsø 2. lag
 kvinner|3|115|5675|Aremark IF
 kvinner|3|116|5616|Rjukan Idrettslag 2. lag
-kvinner|3|117|5610|Kongsberg IF
+kvinner|3|117|5610|Kongsberg Idrettsforening
 kvinner|3|118|5601|Raufoss Idrettslag Friidrett
 kvinner|3|119|5520|Lysekloster Idrettslag
 kvinner|3|120|5517|Voss IL
@@ -633,7 +633,7 @@ kvinner|3|113|5706|Overhalla IL
 kvinner|3|114|5679|IL i BUL Tromsø 2. lag
 kvinner|3|115|5675|Aremark IF
 kvinner|3|116|5616|Rjukan Idrettslag 2. lag
-kvinner|3|117|5610|Kongsberg IF
+kvinner|3|117|5610|Kongsberg Idrettsforening
 kvinner|3|118|5601|Raufoss Idrettslag Friidrett
 kvinner|3|119|5537|Lysekloster Idrettslag
 kvinner|3|120|5517|Voss IL
@@ -948,7 +948,7 @@ kvinner|3|102|6180|Flåværingen IL
 kvinner|3|103|6179|IL Pioner
 kvinner|3|104|6139|Nesodden IF
 kvinner|3|105|6060|Idrettslaget Skjalg 3. lag
-kvinner|3|106|6055|Kongsberg IF
+kvinner|3|106|6055|Kongsberg Idrettsforening
 kvinner|3|107|6011|Lillehammer IF 2. lag
 kvinner|3|108|5997|IL Gular 3. lag
 kvinner|3|109|5969|Lørenskog Friidrettslag
@@ -1277,7 +1277,7 @@ kvinner|3|104|6211|IL Pioner
 kvinner|3|105|6180|Flåværingen IL
 kvinner|3|106|6139|Nesodden IF
 kvinner|3|107|6060|Idrettslaget Skjalg 3. lag
-kvinner|3|108|6055|Kongsberg IF
+kvinner|3|108|6055|Kongsberg Idrettsforening
 kvinner|3|109|6011|Lillehammer IF 2. lag
 kvinner|3|110|5997|IL Gular 3. lag
 kvinner|3|111|5966|Moelven IL
@@ -1607,7 +1607,7 @@ kvinner|3|105|6211|IL Pioner
 kvinner|3|106|6180|Flåværingen IL
 kvinner|3|107|6139|Nesodden IF
 kvinner|3|108|6060|Idrettslaget Skjalg 3. lag
-kvinner|3|109|6055|Kongsberg IF
+kvinner|3|109|6055|Kongsberg Idrettsforening
 kvinner|3|110|6011|Lillehammer IF 2. lag
 kvinner|3|111|5997|IL Gular 3. lag
 kvinner|3|112|5966|Moelven IL
@@ -1937,7 +1937,7 @@ kvinner|3|105|6314|Nittedal IL 2. lag
 kvinner|3|106|6211|IL Pioner
 kvinner|3|107|6180|Flåværingen IL
 kvinner|3|108|6139|Nesodden IF
-kvinner|3|109|6076|Kongsberg IF
+kvinner|3|109|6076|Kongsberg Idrettsforening
 kvinner|3|110|6060|Idrettslaget Skjalg 3. lag
 kvinner|3|111|6011|Lillehammer IF 2. lag
 kvinner|3|112|5997|IL Gular 3. lag
@@ -2271,7 +2271,7 @@ kvinner|3|106|6366|Stadsbygd IL
 kvinner|3|107|6314|Nittedal IL 2. lag
 kvinner|3|108|6211|IL Pioner
 kvinner|3|109|6180|Flåværingen IL
-kvinner|3|110|6076|Kongsberg IF
+kvinner|3|110|6076|Kongsberg Idrettsforening
 kvinner|3|111|6060|Idrettslaget Skjalg 3. lag
 kvinner|3|112|6011|Lillehammer IF 2. lag
 kvinner|3|113|5997|IL Gular 3. lag
@@ -2610,7 +2610,7 @@ kvinner|3|112|6211|IL Pioner
 kvinner|3|113|6180|Flåværingen IL
 kvinner|3|114|6157|IL Runar 2. lag
 kvinner|3|115|6097|Norna-Salhus IL 3. lag
-kvinner|3|116|6076|Kongsberg IF
+kvinner|3|116|6076|Kongsberg Idrettsforening
 kvinner|3|117|6060|Idrettslaget Skjalg 3. lag
 kvinner|3|118|6037|Ørsta IL 2. lag
 kvinner|3|119|5997|IL Gular 3. lag
@@ -2947,7 +2947,7 @@ kvinner|3|112|6211|IL Pioner
 kvinner|3|113|6180|Flåværingen IL
 kvinner|3|114|6157|IL Runar 2. lag
 kvinner|3|115|6097|Norna-Salhus IL 3. lag
-kvinner|3|116|6076|Kongsberg IF
+kvinner|3|116|6076|Kongsberg Idrettsforening
 kvinner|3|117|6060|Idrettslaget Skjalg 3. lag
 kvinner|3|118|6037|Ørsta IL 2. lag
 kvinner|3|119|5997|IL Gular 3. lag
@@ -3286,7 +3286,7 @@ kvinner|3|112|6211|IL Pioner
 kvinner|3|113|6180|Flåværingen IL
 kvinner|3|114|6157|IL Runar 2. lag
 kvinner|3|115|6097|Norna-Salhus IL 3. lag
-kvinner|3|116|6076|Kongsberg IF
+kvinner|3|116|6076|Kongsberg Idrettsforening
 kvinner|3|117|6060|Idrettslaget Skjalg 3. lag
 kvinner|3|118|6037|Ørsta IL 2. lag
 kvinner|3|119|5997|IL Gular 3. lag
@@ -3625,7 +3625,7 @@ kvinner|3|112|6211|IL Pioner
 kvinner|3|113|6180|Flåværingen IL
 kvinner|3|114|6157|IL Runar 2. lag
 kvinner|3|115|6097|Norna-Salhus IL 3. lag
-kvinner|3|116|6076|Kongsberg IF
+kvinner|3|116|6076|Kongsberg Idrettsforening
 kvinner|3|117|6060|Idrettslaget Skjalg 3. lag
 kvinner|3|118|6037|Ørsta IL 2. lag
 kvinner|3|119|5997|IL Gular 3. lag
@@ -3965,7 +3965,7 @@ kvinner|3|112|6211|IL Pioner
 kvinner|3|113|6180|Flåværingen IL
 kvinner|3|114|6157|IL Runar 2. lag
 kvinner|3|115|6097|Norna-Salhus IL 3. lag
-kvinner|3|116|6076|Kongsberg IF
+kvinner|3|116|6076|Kongsberg Idrettsforening
 kvinner|3|117|6060|Idrettslaget Skjalg 3. lag
 kvinner|3|118|6037|Ørsta IL 2. lag
 kvinner|3|119|5997|IL Gular 3. lag
@@ -4305,7 +4305,7 @@ kvinner|3|112|6211|IL Pioner
 kvinner|3|113|6180|Flåværingen IL
 kvinner|3|114|6157|IL Runar 2. lag
 kvinner|3|115|6097|Norna-Salhus IL 3. lag
-kvinner|3|116|6076|Kongsberg IF
+kvinner|3|116|6076|Kongsberg Idrettsforening
 kvinner|3|117|6060|Idrettslaget Skjalg 3. lag
 kvinner|3|118|6037|Ørsta IL 2. lag
 kvinner|3|119|5997|IL Gular 3. lag
@@ -4645,7 +4645,7 @@ kvinner|3|112|6211|IL Pioner
 kvinner|3|113|6180|Flåværingen IL
 kvinner|3|114|6157|IL Runar 2. lag
 kvinner|3|115|6097|Norna-Salhus IL 3. lag
-kvinner|3|116|6076|Kongsberg IF
+kvinner|3|116|6076|Kongsberg Idrettsforening
 kvinner|3|117|6060|Idrettslaget Skjalg 3. lag
 kvinner|3|118|6037|Ørsta IL 2. lag
 kvinner|3|119|5997|IL Gular 3. lag
@@ -4986,7 +4986,7 @@ kvinner|3|112|6211|IL Pioner
 kvinner|3|113|6180|Flåværingen IL
 kvinner|3|114|6157|IL Runar 2. lag
 kvinner|3|115|6097|Norna-Salhus IL 3. lag
-kvinner|3|116|6076|Kongsberg IF
+kvinner|3|116|6076|Kongsberg Idrettsforening
 kvinner|3|117|6060|Idrettslaget Skjalg 3. lag
 kvinner|3|118|6037|Ørsta IL 2. lag
 kvinner|3|119|5997|IL Gular 3. lag
@@ -5326,7 +5326,7 @@ kvinner|3|112|6211|IL Pioner
 kvinner|3|113|6180|Flåværingen IL
 kvinner|3|114|6157|IL Runar 2. lag
 kvinner|3|115|6097|Norna-Salhus IL 3. lag
-kvinner|3|116|6076|Kongsberg IF
+kvinner|3|116|6076|Kongsberg Idrettsforening
 kvinner|3|117|6060|Idrettslaget Skjalg 3. lag
 kvinner|3|118|6037|Ørsta IL 2. lag
 kvinner|3|119|5997|IL Gular 3. lag
@@ -5667,7 +5667,7 @@ kvinner|3|112|6211|IL Pioner
 kvinner|3|113|6180|Flåværingen IL
 kvinner|3|114|6157|IL Runar 2. lag
 kvinner|3|115|6097|Norna-Salhus IL 3. lag
-kvinner|3|116|6076|Kongsberg IF
+kvinner|3|116|6076|Kongsberg Idrettsforening
 kvinner|3|117|6060|Idrettslaget Skjalg 3. lag
 kvinner|3|118|6037|Ørsta IL 2. lag
 kvinner|3|119|5997|IL Gular 3. lag
@@ -6008,7 +6008,7 @@ kvinner|3|112|6211|IL Pioner
 kvinner|3|113|6180|Flåværingen IL
 kvinner|3|114|6157|IL Runar 2. lag
 kvinner|3|115|6097|Norna-Salhus IL 3. lag
-kvinner|3|116|6076|Kongsberg IF
+kvinner|3|116|6076|Kongsberg Idrettsforening
 kvinner|3|117|6060|Idrettslaget Skjalg 3. lag
 kvinner|3|118|6037|Ørsta IL 2. lag
 kvinner|3|119|5997|IL Gular 3. lag
@@ -6349,7 +6349,7 @@ kvinner|3|112|6240|Lillehammer IF 2. lag
 kvinner|3|113|6211|IL Pioner
 kvinner|3|114|6180|Flåværingen IL
 kvinner|3|115|6157|IL Runar 2. lag
-kvinner|3|116|6076|Kongsberg IF
+kvinner|3|116|6076|Kongsberg Idrettsforening
 kvinner|3|117|6060|Idrettslaget Skjalg 3. lag
 kvinner|3|118|6037|Ørsta IL 2. lag
 kvinner|3|119|5997|IL Gular 3. lag
@@ -6690,7 +6690,7 @@ kvinner|3|112|6240|Lillehammer IF 2. lag
 kvinner|3|113|6211|IL Pioner
 kvinner|3|114|6180|Flåværingen IL
 kvinner|3|115|6157|IL Runar 2. lag
-kvinner|3|116|6076|Kongsberg IF
+kvinner|3|116|6076|Kongsberg Idrettsforening
 kvinner|3|117|6060|Idrettslaget Skjalg 3. lag
 kvinner|3|118|6037|Ørsta IL 2. lag
 kvinner|3|119|5997|IL Gular 3. lag
@@ -7033,7 +7033,7 @@ kvinner|3|112|6240|Lillehammer IF 2. lag
 kvinner|3|113|6211|IL Pioner
 kvinner|3|114|6203|Flåværingen IL
 kvinner|3|115|6157|IL Runar 2. lag
-kvinner|3|116|6088|Kongsberg IF
+kvinner|3|116|6088|Kongsberg Idrettsforening
 kvinner|3|117|6060|Idrettslaget Skjalg 3. lag
 kvinner|3|118|6037|Ørsta IL 2. lag
 kvinner|3|119|5997|IL Gular 3. lag
@@ -7377,7 +7377,7 @@ kvinner|3|112|6240|Lillehammer IF 2. lag
 kvinner|3|113|6211|IL Pioner
 kvinner|3|114|6203|Flåværingen IL
 kvinner|3|115|6157|IL Runar 2. lag
-kvinner|3|116|6088|Kongsberg IF
+kvinner|3|116|6088|Kongsberg Idrettsforening
 kvinner|3|117|6060|Idrettslaget Skjalg 3. lag
 kvinner|3|118|6037|Ørsta IL 2. lag
 kvinner|3|119|5997|IL Gular 3. lag
@@ -7723,7 +7723,7 @@ kvinner|3|113|6211|IL Pioner
 kvinner|3|114|6203|Flåværingen IL
 kvinner|3|115|6157|IL Runar 2. lag
 kvinner|3|116|6089|Ørsta IL 2. lag
-kvinner|3|117|6088|Kongsberg IF
+kvinner|3|117|6088|Kongsberg Idrettsforening
 kvinner|3|118|6060|Idrettslaget Skjalg 3. lag
 kvinner|3|119|5997|IL Gular 3. lag
 kvinner|3|120|5914|Spirit Friidrettsklubb 2. lag
@@ -8072,7 +8072,7 @@ kvinner|3|113|6211|IL Pioner
 kvinner|3|114|6203|Flåværingen IL
 kvinner|3|115|6157|IL Runar 2. lag
 kvinner|3|116|6089|Ørsta IL 2. lag
-kvinner|3|117|6088|Kongsberg IF
+kvinner|3|117|6088|Kongsberg Idrettsforening
 kvinner|3|118|6060|Idrettslaget Skjalg 3. lag
 kvinner|3|119|5998|Lysekloster Idrettslag
 kvinner|3|120|5997|IL Gular 3. lag
